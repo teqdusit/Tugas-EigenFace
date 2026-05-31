@@ -3,4 +3,7 @@ root: intro
 
 chapters:
   - file: materi1
+  - file: markdown
+  - file: markdown-notebooks
+  - file: intro
   
