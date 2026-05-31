@@ -1,6 +1,6 @@
 root: intro
 chapters:
-  - file: materi1
+  - file: EigenFace
   - file: markdown
   - file: markdown-notebooks
   - file: intro
