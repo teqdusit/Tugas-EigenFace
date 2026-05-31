@@ -2,7 +2,7 @@ format: jb-book
 root: intro
 
 chapters:
-  - file: EigenFace
+  - file: tugas-eigenface
   - file: markdown
   - file: markdown-notebooks
   - file: intro
