@@ -1,3 +1,5 @@
 title: Tugas Komputasi Aljabar Linear
 author: Teqdusit
 logo: logo.png
+execute:
+  execute_notebooks: off
