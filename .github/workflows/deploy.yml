@@ -19,10 +19,10 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install Jupyter Book
+      - name: Install Jupyter Book Bersih
         run: |
-          pip install -U pip
-          pip install jupyter-book
+          pip install --no-cache-dir -U pip
+          pip install --no-cache-dir jupyter-book
 
       - name: Build the book
         run: |
