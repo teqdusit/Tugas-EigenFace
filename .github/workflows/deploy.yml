@@ -1,7 +1,6 @@
 name: deploy-book
 
 on:
-  # Berjalan otomatis setiap kali kamu melakukan git push ke branch main
   push:
     branches:
       - main
@@ -16,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-python: '3.9'
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
