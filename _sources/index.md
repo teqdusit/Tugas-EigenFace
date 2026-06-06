@@ -1,16 +1,21 @@
-# Komputasi Aljabar Linear
+# Profil
 
-Berikut adalah daftar tugas untuk mata kuliah Komputasi Aljabar Linear. 
 
 ---
 
-# Tentang saya
+## Tentang saya
+
+<img src="foto.jpeg" width="150" style="border-radius: 50%;" />
 
 **Nama:** Teq Dusit Anggoro
+
 **Nim:** 250411100176
+
 **Prodi:** Teknik Informatika
 
-![Foto Profil](foto.jpeg)
-
 ---
+
+## Daftar Tugas
+
+-[Tugas Project - Eigen Face menggunakan rumus SVD](tugas-eigenface)
 ```{tableofcontents}
