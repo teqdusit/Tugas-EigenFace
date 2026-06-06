@@ -1,3 +1,4 @@
+cat > .github/workflows/deploy.yml << 'EOF'
 name: deploy-book
 
 on:
@@ -8,16 +9,21 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
+    permissions:
+      pages: write
+      id-token: write
+      contents: write
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
 
     - name: Install Jupyter Book
-      run: pip install jupyter-book
+      run: pip install jupyter-book==0.15.1
 
     - name: Build the book
       run: jupyter-book build .
@@ -27,3 +33,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_build/html
+EOF

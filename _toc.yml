@@ -1,4 +1,6 @@
+cat > _toc.yml << 'EOF'
 format: jb-book
 root: index
 chapters:
   - file: tugas-eigenface
+EOF
