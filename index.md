@@ -5,7 +5,7 @@
 
 ## Tentang saya
 
-<img src="foto.jpeg" width="150" style="border-radius: 50%;" />
+<img src="foto.jpeg" width="200" style="border-radius: 50%;" />
 
 **Nama:** Teq Dusit Anggoro
 
@@ -15,7 +15,3 @@
 
 ---
 
-## Daftar Tugas
-
--[Tugas Project - Eigen Face menggunakan rumus SVD](tugas-eigenface)
-```{tableofcontents}
