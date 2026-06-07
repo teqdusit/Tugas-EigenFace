@@ -29,7 +29,7 @@ a_4 & b_4 & c_4 & d_4 & e_4 \\
 $$
 
 **Target Akhir (Matriks Eselon Baris):**
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & * & * & * & * \\
@@ -38,7 +38,7 @@ $$
 0 & 0 & 0 & 1 & * \\
 \end{array}
 \right]
-$$
+$
 *(Tanda $*$ artinya bisa bernilai angka berapapun)*
 
 ---
@@ -65,7 +65,7 @@ Selesaikan SPL berikut:
 ### Penyelesaian:
 
 **Bentuk Matriks Awal:**
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -74,7 +74,7 @@ $$
 -1 & 2 & -1 & 1 & 4 \\
 \end{array}
 \right]
-$$
+$
 
 #### Kolom 1 (Membuat Nol di bawah Utama 1)
 Baris 1 sudah diawali angka `1`. Kita nolkan Baris 2, 3, dan 4:
@@ -83,7 +83,7 @@ Baris 1 sudah diawali angka `1`. Kita nolkan Baris 2, 3, dan 4:
 * $R_4 + R_1 \rightarrow R_4$
 
 Hasilnya:
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -92,7 +92,7 @@ $$
 0 & 3 & 0 & 2 & 14 \\
 \end{array}
 \right]
-$$
+$
 
 #### Kolom 2 (Membuat Utama 1 di Baris 2 dan Nol di bawahnya)
 Kalikan Baris 2 dengan $-1$ agar menjadi `1`:
@@ -114,7 +114,7 @@ Nolkan elemen di bawah diagonal baris 2:
 * $R_4 - 3R_2 \rightarrow R_4$
 
 Hasilnya:
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -123,12 +123,12 @@ $$
 0 & 0 & -9 & -1 & -31 \\
 \end{array}
 \right]
-$$
+$
 
 #### Kolom 3 & 4 (Menyelesaikan Sisa Matriks)
 Supaya perhitungan lebih mudah dan menghindari pecahan terlalu awal, kita bisa lakukan operasi antar baris terlebih dahulu. 
 Tambahkan Baris 4 dengan Baris 3 ($R_4 + R_3 \rightarrow R_4$):
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -137,10 +137,10 @@ $$
 0 & 0 & -2 & -2 & -13 \\
 \end{array}
 \right]
-$$
+$
 
 Bagi Baris 4 dengan $-2$ ($-\frac{1}{2} \cdot R_4 \rightarrow R_4$):
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -149,10 +149,10 @@ $$
 0 & 0 & 1 & 1 & 6.5 \\
 \end{array}
 \right]
-$$
+$
 
 Tukarkan Baris 3 dan Baris 4 ($R_3 \leftrightarrow R_4$) agar angka `1` naik ke atas:
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -161,10 +161,10 @@ $$
 0 & 0 & 7 & -1 & 18 \\
 \end{array}
 \right]
-$$
+$
 
 Nolkan angka 7 di Baris 4 menggunakan Baris 3 ($R_4 - 7R_3 \rightarrow R_4$):
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -173,10 +173,10 @@ $$
 0 & 0 & 0 & -8 & -27.5 \\
 \end{array}
 \right]
-$$
+$
 
 Bagi Baris 4 dengan $-8$ ($-\frac{1}{8} \cdot R_4 \rightarrow R_4$):
-$$
+$
 \left[
 \begin{array}{cccc|c}
 1 & 1 & 1 & 1 & 10 \\
@@ -185,7 +185,7 @@ $$
 0 & 0 & 0 & 1 & 3.4375 \\
 \end{array}
 \right]
-$$
+$
 
 #### Substitusi Balik
 Dari matriks terakhir, kita dapatkan sistem persamaan baru:
@@ -203,25 +203,25 @@ Dari matriks terakhir, kita dapatkan sistem persamaan baru:
 Selesaikan sistem persamaan linear berikut menggunakan metode Eliminasi Gauss (OBE):
 
 ### Soal 1 (Tingkat Dasar - Hasil Bulat)
-$$
+$
 \begin{aligned}
 x + y + z + w &= 6 \\
 2x + 3y - z + w &= 5 \\
 -x + 2y + 3z - w &= 7 \\
 3x + y - 2z + 2w &= 1
 \end{aligned}
-$$
+$
 *(Petunjuk Kunci Jawaban: $x=1, y=2, z=2, w=1$)*
 
 ### Soal 2 (Tingkat Menengah)
-$$
+$
 \begin{aligned}
 2x + y + 2z - w &= 5 \\
 x + 2y - z + 2w &= 4 \\
 3x - y + z + w &= 6 \\
 x + y + z + w &= 4
 \end{aligned}
-$$
+$
 
 ### Tips Sukses Mengerjakan OBE:
 * Fokus selesaikan kolom demi kolom dari kiri ke kekanan.
