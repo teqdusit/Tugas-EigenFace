@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Tugas 4 &#8212; Tugas Komputasi Aljabar Linear</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tugas 5" href="tugas5.html" />
+    <link rel="prev" title="Profil" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tugas Komputasi Aljabar Linear</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="tugas-adjoin.html">TUGAS Join (Adjoin)</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="evaluasi.html">Tugas Evaluasi Determinan dan Invers Matriks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas-tranformasi.html">Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eigen-value.html">Eigen Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas-eigenface.html">Tugas Project - Eigen Face menggunakan Rumus SVD</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tugas4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tugas 4</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-baris-elementer-obe">1. Tiga Operasi Baris Elementer (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-matriks-4-variabel-4-persamaan">2. Struktur Matriks 4 Variabel &amp; 4 Persamaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-sistematis-strategi-obe">3. Langkah-Langkah Sistematis (Strategi OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-pembahasan">4. Contoh Soal &amp; Pembahasan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian">Penyelesaian:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kolom-1-membuat-nol-di-bawah-utama-1">Kolom 1 (Membuat Nol di bawah Utama 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kolom-2-membuat-utama-1-di-baris-2-dan-nol-di-bawahnya">Kolom 2 (Membuat Utama 1 di Baris 2 dan Nol di bawahnya)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kolom-3-4-menyelesaikan-sisa-matriks">Kolom 3 &amp; 4 (Menyelesaikan Sisa Matriks)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-balik">Substitusi Balik</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-latihan-mandiri">5. Soal Latihan Mandiri</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1-tingkat-dasar-hasil-bulat">Soal 1 (Tingkat Dasar - Hasil Bulat)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2-tingkat-menengah">Soal 2 (Tingkat Menengah)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-sukses-mengerjakan-obe">Tips Sukses Mengerjakan OBE:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-4">
+<h1>Tugas 4<a class="headerlink" href="#tugas-4" title="Permalink to this heading">#</a></h1>
+<section id="operasi-baris-elementer-obe">
+<h2>Operasi Baris Elementer (OBE)<a class="headerlink" href="#operasi-baris-elementer-obe" title="Permalink to this heading">#</a></h2>
+<p>Eliminasi Gauss adalah metode untuk menyelesaikan Sistem Persamaan Linear (SPL) dengan mengubah matriks augmentasi (gabungan koefisien dan konstanta) menjadi <strong>Matriks Eselon Baris</strong>. Target utama kita adalah membentuk <em>leading 1</em> (utama 1) secara diagonal dan membuat elemen di bawahnya menjadi 0.</p>
+</section>
+<hr class="docutils" />
+<section id="tiga-operasi-baris-elementer-obe">
+<h2>1. Tiga Operasi Baris Elementer (OBE)<a class="headerlink" href="#tiga-operasi-baris-elementer-obe" title="Permalink to this heading">#</a></h2>
+<p>Untuk mengubah baris matriks, kita hanya diperbolehkan menggunakan 3 operasi berikut:</p>
+<ol class="arabic simple">
+<li><p><strong>Menukarkan</strong> posisi dua baris (<span class="math notranslate nohighlight">\(R_i \leftrightarrow R_j\)</span>).</p></li>
+<li><p><strong>Mengalikan</strong> suatu baris dengan konstanta non-nol (<span class="math notranslate nohighlight">\(k \cdot R_i\)</span>).</p></li>
+<li><p><strong>Menambahkan</strong> kelipatan suatu baris ke baris lainnya (<span class="math notranslate nohighlight">\(R_i + k \cdot R_j\)</span>).</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="struktur-matriks-4-variabel-4-persamaan">
+<h2>2. Struktur Matriks 4 Variabel &amp; 4 Persamaan<a class="headerlink" href="#struktur-matriks-4-variabel-4-persamaan" title="Permalink to this heading">#</a></h2>
+<p>Sistem persamaan dengan variabel <span class="math notranslate nohighlight">\(x, y, z, w\)</span> akan diubah menjadi bentuk matriks augmentasi:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{cccc|c}
+a_1 &amp; b_1 &amp; c_1 &amp; d_1 &amp; e_1 \\
+a_2 &amp; b_2 &amp; c_2 &amp; d_2 &amp; e_2 \\
+a_3 &amp; b_3 &amp; c_3 &amp; d_3 &amp; e_3 \\
+a_4 &amp; b_4 &amp; c_4 &amp; d_4 &amp; e_4 \\
+\end{array}
+\right]
+\end{split}\]</div>
+<p><strong>Target Akhir (Matriks Eselon Baris):</strong>
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; * &amp; * &amp; * &amp; * \\
+0 &amp; 1 &amp; * &amp; * &amp; * \\
+0 &amp; 0 &amp; 1 &amp; * &amp; * \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; * \\
+\end{array}
+\right]
+\)</span><span class="math notranslate nohighlight">\(
+*(Tanda \)</span><em>$ artinya bisa bernilai angka berapapun)</em></p>
+</section>
+<hr class="docutils" />
+<section id="langkah-langkah-sistematis-strategi-obe">
+<h2>3. Langkah-Langkah Sistematis (Strategi OBE)<a class="headerlink" href="#langkah-langkah-sistematis-strategi-obe" title="Permalink to this heading">#</a></h2>
+<p>Agar tidak membingungkan, lakukan eliminasi secara berurutan per kolom:</p>
+<ul class="simple">
+<li><p><strong>Langkah 1 (Kolom 1):</strong> Buat elemen pojok kiri atas menjadi <code class="docutils literal notranslate"><span class="pre">1</span></code>. Lalu gunakan baris 1 untuk mengubah elemen di bawahnya (Baris 2, 3, dan 4) menjadi <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><strong>Langkah 2 (Kolom 2):</strong> Buat elemen diagonal pada baris 2 menjadi <code class="docutils literal notranslate"><span class="pre">1</span></code>. Lalu gunakan baris 2 untuk mengubah elemen di bawahnya (Baris 3 dan 4) menjadi <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><strong>Langkah 3 (Kolom 3):</strong> Buat elemen diagonal pada baris 3 menjadi <code class="docutils literal notranslate"><span class="pre">1</span></code>. Lalu gunakan baris 3 untuk mengubah elemen di bawahnya (Baris 4) menjadi <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><strong>Langkah 4 (Kolom 4):</strong> Buat elemen diagonal pada baris 4 menjadi <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p><strong>Langkah 5 (Substitusi Balik):</strong> Cari nilai <span class="math notranslate nohighlight">\(w\)</span> dari baris 4, lalu masukkan ke baris 3 untuk mendapat <span class="math notranslate nohighlight">\(z\)</span>, masukkan ke baris 2 untuk mendapat <span class="math notranslate nohighlight">\(y\)</span>, dan terakhir baris 1 untuk mendapat <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="contoh-soal-pembahasan">
+<h2>4. Contoh Soal &amp; Pembahasan<a class="headerlink" href="#contoh-soal-pembahasan" title="Permalink to this heading">#</a></h2>
+<p>Selesaikan SPL berikut:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x + y + z + w = 10\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(2x + y - z + w = 5\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x - y + 2z - 2w = -2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-x + 2y - z + w = 4\)</span></p></li>
+</ol>
+<section id="penyelesaian">
+<h3>Penyelesaian:<a class="headerlink" href="#penyelesaian" title="Permalink to this heading">#</a></h3>
+<p><strong>Bentuk Matriks Awal:</strong>
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+2 &amp; 1 &amp; -1 &amp; 1 &amp; 5 \\
+1 &amp; -1 &amp; 2 &amp; -2 &amp; -2 \\
+-1 &amp; 2 &amp; -1 &amp; 1 &amp; 4 \\
+\end{array}
+\right]
+\)</span>$</p>
+<section id="kolom-1-membuat-nol-di-bawah-utama-1">
+<h4>Kolom 1 (Membuat Nol di bawah Utama 1)<a class="headerlink" href="#kolom-1-membuat-nol-di-bawah-utama-1" title="Permalink to this heading">#</a></h4>
+<p>Baris 1 sudah diawali angka <code class="docutils literal notranslate"><span class="pre">1</span></code>. Kita nolkan Baris 2, 3, dan 4:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_2 - 2R_1 \rightarrow R_2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_3 - R_1 \rightarrow R_3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_4 + R_1 \rightarrow R_4\)</span></p></li>
+</ul>
+<p>Hasilnya:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; -1 &amp; -3 &amp; -1 &amp; -15 \\
+0 &amp; -2 &amp; 1 &amp; -3 &amp; -12 \\
+0 &amp; 3 &amp; 0 &amp; 2 &amp; 14 \\
+\end{array}
+\right]
+\)</span>$</p>
+</section>
+<section id="kolom-2-membuat-utama-1-di-baris-2-dan-nol-di-bawahnya">
+<h4>Kolom 2 (Membuat Utama 1 di Baris 2 dan Nol di bawahnya)<a class="headerlink" href="#kolom-2-membuat-utama-1-di-baris-2-dan-nol-di-bawahnya" title="Permalink to this heading">#</a></h4>
+<p>Kalikan Baris 2 dengan <span class="math notranslate nohighlight">\(-1\)</span> agar menjadi <code class="docutils literal notranslate"><span class="pre">1</span></code>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(-1 \cdot R_2 \rightarrow R_2\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; -2 &amp; 1 &amp; -3 &amp; -12 \\
+0 &amp; 3 &amp; 0 &amp; 2 &amp; 14 \\
+\end{array}
+\right]
+\end{split}\]</div>
+<p>Nolkan elemen di bawah diagonal baris 2:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_3 + 2R_2 \rightarrow R_3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(R_4 - 3R_2 \rightarrow R_4\)</span></p></li>
+</ul>
+<p>Hasilnya:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 7 &amp; -1 &amp; 18 \\
+0 &amp; 0 &amp; -9 &amp; -1 &amp; -31 \\
+\end{array}
+\right]
+\)</span>$</p>
+</section>
+<section id="kolom-3-4-menyelesaikan-sisa-matriks">
+<h4>Kolom 3 &amp; 4 (Menyelesaikan Sisa Matriks)<a class="headerlink" href="#kolom-3-4-menyelesaikan-sisa-matriks" title="Permalink to this heading">#</a></h4>
+<p>Supaya perhitungan lebih mudah dan menghindari pecahan terlalu awal, kita bisa lakukan operasi antar baris terlebih dahulu.
+Tambahkan Baris 4 dengan Baris 3 (<span class="math notranslate nohighlight">\(R_4 + R_3 \rightarrow R_4\)</span>):
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 7 &amp; -1 &amp; 18 \\
+0 &amp; 0 &amp; -2 &amp; -2 &amp; -13 \\
+\end{array}
+\right]
+\)</span>$</p>
+<p>Bagi Baris 4 dengan <span class="math notranslate nohighlight">\(-2\)</span> (<span class="math notranslate nohighlight">\(-\frac{1}{2} \cdot R_4 \rightarrow R_4\)</span>):
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 7 &amp; -1 &amp; 18 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 6.5 \\
+\end{array}
+\right]
+\)</span>$</p>
+<p>Tukarkan Baris 3 dan Baris 4 (<span class="math notranslate nohighlight">\(R_3 \leftrightarrow R_4\)</span>) agar angka <code class="docutils literal notranslate"><span class="pre">1</span></code> naik ke atas:
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 6.5 \\
+0 &amp; 0 &amp; 7 &amp; -1 &amp; 18 \\
+\end{array}
+\right]
+\)</span>$</p>
+<p>Nolkan angka 7 di Baris 4 menggunakan Baris 3 (<span class="math notranslate nohighlight">\(R_4 - 7R_3 \rightarrow R_4\)</span>):
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 6.5 \\
+0 &amp; 0 &amp; 0 &amp; -8 &amp; -27.5 \\
+\end{array}
+\right]
+\)</span>$</p>
+<p>Bagi Baris 4 dengan <span class="math notranslate nohighlight">\(-8\)</span> (<span class="math notranslate nohighlight">\(-\frac{1}{8} \cdot R_4 \rightarrow R_4\)</span>):
+$<span class="math notranslate nohighlight">\(
+\left[
+\begin{array}{cccc|c}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 10 \\
+0 &amp; 1 &amp; 3 &amp; 1 &amp; 15 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 6.5 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 3.4375 \\
+\end{array}
+\right]
+\)</span>$</p>
+</section>
+<section id="substitusi-balik">
+<h4>Substitusi Balik<a class="headerlink" href="#substitusi-balik" title="Permalink to this heading">#</a></h4>
+<p>Dari matriks terakhir, kita dapatkan sistem persamaan baru:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(w = 3.4375\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(z + w = 6.5 \rightarrow z = 6.5 - 3.4375 = 3.0625\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(y + 3z + w = 15 \rightarrow y = 15 - 3(3.0625) - 3.4375 = 2.375\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x + y + z + w = 10 \rightarrow x = 10 - 2.375 - 3.0625 - 3.4375 = 1.125\)</span></p></li>
+</ol>
+<p><strong>Solusi:</strong> <span class="math notranslate nohighlight">\(x = 1.125\)</span>, <span class="math notranslate nohighlight">\(y = 2.375\)</span>, <span class="math notranslate nohighlight">\(z = 3.0625\)</span>, <span class="math notranslate nohighlight">\(w = 3.4375\)</span>.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="soal-latihan-mandiri">
+<h2>5. Soal Latihan Mandiri<a class="headerlink" href="#soal-latihan-mandiri" title="Permalink to this heading">#</a></h2>
+<p>Selesaikan sistem persamaan linear berikut menggunakan metode Eliminasi Gauss (OBE):</p>
+<section id="soal-1-tingkat-dasar-hasil-bulat">
+<h3>Soal 1 (Tingkat Dasar - Hasil Bulat)<a class="headerlink" href="#soal-1-tingkat-dasar-hasil-bulat" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+x + y + z + w &amp;= 6 \\
+2x + 3y - z + w &amp;= 5 \\
+-x + 2y + 3z - w &amp;= 7 \\
+3x + y - 2z + 2w &amp;= 1
+\end{aligned}
+\end{split}\]</div>
+<p><em>(Petunjuk Kunci Jawaban: <span class="math notranslate nohighlight">\(x=1, y=2, z=2, w=1\)</span>)</em></p>
+</section>
+<section id="soal-2-tingkat-menengah">
+<h3>Soal 2 (Tingkat Menengah)<a class="headerlink" href="#soal-2-tingkat-menengah" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+2x + y + 2z - w &amp;= 5 \\
+x + 2y - z + 2w &amp;= 4 \\
+3x - y + z + w &amp;= 6 \\
+x + y + z + w &amp;= 4
+\end{aligned}
+\end{split}\]</div>
+</section>
+<section id="tips-sukses-mengerjakan-obe">
+<h3>Tips Sukses Mengerjakan OBE:<a class="headerlink" href="#tips-sukses-mengerjakan-obe" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Fokus selesaikan kolom demi kolom dari kiri ke kekanan.</p></li>
+<li><p>Jangan terburu-buru membagi baris dengan angka besar jika masih bisa dikurangi/ditambah dengan baris lain agar tidak pusing dengan angka pecahan di awal langkah.</p></li>
+<li><p>Teliti tanda positif <code class="docutils literal notranslate"><span class="pre">+</span></code> dan negatif <code class="docutils literal notranslate"><span class="pre">-</span></code> saat melakukan operasi perkalian dan penjumlahan baris.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profil</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tugas5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tugas 5</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer-obe">Operasi Baris Elementer (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-operasi-baris-elementer-obe">1. Tiga Operasi Baris Elementer (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-matriks-4-variabel-4-persamaan">2. Struktur Matriks 4 Variabel &amp; 4 Persamaan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-sistematis-strategi-obe">3. Langkah-Langkah Sistematis (Strategi OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-pembahasan">4. Contoh Soal &amp; Pembahasan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian">Penyelesaian:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kolom-1-membuat-nol-di-bawah-utama-1">Kolom 1 (Membuat Nol di bawah Utama 1)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kolom-2-membuat-utama-1-di-baris-2-dan-nol-di-bawahnya">Kolom 2 (Membuat Utama 1 di Baris 2 dan Nol di bawahnya)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kolom-3-4-menyelesaikan-sisa-matriks">Kolom 3 &amp; 4 (Menyelesaikan Sisa Matriks)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#substitusi-balik">Substitusi Balik</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-latihan-mandiri">5. Soal Latihan Mandiri</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-1-tingkat-dasar-hasil-bulat">Soal 1 (Tingkat Dasar - Hasil Bulat)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-2-tingkat-menengah">Soal 2 (Tingkat Menengah)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-sukses-mengerjakan-obe">Tips Sukses Mengerjakan OBE:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Teqdusit
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
