@@ -1,4 +1,5 @@
 format: jb-book
 root: index
 chapters:
+  - file: eigen-value
   - file: tugas-eigenface
