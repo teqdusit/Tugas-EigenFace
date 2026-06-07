@@ -89,26 +89,26 @@ Mari kita hitung sub-determinan matriks $3 \times 3$ (Minor):
 1.  *Menghitung $M_{11}$* (Hapus baris 1, kolom 1):
     $M_{11} = \det \begin{bmatrix} 1 & 1 & 1 \\ 1 & -3 & 1 \\ 1 & 1 & -3 \end{bmatrix}$
      Ekspansi baris 1:
-    $$M_{12} = -3 \cdot [9 - 1] - 1 \cdot [-3 - 1] + 1 \cdot [1 + 3]$$
-    $$M_{12} = -3[8] - 1[-4] + 1[4] = -24 + 4 + 4 = -16$$
+    $M_{12} = -3 \cdot [9 - 1] - 1 \cdot [-3 - 1] + 1 \cdot [1 + 3]$
+    $M_{12} = -3[8] - 1[-4] + 1[4] = -24 + 4 + 4 = -16$
 
 3.  *Menghitung $M_{13}$* (Hapus baris 1, kolom 3):
-    $$M_{13} = \det \begin{bmatrix} -3 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & -3 \end{bmatrix}$$
+    $M_{13} = \det \begin{bmatrix} -3 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & -3 \end{bmatrix}$
     Ekspansi baris 1:
-    $$M_{13} = -3 \cdot [(-3) - 1] - 1 \cdot [(-3) - 1] + 1 \cdot [1 - 1]$$
-    $$M_{13} = -3[-4] - 1[-4] + 0 = 12 + 4 = 16$$
+    $M_{13} = -3 \cdot [(-3) - 1] - 1 \cdot [(-3) - 1] + 1 \cdot [1 - 1]$
+    $M_{13} = -3[-4] - 1[-4] + 0 = 12 + 4 = 16$
 
 4.  *Menghitung $M_{14}$* (Hapus baris 1, kolom 4):
-    $$M_{14} = \det \begin{bmatrix} -3 & 1 & 1 \\ 1 & -3 & 1 \\ 1 & 1 & 1 \end{bmatrix}$$
+    $M_{14} = \det \begin{bmatrix} -3 & 1 & 1 \\ 1 & -3 & 1 \\ 1 & 1 & 1 \end{bmatrix}$
     Ekspansi baris 1:
-    $$M_{14} = -3 \cdot [-3 - 1] - 1 \cdot [1 - 1] + 1 \cdot [1 - (-3)]$$
-    $$M_{14} = -3[-4] - 0 + 1[4] = 12 + 4 = 16$$
+    $M_{14} = -3 \cdot [-3 - 1] - 1 \cdot [1 - 1] + 1 \cdot [1 - (-3)]$
+    $M_{14} = -3[-4] - 0 + 1[4] = 12 + 4 = 16$
 
 Gabungkan semua nilai minor ke dalam rumus determinan awal:
-$$\det(A) = M_{11} + 3M_{12} + M_{13} - M_{14}$$
-$$\det(A) = 16 + 3(-16) + 16 - 16$$
-$$\det(A) = 16 - 48 + 16 - 16$$
-$$\det(A) = -48$$
+$\det(A) = M_{11} + 3M_{12} + M_{13} - M_{14}$
+$\det(A) = 16 + 3(-16) + 16 - 16$
+$\det(A) = 16 - 48 + 16 - 16$
+$\det(A) = -48$
 
 Jadi, determinan matriks $4 \times 4$ tersebut adalah *$-48$*.
 
@@ -118,22 +118,22 @@ Jadi, determinan matriks $4 \times 4$ tersebut adalah *$-48$*.
 
 #### *Soal 4 (Matriks $2 \times 2$)*
 Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut:
-$$A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}$$
+$A = \begin{bmatrix} -7 & -5 \\ 1 & 4 \end{bmatrix}$
 
 *Pembahasan:*
 Dari hasil pengerjaan Soal 1, kita tahu nilai $\det(A) = -23$.
 Untuk matriks berukuran $2 \times 2$, nilai adjoin didapatkan langsung dengan menukar elemen diagonal utama dan mengubah tanda elemen diagonal sekunder:
-$$\operatorname{adj}(A) = \begin{bmatrix} 4 & 5 \\ -1 & -7 \end{bmatrix}$$
+$\operatorname{adj}(A) = \begin{bmatrix} 4 & 5 \\ -1 & -7 \end{bmatrix}$
 
 Maka invers matriks $A$ adalah:
-$$A^{-1} = \frac{1}{\det(A)} \operatorname{adj}(A)$$
-$$A^{-1} = \frac{1}{-23} \begin{bmatrix} 4 & 5 \\ -1 & -7 \end{bmatrix} = \begin{bmatrix} -\frac{4}{23} & -\frac{5}{23} \\ \frac{1}{23} & \frac{7}{23} \end{bmatrix}$$
+$A^{-1} = \frac{1}{\det(A)} \operatorname{adj}(A)$
+$A^{-1} = \frac{1}{-23} \begin{bmatrix} 4 & 5 \\ -1 & -7 \end{bmatrix} = \begin{bmatrix} -\frac{4}{23} & -\frac{5}{23} \\ \frac{1}{23} & \frac{7}{23} \end{bmatrix}$
 
 ---
 
 #### *Soal 5 (Matriks $3 \times 3$)*
 Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut:
-$$A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$$
+$A = \begin{bmatrix} 0 & 2 & -3 \\ 1 & -2 & -1 \\ 0 & 0 & 1 \end{bmatrix}$
 
 *Pembahasan:*
 Dari hasil pengerjaan Soal 2, kita tahu nilai $\det(A) = -2$. Sekarang, kita cari 9 elemen matriks kofaktor $C_{ij} = (-1)^{i+j}M_{ij}$:
@@ -149,38 +149,38 @@ Dari hasil pengerjaan Soal 2, kita tahu nilai $\det(A) = -2$. Sekarang, kita car
 * $C_{33} = +\det \begin{bmatrix} 0 & 2 \\ 1 & -2 \end{bmatrix} = 0 - 2 = -2$
 
 Susun matriks kofaktor $C$:
-$$C = \begin{bmatrix} -2 & -1 & 0 \\ -2 & 0 & 0 \\ -8 & -3 & -2 \end{bmatrix}$$
+$C = \begin{bmatrix} -2 & -1 & 0 \\ -2 & 0 & 0 \\ -8 & -3 & -2 \end{bmatrix}$
 
 Dapatkan nilai adjoin dengan melakukan transpose matriks kofaktor ($\operatorname{adj}(A) = C^T$):
-$$\operatorname{adj}(A) = \begin{bmatrix} -2 & -2 & -8 \\ -1 & 0 & -3 \\ 0 & 0 & -2 \end{bmatrix}$$
+$\operatorname{adj}(A) = \begin{bmatrix} -2 & -2 & -8 \\ -1 & 0 & -3 \\ 0 & 0 & -2 \end{bmatrix}$
 
 Hitung nilai invers matriks:
-$$A^{-1} = \frac{1}{-2} \begin{bmatrix} -2 & -2 & -8 \\ -1 & 0 & -3 \\ 0 & 0 & -2 \end{bmatrix} = \begin{bmatrix} 1 & 1 & 4 \\ \frac{1}{2} & 0 & \frac{3}{2} \\ 0 & 0 & 1 \end{bmatrix}$$
+$A^{-1} = \frac{1}{-2} \begin{bmatrix} -2 & -2 & -8 \\ -1 & 0 & -3 \\ 0 & 0 & -2 \end{bmatrix} = \begin{bmatrix} 1 & 1 & 4 \\ \frac{1}{2} & 0 & \frac{3}{2} \\ 0 & 0 & 1 \end{bmatrix}$
 
 ---
 
 #### *Soal 6 (Matriks $4 \times 4$)*
 Gunakan rumus matriks adjoin untuk menghitung invers dari matriks berikut:
-$$A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$$
+$A = \begin{bmatrix} 1 & -3 & 1 & 1 \\ -3 & 1 & 1 & 1 \\ 1 & 1 & -3 & 1 \\ 1 & 1 & 1 & -3 \end{bmatrix}$
 
 *Pembahasan:*
 Dari pengerjaan Soal 3, didapatkan nilai $\det(A) = -48$. Karena elemen-elemen matriks ini memiliki tingkat simetrisitas yang tinggi, kita dapat memanfaatkan sifat tersebut:
 
 1.  *Elemen Diagonal Utama Kofaktor ($C_{11}, C_{22}, C_{33}, C_{44}$):*
     Nilai minor diagonal utamanya akan selalu bernilai sama dengan perhitungan $M_{11}$ pada langkah sebelumnya.
-    $$C_{11} = C_{22} = C_{33} = C_{44} = 16$$
+    $C_{11} = C_{22} = C_{33} = C_{44} = 16$
 
 2.  *Elemen Non-Diagonal Kofaktor:*
     Sebagai contoh, kita ambil nilai $C_{12} = -M_{12} = -(-16) = 16$. Dikarenakan konfigurasi angka di luar diagonal utama bernilai konstan ($1$), maka seluruh kofaktor luar diagonal utama juga bernilai sama.
-    $$C_{ij} = 16 \quad \text{untuk } i \neq j$$
+    $C_{ij} = 16 \quad \text{untuk } i \neq j$
 
 Maka bentuk matriks kofaktor $C$ adalah matriks seragam berorde $4 \times 4$:
-$$C = \begin{bmatrix} 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \end{bmatrix}$$
+$C = \begin{bmatrix} 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \end{bmatrix}$
 
 Karena seluruh elemennya bernilai seragam, maka $\operatorname{adj}(A) = C^T = C$.
 
 Hitung nilai invers matriks:
-$$A^{-1} = \frac{1}{-48} \begin{bmatrix} 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \end{bmatrix}$$
+$A^{-1} = \frac{1}{-48} \begin{bmatrix} 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \\ 16 & 16 & 16 & 16 \end{bmatrix}$
 
 Sederhanakan pecahan dengan membagi tiap elemen dengan $-48$ (dimana $\frac{16}{-48} = -\frac{1}{3}$):
-$$A^{-1} = \begin{bmatrix} -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \\ -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \\ -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \\ -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \end{bmatrix}$$
+$A^{-1} = \begin{bmatrix} -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \\ -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \\ -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \\ -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} & -\frac{1}{3} \end{bmatrix}$
