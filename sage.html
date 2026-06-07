@@ -7,7 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Search - Tugas Komputasi Aljabar Linear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>SageMath &#8212; Tugas Komputasi Aljabar Linear</title>
   
   
   
@@ -60,12 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sage';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tugas 4" href="tugas4.html" />
+    <link rel="prev" title="Profil" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -97,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -127,8 +128,6 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -168,8 +167,8 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="sage.html">SageMath</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SageMath</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas4.html">Tugas 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas5.html">Tugas 5</a></li>
 
@@ -233,6 +232,54 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/sage.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -266,7 +313,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -275,42 +324,107 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Search</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>SageMath</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-sagemath">1. Apa itu SageMath?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-menggunakan-sagemath">2. Mengapa Menggunakan SageMath?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-utama-sagemath">3. Fitur Utama SageMath</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penggunaan-dasar-sintaks-sagemath">4. Contoh Penggunaan Dasar (Sintaks SageMath)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-menghitung-turunan-dan-integral-kalkulus">a. Menghitung Turunan dan Integral (Kalkulus)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sagemath">
+<h1>SageMath<a class="headerlink" href="#sagemath" title="Permalink to this heading">#</a></h1>
+<section id="apa-itu-sagemath">
+<h2>1. Apa itu SageMath?<a class="headerlink" href="#apa-itu-sagemath" title="Permalink to this heading">#</a></h2>
+<p><strong>SageMath</strong> (sebelumnya bernama SAGE - <em>System for Algebra and Geometry Experimentation</em>) adalah sistem komputer aljabar (Computer Algebra System / CAS) yang bersifat <em>open-source</em> (gratis dan bebas dikembangkan).</p>
+<p>SageMath menggabungkan kekuatan berbagai software matematika open-source yang sudah ada (seperti NumPy, SciPy, Matplotlib, Maxima, GAP, R, dan Singular) ke dalam satu antarmuka terpadu menggunakan bahasa pemrograman <strong>Python</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="mengapa-menggunakan-sagemath">
+<h2>2. Mengapa Menggunakan SageMath?<a class="headerlink" href="#mengapa-menggunakan-sagemath" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Berbasis Python:</strong> Tidak perlu mempelajari bahasa pemrograman baru yang rumit jika sudah memahami dasar-dasar Python.</p></li>
+<li><p><strong>Alternatif Software Komersial:</strong> Menjadi kompetitor gratis dan terbuka untuk software matematika berbayar seperti <em>MATLAB, Mathematica, Maple,</em> dan <em>Magma</em>.</p></li>
+<li><p><strong>Sangat Lengkap:</strong> Mendukung berbagai cabang matematika mulai dari aljabar dasar, kalkulus, teori bilangan, kriptografi, graf, hingga linear aljabar.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="fitur-utama-sagemath">
+<h2>3. Fitur Utama SageMath<a class="headerlink" href="#fitur-utama-sagemath" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Aljabar Linear &amp; Matriks:</strong> Mampu menyelesaikan operasi matriks, mencari determinan, invers, nilai eigen, hingga Operasi Baris Elementer (OBE).</p></li>
+<li><p><strong>Kalkulus Simbolik:</strong> Menyelesaikan turunan (derivatives), integral tentu/tak tentu, limit, dan deret Taylor secara simbolik (bukan hanya numerik).</p></li>
+<li><p><strong>Visualisasi Data:</strong> Membuat grafik 2D dan 3D dengan kualitas tinggi secara mudah.</p></li>
+<li><p><strong>Teori Bilangan &amp; Kriptografi:</strong> Menyediakan fungsi tingkat lanjut untuk menguji bilangan prima, faktorisasi, dan simulasi algoritma keamanan.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="contoh-penggunaan-dasar-sintaks-sagemath">
+<h2>4. Contoh Penggunaan Dasar (Sintaks SageMath)<a class="headerlink" href="#contoh-penggunaan-dasar-sintaks-sagemath" title="Permalink to this heading">#</a></h2>
+<p>Berikut adalah beberapa contoh kode sederhana bagaimana SageMath menyelesaikan persoalan matematika:</p>
+<section id="a-menghitung-turunan-dan-integral-kalkulus">
+<h3>a. Menghitung Turunan dan Integral (Kalkulus)<a class="headerlink" href="#a-menghitung-turunan-dan-integral-kalkulus" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mendefinisikan variabel x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+
+<span class="c1"># Menghitung turunan dari f(x) = sin(x^2)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Turunan:&quot;</span><span class="p">,</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># Menghitung integral dari g(x) = 3x^2</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Integral:&quot;</span><span class="p">,</span> <span class="n">integral</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -319,12 +433,51 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profil</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tugas4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tugas 4</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-sagemath">1. Apa itu SageMath?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-menggunakan-sagemath">2. Mengapa Menggunakan SageMath?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-utama-sagemath">3. Fitur Utama SageMath</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penggunaan-dasar-sintaks-sagemath">4. Contoh Penggunaan Dasar (Sintaks SageMath)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-menghitung-turunan-dan-integral-kalkulus">a. Menghitung Turunan dan Integral (Kalkulus)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
