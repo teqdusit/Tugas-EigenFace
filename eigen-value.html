@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR) &#8212; Tugas Komputasi Aljabar Linear</title>
+    <title>Eigen Value &#8212; Tugas Komputasi Aljabar Linear</title>
   
   
   
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eigen Value</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas-eigenface.html">Tugas Project - Eigen Face menggunakan Rumus SVD</a></li>
 </ul>
 
@@ -310,7 +310,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ringkasan Materi & Tugas: Komputasi Eigenvalue (Teori & Metode QR)</h1>
+    <h1>Eigen Value</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -324,14 +324,19 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-utama">Persamaan Utama:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendekatan-komputasi-numerik-metode-qr-iteration">2. Pendekatan Komputasi Numerik (Metode QR Iteration)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-algoritma-qr">Alur Algoritma QR:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-implementasi-dan-hasil">2. Contoh Implementasi dan hasil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teori-dasar-soal">Teori Dasar &amp; Soal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-iterasi-qr">Algoritma Iterasi QR</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hasil-simulasi-program-tugas">3. Data Hasil Simulasi Program (Tugas)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-1">=== Iterasi 1 ===</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-contoh-iterasi-1">Langkah Penyelesaian (Contoh: Iterasi 1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-cosine-c-dan-sine-s">1. Menghitung Nilai Cosine (<span class="math notranslate nohighlight">\(c\)</span>) dan Sine (<span class="math notranslate nohighlight">\(s\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membentuk-matriks-ortogonal-q-0-dan-segitiga-atas-r-0">2. Membentuk Matriks Ortogonal <span class="math notranslate nohighlight">\(Q_0\)</span> dan Segitiga Atas <span class="math notranslate nohighlight">\(R_0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-matriks-baru-a-1">3. Menghitung Matriks Baru <span class="math notranslate nohighlight">\(A_1\)</span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-hasil-konvergensi-hingga-10-iterasi">Tabel Hasil Konvergensi Hingga 10 Iterasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-analisis">Kesimpulan Analisis</a></li>
 </ul>
             </nav>
         </div>
@@ -343,9 +348,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ringkasan-materi-tugas-komputasi-eigenvalue-teori-metode-qr">
-<h1>Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR)<a class="headerlink" href="#ringkasan-materi-tugas-komputasi-eigenvalue-teori-metode-qr" title="Permalink to this heading">#</a></h1>
-<p>Halaman ini berisi ringkasan konsep dasar Eigenvalue dari sudut pandang aljabar linear analitik hingga implementasi komputasi numerik menggunakan metode <strong>QR Iteration</strong>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="eigen-value">
+<h1>Eigen Value<a class="headerlink" href="#eigen-value" title="Permalink to this heading">#</a></h1>
+<p>Mari kita pelajari konsep dasar Eigenvalue dari sudut pandang aljabar linear analitik hingga implementasi komputasi numerik</p>
 <hr class="docutils" />
 <section id="konsep-dasar-pengertian-analitik">
 <h2>1. Konsep Dasar &amp; Pengertian Analitik<a class="headerlink" href="#konsep-dasar-pengertian-analitik" title="Permalink to this heading">#</a></h2>
@@ -364,38 +369,153 @@ $<span class="math notranslate nohighlight">\(\det(A - \lambda I) = 0\)</span>$<
 </section>
 </section>
 <hr class="docutils" />
-<section id="pendekatan-komputasi-numerik-metode-qr-iteration">
-<h2>2. Pendekatan Komputasi Numerik (Metode QR Iteration)<a class="headerlink" href="#pendekatan-komputasi-numerik-metode-qr-iteration" title="Permalink to this heading">#</a></h2>
-<p>Mencari akar persamaan karakteristik secara manual sangat mudah untuk matriks ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>. Namun, bagi komputer yang menangani data raksasa, menghitung determinan polinomial derajat tinggi sangatlah berat. Oleh karena itu, digunakan metode pendekatan iteratif seperti <strong>Dekomposisi QR</strong>.</p>
-<section id="alur-algoritma-qr">
-<h3>Alur Algoritma QR:<a class="headerlink" href="#alur-algoritma-qr" title="Permalink to this heading">#</a></h3>
+<section id="contoh-implementasi-dan-hasil">
+<h2>2. Contoh Implementasi dan hasil<a class="headerlink" href="#contoh-implementasi-dan-hasil" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Matriks pada iterasi ke-<span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(A_k\)</span>) difaktorkan menjadi perkalian dua matriks:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Q\)</span> = Matriks Ortogonal (<span class="math notranslate nohighlight">\(Q^T \cdot Q = I\)</span>)</p></li>
-<li><p><span class="math notranslate nohighlight">\(R\)</span> = Matriks Segitiga Atas (<em>Upper Triangular</em>)</p></li>
-</ul>
-</li>
-<li><p>Setelah didapat <span class="math notranslate nohighlight">\(A_k = Q_k \cdot R_k\)</span>, kita membentuk matriks baru untuk iterasi berikutnya dengan membalik urutan perkaliannya:
-$<span class="math notranslate nohighlight">\(A_{k+1} = R_k \cdot Q_k\)</span>$</p></li>
-<li><p>Jika proses ini diulang terus-menerus secara iteratif, nilai di luar diagonal utama matriks <span class="math notranslate nohighlight">\(A\)</span> lama-kelamaan akan mengecil menuju nol (<span class="math notranslate nohighlight">\(0\)</span>).</p></li>
-<li><p>Hasil akhir diagonal utama pada matriks <span class="math notranslate nohighlight">\(A\)</span> baru tersebut merupakan <strong>perkiraan nilai Eigenvalue</strong>.</p></li>
+<li><p>Memahami konsep nilai eigen (<em>eigenvalue</em>) pada matriks simetris ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>.</p></li>
+<li><p>Mengimplementasikan <strong>Algoritma Iterasi QR</strong> sebanyak 10 iterasi untuk menunjukkan proses konvergensi.</p></li>
+<li><p>Menghasilkan matriks segitiga atas di mana elemen diagonal utamanya adalah nilai eigen yang diharapkan, yaitu <span class="math notranslate nohighlight">\(\lambda_1 = 3\)</span> dan <span class="math notranslate nohighlight">\(\lambda_2 = 1\)</span>.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="teori-dasar-soal">
+<h2>Teori Dasar &amp; Soal<a class="headerlink" href="#teori-dasar-soal" title="Permalink to this heading">#</a></h2>
+<p>Diberikan sebuah matriks simetris <span class="math notranslate nohighlight">\(A_0\)</span>:
+$<span class="math notranslate nohighlight">\(A_0 = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>$</p>
+<section id="algoritma-iterasi-qr">
+<h3>Algoritma Iterasi QR<a class="headerlink" href="#algoritma-iterasi-qr" title="Permalink to this heading">#</a></h3>
+<p>Untuk setiap iterasi <span class="math notranslate nohighlight">\(k = 0, 1, 2, \dots, 9\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Faktorkan matriks <span class="math notranslate nohighlight">\(A_k\)</span> menjadi <span class="math notranslate nohighlight">\(Q_k\)</span> (matriks ortogonal) dan <span class="math notranslate nohighlight">\(R_k\)</span> (matriks segitiga atas), sehingga:
+$<span class="math notranslate nohighlight">\(A_k = Q_k R_k\)</span>$</p></li>
+<li><p>Hitung matriks baru untuk iterasi berikutnya dengan mengalikan terbalik hasil dekomposisi tersebut:
+$<span class="math notranslate nohighlight">\(A_{k+1} = R_k Q_k\)</span>$</p></li>
+<li><p>Ulangi proses ini sebanyak 10 kali. Seiring bertambahnya iterasi, elemen di bawah diagonal utama (<span class="math notranslate nohighlight">\(a_{21}\)</span>) akan mendekati <span class="math notranslate nohighlight">\(0\)</span>, dan nilai-nilai pada diagonal utama akan konvergen menuju nilai eigen dari matriks tersebut.</p></li>
 </ol>
 </section>
 </section>
 <hr class="docutils" />
-<section id="data-hasil-simulasi-program-tugas">
-<h2>3. Data Hasil Simulasi Program (Tugas)<a class="headerlink" href="#data-hasil-simulasi-program-tugas" title="Permalink to this heading">#</a></h2>
-<p>Berikut adalah simulasi jalannya program komputasi QR Iteration dengan input matriks awal:
-$<span class="math notranslate nohighlight">\(A = \begin{pmatrix} 5 &amp; 2 \\ 2 &amp; 2 \end{pmatrix}\)</span>$</p>
-<section id="iterasi-1">
-<h3>=== Iterasi 1 ===<a class="headerlink" href="#iterasi-1" title="Permalink to this heading">#</a></h3>
-<p><strong>Matriks <span class="math notranslate nohighlight">\(Q\)</span>:</strong></p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[ 0.92847669 -0.37139068]
- [ 0.37139068  0.92847669]]
-</pre></div>
+<section id="langkah-penyelesaian-contoh-iterasi-1">
+<h2>Langkah Penyelesaian (Contoh: Iterasi 1)<a class="headerlink" href="#langkah-penyelesaian-contoh-iterasi-1" title="Permalink to this heading">#</a></h2>
+<p>Untuk melakukan dekomposisi <span class="math notranslate nohighlight">\(A_0 = Q_0 R_0\)</span>, kita dapat menggunakan teknik <strong>Rotasi Givens</strong> untuk mengeliminasi elemen <span class="math notranslate nohighlight">\(a_{21}\)</span> (membuatnya menjadi 0).</p>
+<section id="menghitung-nilai-cosine-c-dan-sine-s">
+<h3>1. Menghitung Nilai Cosine (<span class="math notranslate nohighlight">\(c\)</span>) dan Sine (<span class="math notranslate nohighlight">\(s\)</span>)<a class="headerlink" href="#menghitung-nilai-cosine-c-dan-sine-s" title="Permalink to this heading">#</a></h3>
+<p>Dari matriks <span class="math notranslate nohighlight">\(A_0 = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>, diperoleh elemen <span class="math notranslate nohighlight">\(a_{11} = 2\)</span> dan <span class="math notranslate nohighlight">\(a_{21} = 1\)</span>.
+$<span class="math notranslate nohighlight">\(c = \frac{a_{11}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{2}{\sqrt{2^2 + 1^2}} = \frac{2}{\sqrt{5}} \approx 0.8944\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(s = \frac{a_{21}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{1}{\sqrt{2^2 + 1^2}} = \frac{1}{\sqrt{5}} \approx 0.4472\)</span>$</p>
+</section>
+<section id="membentuk-matriks-ortogonal-q-0-dan-segitiga-atas-r-0">
+<h3>2. Membentuk Matriks Ortogonal <span class="math notranslate nohighlight">\(Q_0\)</span> dan Segitiga Atas <span class="math notranslate nohighlight">\(R_0\)</span><a class="headerlink" href="#membentuk-matriks-ortogonal-q-0-dan-segitiga-atas-r-0" title="Permalink to this heading">#</a></h3>
+<p>Matriks rotasi transpose <span class="math notranslate nohighlight">\(Q_0^T\)</span> didefinisikan sebagai:
+$<span class="math notranslate nohighlight">\(Q_0^T = \begin{pmatrix} c &amp; s \\ -s &amp; c \end{pmatrix} = \begin{pmatrix} 0.8944 &amp; 0.4472 \\ -0.4472 &amp; 0.8944 \end{pmatrix}\)</span>$</p>
+<p>Maka, matriks <span class="math notranslate nohighlight">\(Q_0\)</span> (transpose dari <span class="math notranslate nohighlight">\(Q_0^T\)</span>) adalah:
+$<span class="math notranslate nohighlight">\(Q_0 = \begin{pmatrix} 0.8944 &amp; -0.4472 \\ 0.4472 &amp; 0.8944 \end{pmatrix}\)</span>$</p>
+<p>Matriks <span class="math notranslate nohighlight">\(R_0\)</span> diperoleh dari hasil kali <span class="math notranslate nohighlight">\(Q_0^T A_0\)</span>:
+$<span class="math notranslate nohighlight">\(R_0 = \begin{pmatrix} 0.8944 &amp; 0.4472 \\ -0.4472 &amp; 0.8944 \end{pmatrix} \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} = \begin{pmatrix} 2.2361 &amp; 1.7889 \\ 0 &amp; 1.3416 \end{pmatrix}\)</span>$</p>
+</section>
+<section id="menghitung-matriks-baru-a-1">
+<h3>3. Menghitung Matriks Baru <span class="math notranslate nohighlight">\(A_1\)</span><a class="headerlink" href="#menghitung-matriks-baru-a-1" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}A_1 = R_0 Q_0 = \begin{pmatrix} 2.2361 &amp; 1.7889 \\ 0 &amp; 1.3416 \end{pmatrix} \begin{pmatrix} 0.8944 &amp; -0.4472 \\ 0.4472 &amp; 0.8944 \end{pmatrix} = \begin{pmatrix} 2.8000 &amp; 0.6000 \\ 0.6000 &amp; 1.2000 \end{pmatrix}\end{split}\]</div>
+<blockquote>
+<div><p><strong>Analisis Awal:</strong> Setelah iterasi pertama, nilai diagonal (<span class="math notranslate nohighlight">\(2.8\)</span> dan <span class="math notranslate nohighlight">\(1.2\)</span>) sudah mulai bergerak mendekati target nilai eigen yaitu <span class="math notranslate nohighlight">\(3\)</span> dan <span class="math notranslate nohighlight">\(1\)</span>. Sementara nilai <em>off-diagonal</em> menyusut dari <span class="math notranslate nohighlight">\(1.0\)</span> menjadi <span class="math notranslate nohighlight">\(0.6\)</span>.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tabel-hasil-konvergensi-hingga-10-iterasi">
+<h2>Tabel Hasil Konvergensi Hingga 10 Iterasi<a class="headerlink" href="#tabel-hasil-konvergensi-hingga-10-iterasi" title="Permalink to this heading">#</a></h2>
+<p>Proses di atas diulang kembali dengan cara yang sama untuk <span class="math notranslate nohighlight">\(A_1, A_2, \dots, A_9\)</span> hingga menghasilkan <span class="math notranslate nohighlight">\(A_{10}\)</span>. Berikut adalah tabel perkembangan nilai elemen matriks pada setiap iterasi:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Iterasi (<span class="math notranslate nohighlight">\(k\)</span>)</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(a_{11}\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(a_{12}\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(a_{21}\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(a_{22}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>0 (Awal)</strong></p></td>
+<td class="text-center"><p><strong>2.0000</strong></p></td>
+<td class="text-center"><p>1.0000</p></td>
+<td class="text-center"><p>1.0000</p></td>
+<td class="text-center"><p><strong>2.0000</strong></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>1</strong></p></td>
+<td class="text-center"><p>2.8000</p></td>
+<td class="text-center"><p>0.6000</p></td>
+<td class="text-center"><p>0.6000</p></td>
+<td class="text-center"><p>1.2000</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>2</strong></p></td>
+<td class="text-center"><p>2.9730</p></td>
+<td class="text-center"><p>0.2297</p></td>
+<td class="text-center"><p>0.2297</p></td>
+<td class="text-center"><p>1.0270</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>3</strong></p></td>
+<td class="text-center"><p>2.9969</p></td>
+<td class="text-center"><p>0.0789</p></td>
+<td class="text-center"><p>0.0789</p></td>
+<td class="text-center"><p>1.0031</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>4</strong></p></td>
+<td class="text-center"><p>2.9997</p></td>
+<td class="text-center"><p>0.0264</p></td>
+<td class="text-center"><p>0.0264</p></td>
+<td class="text-center"><p>1.0003</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>5</strong></p></td>
+<td class="text-center"><p>3.0000</p></td>
+<td class="text-center"><p>0.0088</p></td>
+<td class="text-center"><p>0.0088</p></td>
+<td class="text-center"><p>1.0000</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>6</strong></p></td>
+<td class="text-center"><p>3.0000</p></td>
+<td class="text-center"><p>0.0029</p></td>
+<td class="text-center"><p>0.0029</p></td>
+<td class="text-center"><p>1.0000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>7</strong></p></td>
+<td class="text-center"><p>3.0000</p></td>
+<td class="text-center"><p>0.0010</p></td>
+<td class="text-center"><p>0.0010</p></td>
+<td class="text-center"><p>1.0000</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>8</strong></p></td>
+<td class="text-center"><p>3.0000</p></td>
+<td class="text-center"><p>0.0003</p></td>
+<td class="text-center"><p>0.0003</p></td>
+<td class="text-center"><p>1.0000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>9</strong></p></td>
+<td class="text-center"><p>3.0000</p></td>
+<td class="text-center"><p>0.0001</p></td>
+<td class="text-center"><p>0.0001</p></td>
+<td class="text-center"><p>1.0000</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>10</strong></p></td>
+<td class="text-center"><p><strong>3.0000</strong></p></td>
+<td class="text-center"><p>0.0000</p></td>
+<td class="text-center"><p><strong>0.0000</strong></p></td>
+<td class="text-center"><p><strong>1.0000</strong></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
+<hr class="docutils" />
+<section id="kesimpulan-analisis">
+<h2>Kesimpulan Analisis<a class="headerlink" href="#kesimpulan-analisis" title="Permalink to this heading">#</a></h2>
+<p>Berdasarkan hasil simulasi 10 iterasi menggunakan metode Iterasi QR, diperoleh matriks akhir:
+$<span class="math notranslate nohighlight">\(A_{10} \approx \begin{pmatrix} 3.0000 &amp; 0.0000 \\ 0.0000 &amp; 1.0000 \end{pmatrix}\)</span>$</p>
+<ol class="arabic simple">
+<li><p><strong>Pembentukan Matriks Segitiga Atas:</strong> Elemen di bawah diagonal utama (<span class="math notranslate nohighlight">\(a_{21}\)</span>) berhasil tereduksi secara signifikan hingga mencapai angka <strong><span class="math notranslate nohighlight">\(0.0000\)</span></strong> (konvergen). Hal ini membuktikan bahwa algoritma berhasil membentuk matriks segitiga atas (bahkan matriks diagonal sempurna karena sifat awal matriks yang simetris).</p></li>
+<li><p><strong>Kesesuaian Nilai Eigen:</strong> Elemen pada diagonal utama menunjukkan angka <strong>3</strong> dan <strong>1</strong>. Hal ini sesuai dengan nilai eigen teoritis yang diharapkan dari matriks <span class="math notranslate nohighlight">\(A_0\)</span>.</p></li>
+<li><p><strong>Laju Konvergensi:</strong> Algoritma ini menunjukkan konvergensi yang relatif cepat pada matriks ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>, di mana pada iterasi ke-5 nilai eigen sudah sangat mendekati nilai presisi aslinya.</p></li>
+</ol>
 </section>
 </section>
 
@@ -467,14 +587,19 @@ $<span class="math notranslate nohighlight">\(A = \begin{pmatrix} 5 &amp; 2 \\ 2
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-utama">Persamaan Utama:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendekatan-komputasi-numerik-metode-qr-iteration">2. Pendekatan Komputasi Numerik (Metode QR Iteration)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-algoritma-qr">Alur Algoritma QR:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-implementasi-dan-hasil">2. Contoh Implementasi dan hasil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teori-dasar-soal">Teori Dasar &amp; Soal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-iterasi-qr">Algoritma Iterasi QR</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hasil-simulasi-program-tugas">3. Data Hasil Simulasi Program (Tugas)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-1">=== Iterasi 1 ===</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-penyelesaian-contoh-iterasi-1">Langkah Penyelesaian (Contoh: Iterasi 1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-nilai-cosine-c-dan-sine-s">1. Menghitung Nilai Cosine (<span class="math notranslate nohighlight">\(c\)</span>) dan Sine (<span class="math notranslate nohighlight">\(s\)</span>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#membentuk-matriks-ortogonal-q-0-dan-segitiga-atas-r-0">2. Membentuk Matriks Ortogonal <span class="math notranslate nohighlight">\(Q_0\)</span> dan Segitiga Atas <span class="math notranslate nohighlight">\(R_0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-matriks-baru-a-1">3. Menghitung Matriks Baru <span class="math notranslate nohighlight">\(A_1\)</span></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabel-hasil-konvergensi-hingga-10-iterasi">Tabel Hasil Konvergensi Hingga 10 Iterasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-analisis">Kesimpulan Analisis</a></li>
 </ul>
   </nav></div>
 

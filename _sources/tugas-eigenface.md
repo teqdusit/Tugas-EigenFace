@@ -13,7 +13,7 @@ Singular Value Decomposition (SVD) adalah metode faktorisasi matriks yang memeca
 ## 2. Rumus Matematika SVD pada Data Wajah
 
 Misalkan kita memiliki dataset berisi $M$ buah foto wajah, di mana setiap foto telah diubah menjadi satu vektor kolom panjang berukuran $N$ (total piksel). Seluruh vektor ini digabungkan membentuk sebuah matriks data wajah $A$ berukuran $N \times M$.Rumus utama SVD memfaktorkan matriks $A$ menjadi:
-$$A = U \cdot \Sigma \cdot V^T$$
+$A = U \cdot \Sigma \cdot V^T$
 Detail Komponen Matriks:
 1. Matriks $U$ (Left Singular Vectors) $\rightarrow$ Ukuran $N \times N$
 - Kolom-kolom di dalam matriks $U$ bersifat saling tegak lurus (ortogonal).
@@ -69,7 +69,7 @@ Google Colab menggunakan sistem berbasis Notebook (file .ipynb). Kode program ka
 
 ## 5. link collab:
 
-[![Open In Colab](https://colab.research.google.com/drive/https://colab.research.google.com/drive/1e2xJwZ8vghJKkQnf5-Lr2vYDt1j5-XPt)]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1e2xJwZ8vghJKkQnf5-Lr2vYDt1j5-XPt)
 
 
 
