@@ -1,0 +1,782 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi &#8212; Tugas Komputasi Aljabar Linear</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas-tranformasi';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Eigen Value" href="eigen-value.html" />
+    <link rel="prev" title="Profil" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Tugas Komputasi Aljabar Linear</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eigen-value.html">Eigen Value</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tugas-eigenface.html">Tugas Project - Eigen Face menggunakan Rumus SVD</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/tugas-tranformasi.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translasi-pergeseran">1. Translasi (Pergeseran)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-matriks-translasi">Persamaan Matriks Translasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-pencerminan">2. Refleksi (Pencerminan)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-refleksi-terhadap-sumbu-x">A. Refleksi Terhadap Sumbu-X</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-refleksi-terhadap-sumbu-y">B. Refleksi Terhadap Sumbu-Y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-refleksi-terhadap-garis-y-x">C. Refleksi Terhadap Garis <span class="math notranslate nohighlight">\(y = x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-refleksi-terhadap-garis-y-x">D. Refleksi Terhadap Garis <span class="math notranslate nohighlight">\(y = -x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-refleksi-terhadap-titik-pusat-o-0-0">E. Refleksi Terhadap Titik Pusat <span class="math notranslate nohighlight">\(O(0,0)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotasi-perputaran">3. Rotasi (Perputaran)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-rotasi-dengan-pusat-titik-asal-o-0-0">A. Rotasi dengan Pusat Titik Asal <span class="math notranslate nohighlight">\(O(0,0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-rotasi-dengan-pusat-sembarang-titik-p-a-b">B. Rotasi dengan Pusat Sembarang Titik <span class="math notranslate nohighlight">\(P(a,b)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dilatasi-perkalian-skala">4. Dilatasi (Perkalian Skala)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dilatasi-dengan-pusat-o-0-0">A. Dilatasi dengan Pusat <span class="math notranslate nohighlight">\(O(0,0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-dilatasi-dengan-pusat-sembarang-titik-p-a-b">B. Dilatasi dengan Pusat Sembarang Titik <span class="math notranslate nohighlight">\(P(a,b)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-matriks">5. Komposisi Transformasi Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aturan-urutan-perkalian-penting">Aturan Urutan Perkalian (Penting!)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dan-penyelesaian-teknis">Contoh Soal dan Penyelesaian Teknis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-menggunakan-komposisi-matriks">Penyelesaian Menggunakan Komposisi Matriks:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-hasil">Kesimpulan Hasil:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-python">Source Code Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transformasi-linear-refleksi-pada-vektor-di-bidang-dua-dimensi">
+<h1>Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi<a class="headerlink" href="#transformasi-linear-refleksi-pada-vektor-di-bidang-dua-dimensi" title="Permalink to this heading">#</a></h1>
+<section id="pengertian">
+<h2>Pengertian<a class="headerlink" href="#pengertian" title="Permalink to this heading">#</a></h2>
+<p>Transformasi matriks adalah salah satu fondasi terpenting dalam matematika komputasi, grafika komputer, dan pengolahan citra (<em>image processing</em>). Melalui pendekatan linear algebra ini, kita dapat mengubah posisi, arah, ukuran, bahkan bentuk suatu objek dalam ruang dua dimensi (<span class="math notranslate nohighlight">\(2D\)</span>) maupun tiga dimensi (<span class="math notranslate nohighlight">\(3D\)</span>) secara efisien menggunakan operasi perkalian matriks.</p>
+<p>Secara umum, transformasi linear dari titik awal <span class="math notranslate nohighlight">\(P(x, y)\)</span> menuju titik bayangan <span class="math notranslate nohighlight">\(P'(x', y')\)</span> dapat dinyatakan sebagai sistem persamaan linear:
+<span class="math notranslate nohighlight">\(x' = ax + by\)</span>
+<span class="math notranslate nohighlight">\(y' = cx + dy\)</span></p>
+<p>Dalam bentuk matriks, persamaan di atas diekspresikan secara ringkas sebagai:
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+<p>Di mana matriks <span class="math notranslate nohighlight">\(M = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\)</span> disebut sebagai <strong>Matriks Transformasi</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="translasi-pergeseran">
+<h2>1. Translasi (Pergeseran)<a class="headerlink" href="#translasi-pergeseran" title="Permalink to this heading">#</a></h2>
+<p>Translasi adalah transformasi yang memindahkan setiap titik pada bidang dengan jarak dan arah yang tetap. Berbeda dengan jenis transformasi lainnya, translasi murni dalam koordinat Kartesius standar <span class="math notranslate nohighlight">\(2D\)</span> merupakan operasi <strong>penjumlahan</strong>, bukan perkalian matriks linear.</p>
+<p>Jika suatu titik <span class="math notranslate nohighlight">\(P(x, y)\)</span> digeser sejauh <span class="math notranslate nohighlight">\(a\)</span> satuan searah sumbu <span class="math notranslate nohighlight">\(X\)</span> dan <span class="math notranslate nohighlight">\(b\)</span> satuan searah sumbu <span class="math notranslate nohighlight">\(Y\)</span>, maka komponen pergeserannya ditulis sebagai vektor <span class="math notranslate nohighlight">\(T = \begin{pmatrix} a \\ b \end{pmatrix}\)</span>.</p>
+<section id="persamaan-matriks-translasi">
+<h3>Persamaan Matriks Translasi<a class="headerlink" href="#persamaan-matriks-translasi" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} x \\ y \end{pmatrix} + \begin{pmatrix} a \\ b \end{pmatrix}\)</span></p>
+<blockquote>
+<div><p><strong>Catatan Teknis (Koordinat Homogen):</strong>
+Dalam industri grafika komputer (seperti OpenGL atau game engine), agar translasi dapat dihitung menggunakan perkalian matriks yang seragam dengan transformasi lainnya, digunakan sistem <strong>Koordinat Homogen</strong> (<em>Homogeneous Coordinates</em>) berukuran <span class="math notranslate nohighlight">\(3 \times 3\)</span>:
+$<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \\ 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 &amp; a \\ 0 &amp; 1 &amp; b \\ 0 &amp; 0 &amp; 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix}\)</span>$</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="refleksi-pencerminan">
+<h2>2. Refleksi (Pencerminan)<a class="headerlink" href="#refleksi-pencerminan" title="Permalink to this heading">#</a></h2>
+<p>Refleksi adalah transformasi geometri yang memetakan suatu titik atau objek dengan cara mencerminkannya terhadap sebuah garis pemandu atau titik pusat tertentu. Sifat utama refleksi adalah jarak objek asli ke cermin selalu sama dengan jarak cermin ke objek bayangan.</p>
+<p>Berikut adalah representasi matriks untuk berbagai jenis refleksi standar <span class="math notranslate nohighlight">\(2D\)</span>:</p>
+<section id="a-refleksi-terhadap-sumbu-x">
+<h3>A. Refleksi Terhadap Sumbu-X<a class="headerlink" href="#a-refleksi-terhadap-sumbu-x" title="Permalink to this heading">#</a></h3>
+<p>Mengubah tanda koordinat <span class="math notranslate nohighlight">\(y\)</span> menjadi negatif, sedangkan koordinat <span class="math notranslate nohighlight">\(x\)</span> tetap.
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+</section>
+<section id="b-refleksi-terhadap-sumbu-y">
+<h3>B. Refleksi Terhadap Sumbu-Y<a class="headerlink" href="#b-refleksi-terhadap-sumbu-y" title="Permalink to this heading">#</a></h3>
+<p>Mengubah tanda koordinat <span class="math notranslate nohighlight">\(x\)</span> menjadi negatif, sedangkan koordinat <span class="math notranslate nohighlight">\(y\)</span> tetap.
+<span class="math notranslate nohighlight">\(\begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+</section>
+<section id="c-refleksi-terhadap-garis-y-x">
+<h3>C. Refleksi Terhadap Garis <span class="math notranslate nohighlight">\(y = x\)</span><a class="headerlink" href="#c-refleksi-terhadap-garis-y-x" title="Permalink to this heading">#</a></h3>
+<p>Menukar posisi koordinat <span class="math notranslate nohighlight">\(x\)</span> menjadi <span class="math notranslate nohighlight">\(y\)</span> dan sebaliknya.
+<span class="math notranslate nohighlight">\(\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+</section>
+<section id="d-refleksi-terhadap-garis-y-x">
+<h3>D. Refleksi Terhadap Garis <span class="math notranslate nohighlight">\(y = -x\)</span><a class="headerlink" href="#d-refleksi-terhadap-garis-y-x" title="Permalink to this heading">#</a></h3>
+<p>Menukar posisi koordinat sekaligus mengubah kedua tandanya menjadi negatif.
+<span class="math notranslate nohighlight">\(\begin{pmatrix} 0 &amp; -1 \\ -1 &amp; 0 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+</section>
+<section id="e-refleksi-terhadap-titik-pusat-o-0-0">
+<h3>E. Refleksi Terhadap Titik Pusat <span class="math notranslate nohighlight">\(O(0,0)\)</span><a class="headerlink" href="#e-refleksi-terhadap-titik-pusat-o-0-0" title="Permalink to this heading">#</a></h3>
+<p>Mengubah tanda kedua koordinat (ekuivalen dengan rotasi <span class="math notranslate nohighlight">\(180^\circ\)</span>).
+<span class="math notranslate nohighlight">\(\begin{pmatrix} -1 &amp; 0 \\ 0 &amp; -1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="rotasi-perputaran">
+<h2>3. Rotasi (Perputaran)<a class="headerlink" href="#rotasi-perputaran" title="Permalink to this heading">#</a></h2>
+<p>Rotasi adalah transformasi yang memutar sebuah titik atau objek sejauh sudut <span class="math notranslate nohighlight">\(\theta\)</span> terhadap suatu titik acuan tertentu. Secara konvensi matematika, arah putaran bernilai <strong>positif (<span class="math notranslate nohighlight">\(+\)</span>) jika berlawanan arah jarum jam</strong>, dan bernilai <strong>negatif (<span class="math notranslate nohighlight">\(-\)</span>) jika searah jarum jam</strong>.</p>
+<section id="a-rotasi-dengan-pusat-titik-asal-o-0-0">
+<h3>A. Rotasi dengan Pusat Titik Asal <span class="math notranslate nohighlight">\(O(0,0)\)</span><a class="headerlink" href="#a-rotasi-dengan-pusat-titik-asal-o-0-0" title="Permalink to this heading">#</a></h3>
+<p>Matriks rotasi diturunkan menggunakan koordinat polar dan prinsip trigonometri:
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+</section>
+<section id="b-rotasi-dengan-pusat-sembarang-titik-p-a-b">
+<h3>B. Rotasi dengan Pusat Sembarang Titik <span class="math notranslate nohighlight">\(P(a,b)\)</span><a class="headerlink" href="#b-rotasi-dengan-pusat-sembarang-titik-p-a-b" title="Permalink to this heading">#</a></h3>
+<p>Untuk memutar objek terhadap titik yang bukan titik asal, kita perlu menggeser titik pusat tersebut ke <span class="math notranslate nohighlight">\((0,0)\)</span> terlebih dahulu, melakukan rotasi, lalu menggesernya kembali ke posisi semula:
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{pmatrix} \begin{pmatrix} x - a \\ y - b \end{pmatrix} + \begin{pmatrix} a \\ b \end{pmatrix}\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="dilatasi-perkalian-skala">
+<h2>4. Dilatasi (Perkalian Skala)<a class="headerlink" href="#dilatasi-perkalian-skala" title="Permalink to this heading">#</a></h2>
+<p>Dilatasi adalah transformasi yang mengubah ukuran (memperbesar atau memperkecil) suatu objek tanpa mengubah bentuk aslinya. Perubahan ukuran ini ditentukan oleh <strong>faktor skala <span class="math notranslate nohighlight">\(k\)</span></strong>.</p>
+<ul class="simple">
+<li><p>Jika <span class="math notranslate nohighlight">\(|k| &gt; 1\)</span>, objek akan diperbesar.</p></li>
+<li><p>Jika <span class="math notranslate nohighlight">\(0 &lt; |k| &lt; 1\)</span>, objek akan diperkecil.</p></li>
+<li><p>Jika <span class="math notranslate nohighlight">\(k &lt; 0\)</span>, bayangan objek akan terbalik dan terletak di sisi berlawanan dari pusat dilatasi.</p></li>
+</ul>
+<section id="a-dilatasi-dengan-pusat-o-0-0">
+<h3>A. Dilatasi dengan Pusat <span class="math notranslate nohighlight">\(O(0,0)\)</span><a class="headerlink" href="#a-dilatasi-dengan-pusat-o-0-0" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} k &amp; 0 \\ 0 &amp; k \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+</section>
+<section id="b-dilatasi-dengan-pusat-sembarang-titik-p-a-b">
+<h3>B. Dilatasi dengan Pusat Sembarang Titik <span class="math notranslate nohighlight">\(P(a,b)\)</span><a class="headerlink" href="#b-dilatasi-dengan-pusat-sembarang-titik-p-a-b" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} k &amp; 0 \\ 0 &amp; k \end{pmatrix} \begin{pmatrix} x - a \\ y - b \end{pmatrix} + \begin{pmatrix} a \\ b \end{pmatrix}\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="komposisi-transformasi-matriks">
+<h2>5. Komposisi Transformasi Matriks<a class="headerlink" href="#komposisi-transformasi-matriks" title="Permalink to this heading">#</a></h2>
+<p>Komposisi transformasi terjadi ketika sebuah titik atau objek ditransformasikan secara berurutan oleh beberapa matriks transformasi (misalnya direfleksikan, kemudian dirotasikan, dan terakhir didilatasi).</p>
+<p>Keunggulan utama menggunakan pendekatan matriks adalah kita dapat menggabungkan rentetan transformasi tersebut menjadi <strong>satu buah matriks tunggal (<span class="math notranslate nohighlight">\(M_{\text{total}}\)</span>)</strong> melalui perkalian matriks.</p>
+<section id="aturan-urutan-perkalian-penting">
+<h3>Aturan Urutan Perkalian (Penting!)<a class="headerlink" href="#aturan-urutan-perkalian-penting" title="Permalink to this heading">#</a></h3>
+<p>Jika sebuah objek ditransformasikan berturut-turut oleh matriks <span class="math notranslate nohighlight">\(M_1\)</span>, kemudian dilanjutkan oleh <span class="math notranslate nohighlight">\(M_2\)</span>, dan dilanjutkan oleh <span class="math notranslate nohighlight">\(M_3\)</span>, maka urutan pengerjaan operasinya dituliskan dari <strong>kanan ke kiri</strong>:</p>
+<p><span class="math notranslate nohighlight">\(M_{\text{total}} = M_3 \times M_2 \times M_1\)</span></p>
+<p>Persamaan akhir untuk mencari bayangan koordinatnya adalah:
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = (M_3 \times M_2 \times M_1) \begin{pmatrix} x \\ y \end{pmatrix}\)</span></p>
+<blockquote>
+<div><p><strong>Peringatan:</strong> Perkalian matriks tidak bersifat komutatif (<span class="math notranslate nohighlight">\(M_1 \times M_2 \neq M_2 \times M_1\)</span>). Mengubah urutan perkalian matriks akan menghasilkan bayangan transformasi yang salah.</p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="contoh-soal-dan-penyelesaian-teknis">
+<h2>Contoh Soal dan Penyelesaian Teknis<a class="headerlink" href="#contoh-soal-dan-penyelesaian-teknis" title="Permalink to this heading">#</a></h2>
+<section id="soal">
+<h3>Soal:<a class="headerlink" href="#soal" title="Permalink to this heading">#</a></h3>
+<p>Sebuah titik <span class="math notranslate nohighlight">\(A(4, 2)\)</span> mula-mula dicerminkan terhadap garis <span class="math notranslate nohighlight">\(y = x\)</span>. Bayangan dari pencerminan tersebut kemudian diputar sebesar <span class="math notranslate nohighlight">\(90^\circ\)</span> berlawanan arah jarum jam dengan pusat rotasi di titik asal <span class="math notranslate nohighlight">\(O(0,0)\)</span>. Tentukan koordinat akhir bayangan titik <span class="math notranslate nohighlight">\(A\)</span>.</p>
+</section>
+<section id="penyelesaian-menggunakan-komposisi-matriks">
+<h3>Penyelesaian Menggunakan Komposisi Matriks:<a class="headerlink" href="#penyelesaian-menggunakan-komposisi-matriks" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Identifikasi Matriks Transformasi:</strong></p>
+<ul class="simple">
+<li><p>Matriks refleksi terhadap garis <span class="math notranslate nohighlight">\(y = x\)</span> (<span class="math notranslate nohighlight">\(M_1\)</span>):
+<span class="math notranslate nohighlight">\(M_1 = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span></p></li>
+<li><p>Matriks rotasi <span class="math notranslate nohighlight">\([O, 90^\circ]\)</span> (<span class="math notranslate nohighlight">\(M_2\)</span>):
+Karena <span class="math notranslate nohighlight">\(\cos 90^\circ = 0\)</span> dan <span class="math notranslate nohighlight">\(\sin 90^\circ = 1\)</span>, maka:
+<span class="math notranslate nohighlight">\(M_2 = \begin{pmatrix} \cos 90^\circ &amp; -\sin 90^\circ \\ \sin 90^\circ &amp; \cos 90^\circ \end{pmatrix} = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span></p></li>
+</ul>
+</li>
+<li><p><strong>Hitung Matriks Komposisi Tunggal (<span class="math notranslate nohighlight">\(M_{\text{total}}\)</span>):</strong>
+<span class="math notranslate nohighlight">\(M_{\text{total}} = M_2 \times M_1\)</span>
+<span class="math notranslate nohighlight">\(M_{\text{total}} = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix} \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span>
+<span class="math notranslate nohighlight">\(M_{\text{total}} = \begin{pmatrix} (0\cdot0 + -1\cdot1) &amp; (0\cdot1 + -1\cdot0) \\ (1\cdot0 + 0\cdot1) &amp; (1\cdot1 + 0\cdot0) \end{pmatrix} = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span></p></li>
+<li><p><strong>Hitung Koordinat Akhir:</strong>
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = M_{\text{total}} \begin{pmatrix} x \\ y \end{pmatrix}\)</span>
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} 4 \\ 2 \end{pmatrix}\)</span>
+<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} (-1 \cdot 4) + (0 \cdot 2) \\ (0 \cdot 4) + (1 \cdot 2) \end{pmatrix} = \begin{pmatrix} -4 \\ 2 \end{pmatrix}\)</span></p></li>
+</ol>
+</section>
+<section id="kesimpulan-hasil">
+<h3>Kesimpulan Hasil:<a class="headerlink" href="#kesimpulan-hasil" title="Permalink to this heading">#</a></h3>
+<p>Bayangan akhir dari titik <span class="math notranslate nohighlight">\(A\)</span> setelah rentetan transformasi tersebut adalah <strong><span class="math notranslate nohighlight">\(A'(-4, 2)\)</span></strong>.</p>
+</section>
+</section>
+<section id="source-code-python">
+<h2>Source Code Python<a class="headerlink" href="#source-code-python" title="Permalink to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Slider</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.88</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+
+<span class="n">mirror_angle</span> <span class="o">=</span> <span class="mi">90</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">reflect_point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">angle_deg</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">angle_deg</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+    <span class="n">rx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">ry</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">draw</span><span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">rw</span><span class="p">,</span> <span class="n">rh</span><span class="p">,</span> <span class="n">angle</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+    <span class="n">corners</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">bx</span><span class="p">,</span>      <span class="n">by</span> <span class="o">+</span> <span class="n">rh</span><span class="p">),</span>
+        <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">bx</span> <span class="o">+</span> <span class="n">rw</span><span class="p">,</span> <span class="n">by</span> <span class="o">+</span> <span class="n">rh</span><span class="p">),</span>
+        <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">bx</span><span class="p">,</span>      <span class="n">by</span><span class="p">),</span>
+        <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">bx</span> <span class="o">+</span> <span class="n">rw</span><span class="p">,</span> <span class="n">by</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="n">ref_corners</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">lbl</span><span class="p">,</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span> <span class="ow">in</span> <span class="n">corners</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">rx</span><span class="p">,</span> <span class="n">ry</span> <span class="o">=</span> <span class="n">reflect_point</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+        <span class="n">ref_corners</span><span class="p">[</span><span class="n">lbl</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">rx</span><span class="p">,</span> <span class="n">ry</span><span class="p">)</span>
+
+    <span class="c1"># Grid &amp; axes</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Refleksi Persegi Panjang — θ = </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="si">}</span><span class="s1">°&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+
+    <span class="c1"># Garis cermin</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="n">L</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">L</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span>
+            <span class="p">[</span><span class="o">-</span><span class="n">L</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">L</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+            <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Cermin θ=</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="si">}</span><span class="s1">°&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Persegi panjang biru (Objek Asli)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">),</span> <span class="n">rw</span><span class="p">,</span> <span class="n">rh</span><span class="p">,</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;#3B82F6&#39;</span><span class="p">,</span>
+        <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#3B82F6&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span>
+    <span class="p">))</span>
+    <span class="k">for</span> <span class="n">lbl</span><span class="p">,</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span> <span class="ow">in</span> <span class="n">corners</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3B82F6&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">lbl</span><span class="p">,</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+                    <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">,</span>
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#3B82F6&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Persegi panjang merah (Hasil Refleksi)</span>
+    <span class="n">rx_all</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ref_corners</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+    <span class="n">ry_all</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ref_corners</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">(</span>
+        <span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">rx_all</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">ry_all</span><span class="p">)),</span>
+        <span class="nb">abs</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">rx_all</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">rx_all</span><span class="p">)),</span>
+        <span class="nb">abs</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">ry_all</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">ry_all</span><span class="p">)),</span>
+        <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;#EF4444&#39;</span><span class="p">,</span>
+        <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#EF4444&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span>
+    <span class="p">))</span>
+    <span class="k">for</span> <span class="n">lbl</span><span class="p">,</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ref_corners</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#EF4444&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">lbl</span><span class="p">,</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
+                    <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">,</span>
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#EF4444&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Garis putus-putus antar sudut penghubung</span>
+    <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">]:</span>
+        <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span> <span class="o">=</span> <span class="n">corners</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span>
+        <span class="n">rx2</span><span class="p">,</span> <span class="n">ry2</span> <span class="o">=</span> <span class="n">ref_corners</span><span class="p">[</span><span class="n">lbl</span><span class="o">+</span><span class="s2">&quot;&#39;&quot;</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">ox</span><span class="p">,</span> <span class="n">rx2</span><span class="p">],</span> <span class="p">[</span><span class="n">oy</span><span class="p">,</span> <span class="n">ry2</span><span class="p">],</span>
+                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+                <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw_idle</span><span class="p">()</span>
+
+<span class="c1"># ---- KONFIGURASI SLIDER ----</span>
+<span class="n">ax_x</span>     <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">])</span>
+<span class="n">ax_y</span>     <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">])</span>
+<span class="n">ax_ang</span>   <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">])</span>
+<span class="n">ax_rw</span>    <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">])</span>
+<span class="n">ax_rh</span>    <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">])</span>
+
+<span class="n">sl_x</span>   <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_x</span><span class="p">,</span>   <span class="s1">&#39;Geser X&#39;</span><span class="p">,</span>   <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span>   <span class="n">valinit</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span> <span class="n">valstep</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">sl_y</span>   <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_y</span><span class="p">,</span>   <span class="s1">&#39;Geser Y&#39;</span><span class="p">,</span>   <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span>   <span class="n">valinit</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">valstep</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">sl_ang</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_ang</span><span class="p">,</span> <span class="s1">&#39;Sudut θ&#39;</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">valstep</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sl_rw</span>  <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_rw</span><span class="p">,</span>  <span class="s1">&#39;Lebar&#39;</span><span class="p">,</span>      <span class="mf">0.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">valstep</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">sl_rh</span>  <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">ax_rh</span><span class="p">,</span>  <span class="s1">&#39;Tinggi&#39;</span><span class="p">,</span>     <span class="mf">0.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">valstep</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="n">draw</span><span class="p">(</span><span class="n">sl_x</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="n">sl_y</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="n">sl_rw</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="n">sl_rh</span><span class="o">.</span><span class="n">val</span><span class="p">,</span> <span class="n">sl_ang</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+
+<span class="n">sl_x</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+<span class="n">sl_y</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+<span class="n">sl_ang</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+<span class="n">sl_rw</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+<span class="n">sl_rh</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan grafik awal</span>
+<span class="n">draw</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profil</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="eigen-value.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Eigen Value</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translasi-pergeseran">1. Translasi (Pergeseran)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-matriks-translasi">Persamaan Matriks Translasi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-pencerminan">2. Refleksi (Pencerminan)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-refleksi-terhadap-sumbu-x">A. Refleksi Terhadap Sumbu-X</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-refleksi-terhadap-sumbu-y">B. Refleksi Terhadap Sumbu-Y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-refleksi-terhadap-garis-y-x">C. Refleksi Terhadap Garis <span class="math notranslate nohighlight">\(y = x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-refleksi-terhadap-garis-y-x">D. Refleksi Terhadap Garis <span class="math notranslate nohighlight">\(y = -x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#e-refleksi-terhadap-titik-pusat-o-0-0">E. Refleksi Terhadap Titik Pusat <span class="math notranslate nohighlight">\(O(0,0)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotasi-perputaran">3. Rotasi (Perputaran)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-rotasi-dengan-pusat-titik-asal-o-0-0">A. Rotasi dengan Pusat Titik Asal <span class="math notranslate nohighlight">\(O(0,0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-rotasi-dengan-pusat-sembarang-titik-p-a-b">B. Rotasi dengan Pusat Sembarang Titik <span class="math notranslate nohighlight">\(P(a,b)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dilatasi-perkalian-skala">4. Dilatasi (Perkalian Skala)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-dilatasi-dengan-pusat-o-0-0">A. Dilatasi dengan Pusat <span class="math notranslate nohighlight">\(O(0,0)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-dilatasi-dengan-pusat-sembarang-titik-p-a-b">B. Dilatasi dengan Pusat Sembarang Titik <span class="math notranslate nohighlight">\(P(a,b)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-matriks">5. Komposisi Transformasi Matriks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aturan-urutan-perkalian-penting">Aturan Urutan Perkalian (Penting!)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dan-penyelesaian-teknis">Contoh Soal dan Penyelesaian Teknis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-menggunakan-komposisi-matriks">Penyelesaian Menggunakan Komposisi Matriks:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-hasil">Kesimpulan Hasil:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-python">Source Code Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Teqdusit
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Tugas Project - Eigen Face menggunakan Rumus SVD" href="tugas-eigenface.html" />
-    <link rel="prev" title="Profil" href="index.html" />
+    <link rel="prev" title="Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi" href="tugas-tranformasi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas-tranformasi.html">Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Eigen Value</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas-eigenface.html">Tugas Project - Eigen Face menggunakan Rumus SVD</a></li>
 </ul>
@@ -364,7 +365,7 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[A \cdot x = \lambda \cdot x\]</div>
 <p>Untuk mencari nilai <span class="math notranslate nohighlight">\(\lambda\)</span> secara manual (analitik), kita mengubah persamaan di atas menjadi <strong>Persamaan Karakteristik</strong>:
-$<span class="math notranslate nohighlight">\(\det(A - \lambda I) = 0\)</span>$</p>
+<span class="math notranslate nohighlight">\(\det(A - \lambda I) = 0\)</span></p>
 <p>Dari persamaan determinan inilah kita mencari akar-akar polinomial untuk mendapatkan nilai <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
 </section>
 </section>
@@ -381,15 +382,15 @@ $<span class="math notranslate nohighlight">\(\det(A - \lambda I) = 0\)</span>$<
 <section id="teori-dasar-soal">
 <h2>Teori Dasar &amp; Soal<a class="headerlink" href="#teori-dasar-soal" title="Permalink to this heading">#</a></h2>
 <p>Diberikan sebuah matriks simetris <span class="math notranslate nohighlight">\(A_0\)</span>:
-$<span class="math notranslate nohighlight">\(A_0 = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>$</p>
+<span class="math notranslate nohighlight">\(A_0 = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span></p>
 <section id="algoritma-iterasi-qr">
 <h3>Algoritma Iterasi QR<a class="headerlink" href="#algoritma-iterasi-qr" title="Permalink to this heading">#</a></h3>
 <p>Untuk setiap iterasi <span class="math notranslate nohighlight">\(k = 0, 1, 2, \dots, 9\)</span>:</p>
 <ol class="arabic simple">
 <li><p>Faktorkan matriks <span class="math notranslate nohighlight">\(A_k\)</span> menjadi <span class="math notranslate nohighlight">\(Q_k\)</span> (matriks ortogonal) dan <span class="math notranslate nohighlight">\(R_k\)</span> (matriks segitiga atas), sehingga:
-$<span class="math notranslate nohighlight">\(A_k = Q_k R_k\)</span>$</p></li>
+<span class="math notranslate nohighlight">\(A_k = Q_k R_k\)</span></p></li>
 <li><p>Hitung matriks baru untuk iterasi berikutnya dengan mengalikan terbalik hasil dekomposisi tersebut:
-$<span class="math notranslate nohighlight">\(A_{k+1} = R_k Q_k\)</span>$</p></li>
+<span class="math notranslate nohighlight">\(A_{k+1} = R_k Q_k\)</span></p></li>
 <li><p>Ulangi proses ini sebanyak 10 kali. Seiring bertambahnya iterasi, elemen di bawah diagonal utama (<span class="math notranslate nohighlight">\(a_{21}\)</span>) akan mendekati <span class="math notranslate nohighlight">\(0\)</span>, dan nilai-nilai pada diagonal utama akan konvergen menuju nilai eigen dari matriks tersebut.</p></li>
 </ol>
 </section>
@@ -401,22 +402,21 @@ $<span class="math notranslate nohighlight">\(A_{k+1} = R_k Q_k\)</span>$</p></l
 <section id="menghitung-nilai-cosine-c-dan-sine-s">
 <h3>1. Menghitung Nilai Cosine (<span class="math notranslate nohighlight">\(c\)</span>) dan Sine (<span class="math notranslate nohighlight">\(s\)</span>)<a class="headerlink" href="#menghitung-nilai-cosine-c-dan-sine-s" title="Permalink to this heading">#</a></h3>
 <p>Dari matriks <span class="math notranslate nohighlight">\(A_0 = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\)</span>, diperoleh elemen <span class="math notranslate nohighlight">\(a_{11} = 2\)</span> dan <span class="math notranslate nohighlight">\(a_{21} = 1\)</span>.
-$<span class="math notranslate nohighlight">\(c = \frac{a_{11}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{2}{\sqrt{2^2 + 1^2}} = \frac{2}{\sqrt{5}} \approx 0.8944\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(s = \frac{a_{21}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{1}{\sqrt{2^2 + 1^2}} = \frac{1}{\sqrt{5}} \approx 0.4472\)</span>$</p>
+<span class="math notranslate nohighlight">\(c = \frac{a_{11}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{2}{\sqrt{2^2 + 1^2}} = \frac{2}{\sqrt{5}} \approx 0.8944\)</span>
+<span class="math notranslate nohighlight">\(s = \frac{a_{21}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{1}{\sqrt{2^2 + 1^2}} = \frac{1}{\sqrt{5}} \approx 0.4472\)</span></p>
 </section>
 <section id="membentuk-matriks-ortogonal-q-0-dan-segitiga-atas-r-0">
 <h3>2. Membentuk Matriks Ortogonal <span class="math notranslate nohighlight">\(Q_0\)</span> dan Segitiga Atas <span class="math notranslate nohighlight">\(R_0\)</span><a class="headerlink" href="#membentuk-matriks-ortogonal-q-0-dan-segitiga-atas-r-0" title="Permalink to this heading">#</a></h3>
 <p>Matriks rotasi transpose <span class="math notranslate nohighlight">\(Q_0^T\)</span> didefinisikan sebagai:
-$<span class="math notranslate nohighlight">\(Q_0^T = \begin{pmatrix} c &amp; s \\ -s &amp; c \end{pmatrix} = \begin{pmatrix} 0.8944 &amp; 0.4472 \\ -0.4472 &amp; 0.8944 \end{pmatrix}\)</span>$</p>
+<span class="math notranslate nohighlight">\(Q_0^T = \begin{pmatrix} c &amp; s \\ -s &amp; c \end{pmatrix} = \begin{pmatrix} 0.8944 &amp; 0.4472 \\ -0.4472 &amp; 0.8944 \end{pmatrix}\)</span></p>
 <p>Maka, matriks <span class="math notranslate nohighlight">\(Q_0\)</span> (transpose dari <span class="math notranslate nohighlight">\(Q_0^T\)</span>) adalah:
-$<span class="math notranslate nohighlight">\(Q_0 = \begin{pmatrix} 0.8944 &amp; -0.4472 \\ 0.4472 &amp; 0.8944 \end{pmatrix}\)</span>$</p>
+<span class="math notranslate nohighlight">\(Q_0 = \begin{pmatrix} 0.8944 &amp; -0.4472 \\ 0.4472 &amp; 0.8944 \end{pmatrix}\)</span></p>
 <p>Matriks <span class="math notranslate nohighlight">\(R_0\)</span> diperoleh dari hasil kali <span class="math notranslate nohighlight">\(Q_0^T A_0\)</span>:
-$<span class="math notranslate nohighlight">\(R_0 = \begin{pmatrix} 0.8944 &amp; 0.4472 \\ -0.4472 &amp; 0.8944 \end{pmatrix} \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} = \begin{pmatrix} 2.2361 &amp; 1.7889 \\ 0 &amp; 1.3416 \end{pmatrix}\)</span>$</p>
+<span class="math notranslate nohighlight">\(R_0 = \begin{pmatrix} 0.8944 &amp; 0.4472 \\ -0.4472 &amp; 0.8944 \end{pmatrix} \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} = \begin{pmatrix} 2.2361 &amp; 1.7889 \\ 0 &amp; 1.3416 \end{pmatrix}\)</span></p>
 </section>
 <section id="menghitung-matriks-baru-a-1">
 <h3>3. Menghitung Matriks Baru <span class="math notranslate nohighlight">\(A_1\)</span><a class="headerlink" href="#menghitung-matriks-baru-a-1" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[\begin{split}A_1 = R_0 Q_0 = \begin{pmatrix} 2.2361 &amp; 1.7889 \\ 0 &amp; 1.3416 \end{pmatrix} \begin{pmatrix} 0.8944 &amp; -0.4472 \\ 0.4472 &amp; 0.8944 \end{pmatrix} = \begin{pmatrix} 2.8000 &amp; 0.6000 \\ 0.6000 &amp; 1.2000 \end{pmatrix}\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(A_1 = R_0 Q_0 = \begin{pmatrix} 2.2361 &amp; 1.7889 \\ 0 &amp; 1.3416 \end{pmatrix} \begin{pmatrix} 0.8944 &amp; -0.4472 \\ 0.4472 &amp; 0.8944 \end{pmatrix} = \begin{pmatrix} 2.8000 &amp; 0.6000 \\ 0.6000 &amp; 1.2000 \end{pmatrix}\)</span></p>
 <blockquote>
 <div><p><strong>Analisis Awal:</strong> Setelah iterasi pertama, nilai diagonal (<span class="math notranslate nohighlight">\(2.8\)</span> dan <span class="math notranslate nohighlight">\(1.2\)</span>) sudah mulai bergerak mendekati target nilai eigen yaitu <span class="math notranslate nohighlight">\(3\)</span> dan <span class="math notranslate nohighlight">\(1\)</span>. Sementara nilai <em>off-diagonal</em> menyusut dari <span class="math notranslate nohighlight">\(1.0\)</span> menjadi <span class="math notranslate nohighlight">\(0.6\)</span>.</p>
 </div></blockquote>
@@ -510,7 +510,7 @@ $<span class="math notranslate nohighlight">\(R_0 = \begin{pmatrix} 0.8944 &amp;
 <section id="kesimpulan-analisis">
 <h2>Kesimpulan Analisis<a class="headerlink" href="#kesimpulan-analisis" title="Permalink to this heading">#</a></h2>
 <p>Berdasarkan hasil simulasi 10 iterasi menggunakan metode Iterasi QR, diperoleh matriks akhir:
-$<span class="math notranslate nohighlight">\(A_{10} \approx \begin{pmatrix} 3.0000 &amp; 0.0000 \\ 0.0000 &amp; 1.0000 \end{pmatrix}\)</span>$</p>
+<span class="math notranslate nohighlight">\(A_{10} \approx \begin{pmatrix} 3.0000 &amp; 0.0000 \\ 0.0000 &amp; 1.0000 \end{pmatrix}\)</span></p>
 <ol class="arabic simple">
 <li><p><strong>Pembentukan Matriks Segitiga Atas:</strong> Elemen di bawah diagonal utama (<span class="math notranslate nohighlight">\(a_{21}\)</span>) berhasil tereduksi secara signifikan hingga mencapai angka <strong><span class="math notranslate nohighlight">\(0.0000\)</span></strong> (konvergen). Hal ini membuktikan bahwa algoritma berhasil membentuk matriks segitiga atas (bahkan matriks diagonal sempurna karena sifat awal matriks yang simetris).</p></li>
 <li><p><strong>Kesesuaian Nilai Eigen:</strong> Elemen pada diagonal utama menunjukkan angka <strong>3</strong> dan <strong>1</strong>. Hal ini sesuai dengan nilai eigen teoritis yang diharapkan dari matriks <span class="math notranslate nohighlight">\(A_0\)</span>.</p></li>
@@ -550,12 +550,12 @@ $<span class="math notranslate nohighlight">\(A_{10} \approx \begin{pmatrix} 3.0
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="tugas-tranformasi.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Profil</p>
+        <p class="prev-next-title">Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi</p>
       </div>
     </a>
     <a class="right-next"
