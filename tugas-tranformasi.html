@@ -346,15 +346,13 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-matriks">5. Komposisi Transformasi Matriks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aturan-urutan-perkalian-penting">Aturan Urutan Perkalian (Penting!)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-objek-transformasi-persegi-panjang">D. Objek Transformasi: Persegi Panjang</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dan-penyelesaian-teknis">Contoh Soal dan Penyelesaian Teknis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-menggunakan-komposisi-matriks">Penyelesaian Menggunakan Komposisi Matriks:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-hasil">Kesimpulan Hasil:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-python">Source Code Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-python">6. Source Code Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-visualisasi">7. Hasil Visualisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-sifat-transformasi">8. Analisis Sifat Transformasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">9. Kesimpulan</a></li>
 </ul>
             </nav>
         </div>
@@ -472,43 +470,46 @@ $<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \\ 1 \end
 <div><p><strong>Peringatan:</strong> Perkalian matriks tidak bersifat komutatif (<span class="math notranslate nohighlight">\(M_1 \times M_2 \neq M_2 \times M_1\)</span>). Mengubah urutan perkalian matriks akan menghasilkan bayangan transformasi yang salah.</p>
 </div></blockquote>
 </section>
+<hr class="docutils" />
+<section id="d-objek-transformasi-persegi-panjang">
+<h3>D. Objek Transformasi: Persegi Panjang<a class="headerlink" href="#d-objek-transformasi-persegi-panjang" title="Permalink to this heading">#</a></h3>
+<p>Pada implementasi ini, objek yang ditransformasi adalah <strong>persegi panjang</strong>
+yang didefinisikan oleh 4 titik sudut:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Label</p></th>
+<th class="head"><p>Posisi</p></th>
+<th class="head"><p>Koordinat</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(A\)</span></p></td>
+<td><p>Kiri atas</p></td>
+<td><p><span class="math notranslate nohighlight">\((x, y+h)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(B\)</span></p></td>
+<td><p>Kanan atas</p></td>
+<td><p><span class="math notranslate nohighlight">\((x+w, y+h)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(C\)</span></p></td>
+<td><p>Kiri bawah</p></td>
+<td><p><span class="math notranslate nohighlight">\((x, y)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(D\)</span></p></td>
+<td><p>Kanan bawah</p></td>
+<td><p><span class="math notranslate nohighlight">\((x+w, y)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>di mana <span class="math notranslate nohighlight">\(x, y\)</span> adalah posisi sudut kiri bawah, <span class="math notranslate nohighlight">\(w\)</span> adalah lebar, dan <span class="math notranslate nohighlight">\(h\)</span> adalah tinggi.</p>
+<p>Setiap sudut direfleksikan secara individual menggunakan rumus matriks refleksi,
+menghasilkan titik <span class="math notranslate nohighlight">\(A', B', C', D'\)</span> yang membentuk persegi panjang hasil refleksi.</p>
+</section>
 </section>
 <hr class="docutils" />
-<section id="contoh-soal-dan-penyelesaian-teknis">
-<h2>Contoh Soal dan Penyelesaian Teknis<a class="headerlink" href="#contoh-soal-dan-penyelesaian-teknis" title="Permalink to this heading">#</a></h2>
-<section id="soal">
-<h3>Soal:<a class="headerlink" href="#soal" title="Permalink to this heading">#</a></h3>
-<p>Sebuah titik <span class="math notranslate nohighlight">\(A(4, 2)\)</span> mula-mula dicerminkan terhadap garis <span class="math notranslate nohighlight">\(y = x\)</span>. Bayangan dari pencerminan tersebut kemudian diputar sebesar <span class="math notranslate nohighlight">\(90^\circ\)</span> berlawanan arah jarum jam dengan pusat rotasi di titik asal <span class="math notranslate nohighlight">\(O(0,0)\)</span>. Tentukan koordinat akhir bayangan titik <span class="math notranslate nohighlight">\(A\)</span>.</p>
-</section>
-<section id="penyelesaian-menggunakan-komposisi-matriks">
-<h3>Penyelesaian Menggunakan Komposisi Matriks:<a class="headerlink" href="#penyelesaian-menggunakan-komposisi-matriks" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Identifikasi Matriks Transformasi:</strong></p>
-<ul class="simple">
-<li><p>Matriks refleksi terhadap garis <span class="math notranslate nohighlight">\(y = x\)</span> (<span class="math notranslate nohighlight">\(M_1\)</span>):
-<span class="math notranslate nohighlight">\(M_1 = \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span></p></li>
-<li><p>Matriks rotasi <span class="math notranslate nohighlight">\([O, 90^\circ]\)</span> (<span class="math notranslate nohighlight">\(M_2\)</span>):
-Karena <span class="math notranslate nohighlight">\(\cos 90^\circ = 0\)</span> dan <span class="math notranslate nohighlight">\(\sin 90^\circ = 1\)</span>, maka:
-<span class="math notranslate nohighlight">\(M_2 = \begin{pmatrix} \cos 90^\circ &amp; -\sin 90^\circ \\ \sin 90^\circ &amp; \cos 90^\circ \end{pmatrix} = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix}\)</span></p></li>
-</ul>
-</li>
-<li><p><strong>Hitung Matriks Komposisi Tunggal (<span class="math notranslate nohighlight">\(M_{\text{total}}\)</span>):</strong>
-<span class="math notranslate nohighlight">\(M_{\text{total}} = M_2 \times M_1\)</span>
-<span class="math notranslate nohighlight">\(M_{\text{total}} = \begin{pmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{pmatrix} \begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix}\)</span>
-<span class="math notranslate nohighlight">\(M_{\text{total}} = \begin{pmatrix} (0\cdot0 + -1\cdot1) &amp; (0\cdot1 + -1\cdot0) \\ (1\cdot0 + 0\cdot1) &amp; (1\cdot1 + 0\cdot0) \end{pmatrix} = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span></p></li>
-<li><p><strong>Hitung Koordinat Akhir:</strong>
-<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = M_{\text{total}} \begin{pmatrix} x \\ y \end{pmatrix}\)</span>
-<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} 4 \\ 2 \end{pmatrix}\)</span>
-<span class="math notranslate nohighlight">\(\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} (-1 \cdot 4) + (0 \cdot 2) \\ (0 \cdot 4) + (1 \cdot 2) \end{pmatrix} = \begin{pmatrix} -4 \\ 2 \end{pmatrix}\)</span></p></li>
-</ol>
-</section>
-<section id="kesimpulan-hasil">
-<h3>Kesimpulan Hasil:<a class="headerlink" href="#kesimpulan-hasil" title="Permalink to this heading">#</a></h3>
-<p>Bayangan akhir dari titik <span class="math notranslate nohighlight">\(A\)</span> setelah rentetan transformasi tersebut adalah <strong><span class="math notranslate nohighlight">\(A'(-4, 2)\)</span></strong>.</p>
-</section>
-</section>
 <section id="source-code-python">
-<h2>Source Code Python<a class="headerlink" href="#source-code-python" title="Permalink to this heading">#</a></h2>
+<h2>6. Source Code Python<a class="headerlink" href="#source-code-python" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
@@ -622,8 +623,61 @@ Karena <span class="math notranslate nohighlight">\(\cos 90^\circ = 0\)</span> d
 <span class="c1"># Menampilkan grafik awal</span>
 <span class="n">draw</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
 </pre></div>
 </div>
+</section>
+<section id="hasil-visualisasi">
+<h2>7. Hasil Visualisasi<a class="headerlink" href="#hasil-visualisasi" title="Permalink to this heading">#</a></h2>
+<p>Visualisasi menampilkan:</p>
+<ul class="simple">
+<li><p><strong>Persegi panjang biru</strong> — objek asli yang dapat digeser bebas menggunakan slider</p></li>
+<li><p><strong>Persegi panjang merah</strong> — hasil refleksi yang bergerak mengikuti secara otomatis</p></li>
+<li><p><strong>Garis cermin</strong> — garis referensi abu-abu putus-putus yang dapat diputar</p></li>
+<li><p><strong>Garis penghubung</strong> — menghubungkan tiap titik sudut asli ke titik refleksinya,
+membuktikan bahwa jarak tiap titik ke garis cermin adalah sama di kedua sisi</p></li>
+</ul>
+<p>Ketika slider <strong>Geser X</strong> digeser ke kiri, persegi panjang merah bergerak ke kanan —
+persis seperti bayangan di cermin. Ketika slider <strong>Geser Y</strong> digeser ke atas,
+keduanya ikut naik bersama-sama karena refleksi mempertahankan komponen
+yang sejajar dengan garis cermin.</p>
+</section>
+<hr class="docutils" />
+<section id="analisis-sifat-transformasi">
+<h2>8. Analisis Sifat Transformasi<a class="headerlink" href="#analisis-sifat-transformasi" title="Permalink to this heading">#</a></h2>
+<p>Dari hasil visualisasi dapat diverifikasi bahwa refleksi memiliki sifat-sifat berikut:</p>
+<p><strong>1. Isometri</strong> — jarak antar titik dipertahankan:</p>
+<p><span class="math notranslate nohighlight">\(|AB| = |A'B'|, \quad |BC| = |B'C'|\)</span></p>
+<p><strong>2. Involusi</strong> — refleksi dua kali menghasilkan identitas:</p>
+<p><span class="math notranslate nohighlight">\(R_\theta \cdot R_\theta = I\)</span></p>
+<p>artinya merefleksikan objek dua kali mengembalikan ke posisi semula.</p>
+<p><strong>3. Determinan bernilai <span class="math notranslate nohighlight">\(-1\)</span></strong> — menunjukkan perubahan orientasi:</p>
+<p><span class="math notranslate nohighlight">\(\det(R_\theta) = \cos^2 2\theta + \sin^2 2\theta \cdot (-1) \cdot (-1) = -1\)</span></p>
+<p><strong>4. Matriks ortogonal</strong> — invers sama dengan transpos:</p>
+<p><span class="math notranslate nohighlight">\(R_\theta^{-1} = R_\theta^T\)</span></p>
+</section>
+<hr class="docutils" />
+<section id="kesimpulan">
+<h2>9. Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this heading">#</a></h2>
+<p>Dari implementasi dan visualisasi transformasi linear refleksi pada persegi panjang
+di bidang dua dimensi, dapat disimpulkan:</p>
+<ol class="arabic simple">
+<li><p><strong>Refleksi adalah transformasi linear</strong> karena dapat direpresentasikan sebagai
+perkalian matriks <span class="math notranslate nohighlight">\(R_\theta\)</span> yang memenuhi syarat aditivitas dan homogenitas.</p></li>
+<li><p><strong>Refleksi mempertahankan bentuk dan ukuran</strong> — persegi panjang tetap
+berbentuk persegi panjang dengan luas dan panjang sisi yang identik setelah
+direfleksikan.</p></li>
+<li><p><strong>Refleksi membalik orientasi</strong> — susunan titik <span class="math notranslate nohighlight">\(A \to B \to C \to D\)</span>
+yang semula searah jarum jam menjadi berlawanan arah jarum jam pada
+hasil refleksi <span class="math notranslate nohighlight">\(A' \to B' \to C' \to D'\)</span>.</p></li>
+<li><p><strong>Sudut cermin <span class="math notranslate nohighlight">\(\theta\)</span> menentukan arah refleksi</strong> — perubahan <span class="math notranslate nohighlight">\(\theta\)</span>
+mengubah posisi relatif objek refleksi terhadap objek asli, dengan
+kasus-kasus khusus pada <span class="math notranslate nohighlight">\(0°\)</span>, <span class="math notranslate nohighlight">\(45°\)</span>, <span class="math notranslate nohighlight">\(90°\)</span>, dan <span class="math notranslate nohighlight">\(135°\)</span>.</p></li>
+<li><p><strong>Setiap titik memiliki jarak yang sama ke garis cermin</strong> — titik asal
+dan titik refleksinya selalu berjarak sama terhadap garis cermin,
+yang terlihat dari garis penghubung putus-putus yang selalu tegak lurus
+terhadap garis cermin.</p></li>
+</ol>
 </section>
 </section>
 
@@ -716,15 +770,13 @@ Karena <span class="math notranslate nohighlight">\(\cos 90^\circ = 0\)</span> d
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komposisi-transformasi-matriks">5. Komposisi Transformasi Matriks</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aturan-urutan-perkalian-penting">Aturan Urutan Perkalian (Penting!)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-objek-transformasi-persegi-panjang">D. Objek Transformasi: Persegi Panjang</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-dan-penyelesaian-teknis">Contoh Soal dan Penyelesaian Teknis</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal">Soal:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-menggunakan-komposisi-matriks">Penyelesaian Menggunakan Komposisi Matriks:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan-hasil">Kesimpulan Hasil:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-python">Source Code Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-code-python">6. Source Code Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hasil-visualisasi">7. Hasil Visualisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-sifat-transformasi">8. Analisis Sifat Transformasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">9. Kesimpulan</a></li>
 </ul>
   </nav></div>
 
