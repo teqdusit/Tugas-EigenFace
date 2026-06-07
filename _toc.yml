@@ -1,6 +1,7 @@
 format: jb-book
 root: index
 chapters:
+  - file: tugas-adjoin
   - file: tugas-tranformasi
   - file: eigen-value
   - file: tugas-eigenface
