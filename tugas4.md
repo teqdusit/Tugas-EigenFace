@@ -198,31 +198,6 @@ Dari matriks terakhir, kita dapatkan sistem persamaan baru:
 
 ---
 
-## 5. Soal Latihan Mandiri
-
-Selesaikan sistem persamaan linear berikut menggunakan metode Eliminasi Gauss (OBE):
-
-### Soal 1 (Tingkat Dasar - Hasil Bulat)
-$
-\begin{aligned}
-x + y + z + w &= 6 \\
-2x + 3y - z + w &= 5 \\
--x + 2y + 3z - w &= 7 \\
-3x + y - 2z + 2w &= 1
-\end{aligned}
-$
-*(Petunjuk Kunci Jawaban: $x=1, y=2, z=2, w=1$)*
-
-### Soal 2 (Tingkat Menengah)
-$
-\begin{aligned}
-2x + y + 2z - w &= 5 \\
-x + 2y - z + 2w &= 4 \\
-3x - y + z + w &= 6 \\
-x + y + z + w &= 4
-\end{aligned}
-$
-
 ### Tips Sukses Mengerjakan OBE:
 * Fokus selesaikan kolom demi kolom dari kiri ke kekanan.
 * Jangan terburu-buru membagi baris dengan angka besar jika masih bisa dikurangi/ditambah dengan baris lain agar tidak pusing dengan angka pecahan di awal langkah.
