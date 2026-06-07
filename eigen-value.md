@@ -15,7 +15,7 @@ Dalam aljabar linear, jika kita memiliki sebuah matriks persegi $A$ dan kita men
 $$A \cdot x = \lambda \cdot x$$
 
 Untuk mencari nilai $\lambda$ secara manual (analitik), kita mengubah persamaan di atas menjadi **Persamaan Karakteristik**:
-$$\det(A - \lambda I) = 0$$
+$\det(A - \lambda I) = 0$
 
 Dari persamaan determinan inilah kita mencari akar-akar polinomial untuk mendapatkan nilai $\lambda$.
 
@@ -32,14 +32,14 @@ Dari persamaan determinan inilah kita mencari akar-akar polinomial untuk mendapa
 ## Teori Dasar & Soal
 
 Diberikan sebuah matriks simetris $A_0$:
-$$A_0 = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$$
+$A_0 = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$
 
 ### Algoritma Iterasi QR
 Untuk setiap iterasi $k = 0, 1, 2, \dots, 9$:
 1. Faktorkan matriks $A_k$ menjadi $Q_k$ (matriks ortogonal) dan $R_k$ (matriks segitiga atas), sehingga:
-   $$A_k = Q_k R_k$$
+   $A_k = Q_k R_k$
 2. Hitung matriks baru untuk iterasi berikutnya dengan mengalikan terbalik hasil dekomposisi tersebut:
-   $$A_{k+1} = R_k Q_k$$
+   $A_{k+1} = R_k Q_k$
 3. Ulangi proses ini sebanyak 10 kali. Seiring bertambahnya iterasi, elemen di bawah diagonal utama ($a_{21}$) akan mendekati $0$, dan nilai-nilai pada diagonal utama akan konvergen menuju nilai eigen dari matriks tersebut.
 
 ---
@@ -50,21 +50,21 @@ Untuk melakukan dekomposisi $A_0 = Q_0 R_0$, kita dapat menggunakan teknik **Rot
 
 ### 1. Menghitung Nilai Cosine ($c$) dan Sine ($s$)
 Dari matriks $A_0 = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$, diperoleh elemen $a_{11} = 2$ dan $a_{21} = 1$.
-$$c = \frac{a_{11}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{2}{\sqrt{2^2 + 1^2}} = \frac{2}{\sqrt{5}} \approx 0.8944$$
-$$s = \frac{a_{21}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{1}{\sqrt{2^2 + 1^2}} = \frac{1}{\sqrt{5}} \approx 0.4472$$
+$c = \frac{a_{11}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{2}{\sqrt{2^2 + 1^2}} = \frac{2}{\sqrt{5}} \approx 0.8944$
+$s = \frac{a_{21}}{\sqrt{a_{11}^2 + a_{21}^2}} = \frac{1}{\sqrt{2^2 + 1^2}} = \frac{1}{\sqrt{5}} \approx 0.4472$
 
 ### 2. Membentuk Matriks Ortogonal $Q_0$ dan Segitiga Atas $R_0$
 Matriks rotasi transpose $Q_0^T$ didefinisikan sebagai:
-$$Q_0^T = \begin{pmatrix} c & s \\ -s & c \end{pmatrix} = \begin{pmatrix} 0.8944 & 0.4472 \\ -0.4472 & 0.8944 \end{pmatrix}$$
+$Q_0^T = \begin{pmatrix} c & s \\ -s & c \end{pmatrix} = \begin{pmatrix} 0.8944 & 0.4472 \\ -0.4472 & 0.8944 \end{pmatrix}$
 
 Maka, matriks $Q_0$ (transpose dari $Q_0^T$) adalah:
-$$Q_0 = \begin{pmatrix} 0.8944 & -0.4472 \\ 0.4472 & 0.8944 \end{pmatrix}$$
+$Q_0 = \begin{pmatrix} 0.8944 & -0.4472 \\ 0.4472 & 0.8944 \end{pmatrix}$
 
 Matriks $R_0$ diperoleh dari hasil kali $Q_0^T A_0$:
-$$R_0 = \begin{pmatrix} 0.8944 & 0.4472 \\ -0.4472 & 0.8944 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} = \begin{pmatrix} 2.2361 & 1.7889 \\ 0 & 1.3416 \end{pmatrix}$$
+$R_0 = \begin{pmatrix} 0.8944 & 0.4472 \\ -0.4472 & 0.8944 \end{pmatrix} \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} = \begin{pmatrix} 2.2361 & 1.7889 \\ 0 & 1.3416 \end{pmatrix}$
 
 ### 3. Menghitung Matriks Baru $A_1$
-$$A_1 = R_0 Q_0 = \begin{pmatrix} 2.2361 & 1.7889 \\ 0 & 1.3416 \end{pmatrix} \begin{pmatrix} 0.8944 & -0.4472 \\ 0.4472 & 0.8944 \end{pmatrix} = \begin{pmatrix} 2.8000 & 0.6000 \\ 0.6000 & 1.2000 \end{pmatrix}$$
+$A_1 = R_0 Q_0 = \begin{pmatrix} 2.2361 & 1.7889 \\ 0 & 1.3416 \end{pmatrix} \begin{pmatrix} 0.8944 & -0.4472 \\ 0.4472 & 0.8944 \end{pmatrix} = \begin{pmatrix} 2.8000 & 0.6000 \\ 0.6000 & 1.2000 \end{pmatrix}$
 
 > **Analisis Awal:** Setelah iterasi pertama, nilai diagonal ($2.8$ dan $1.2$) sudah mulai bergerak mendekati target nilai eigen yaitu $3$ dan $1$. Sementara nilai *off-diagonal* menyusut dari $1.0$ menjadi $0.6$.
 
@@ -93,7 +93,7 @@ Proses di atas diulang kembali dengan cara yang sama untuk $A_1, A_2, \dots, A_9
 ## Kesimpulan Analisis
 
 Berdasarkan hasil simulasi 10 iterasi menggunakan metode Iterasi QR, diperoleh matriks akhir:
-$$A_{10} \approx \begin{pmatrix} 3.0000 & 0.0000 \\ 0.0000 & 1.0000 \end{pmatrix}$$
+$A_{10} \approx \begin{pmatrix} 3.0000 & 0.0000 \\ 0.0000 & 1.0000 \end{pmatrix}$
 
 1. **Pembentukan Matriks Segitiga Atas:** Elemen di bawah diagonal utama ($a_{21}$) berhasil tereduksi secara signifikan hingga mencapai angka **$0.0000$** (konvergen). Hal ini membuktikan bahwa algoritma berhasil membentuk matriks segitiga atas (bahkan matriks diagonal sempurna karena sifat awal matriks yang simetris).
 2. **Kesesuaian Nilai Eigen:** Elemen pada diagonal utama menunjukkan angka **3** dan **1**. Hal ini sesuai dengan nilai eigen teoritis yang diharapkan dari matriks $A_0$.
