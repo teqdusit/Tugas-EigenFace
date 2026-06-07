@@ -38,15 +38,15 @@ Tahap 1: Pra-proses Data Gambar (Preprocessing)
 - Kurangi setiap vektor wajah asli dengan wajah rata-rata ini ($\Phi_i = X_i - \Psi$). Langkah ini memastikan kita hanya fokus pada perbedaan antar-wajah.
 
 Tahap 2: Menghitung SVD & Reduksi Dimensi
-1. Masukkan matriks perbedaan wajah yang sudah dinormalisasi ke dalam fungsi SVD untuk mendapatkan matriks $U$, $\Sigma$, dan $V^T$.
-2. Memilih $k$ Komponen Utama: Kita tidak perlu menggunakan semua kolom $U$. Pilih sejumlah $k$ kolom pertama (misal 10 atau 20) yang memiliki nilai singular terbesar di matriks $\Sigma$. Matriks pangkas ini kita sebut sebagai Ruang Eigenface.
+1. Masukkan matriks perbedaan wajah yang sudah dinormalisasi ke dalam fungsi SVD untuk mendapatkan matriks $ U $ , $ \Sigma $ , dan $ V^T $ .
+2. Memilih $k$ Komponen Utama: Kita tidak perlu menggunakan semua kolom $ U $ . Pilih sejumlah $k$ kolom pertama (misal 10 atau 20) yang memiliki nilai singular terbesar di matriks  $ \Sigma $ . Matriks pangkas ini kita sebut sebagai Ruang Eigenface.
 
 Tahap 3: Proyeksi Data (Training)
 1. Proyeksikan semua gambar wajah dari database ke dalam Ruang Eigenface yang telah dipangkas.
 2. Hasil proyeksi ini berupa vektor bobot (weight vector) berukuran kecil yang bertindak sebagai "sidik jari" digital untuk masing-masing wajah di database.
 
 Tahap 4: Pengenalan Wajah Baru (Testing)
-1. Masukkan foto wajah baru yang ingin diuji, ubah menjadi vektor, lalu kurangi dengan wajah rata-rata ($\Psi$) yang didapat pada Tahap 1.
+1. Masukkan foto wajah baru yang ingin diuji, ubah menjadi vektor, lalu kurangi dengan wajah rata-rata ( $ \Psi $ ) yang didapat pada Tahap 1.
 2. Proyeksikan vektor wajah baru tersebut ke Ruang Eigenface untuk mendapatkan vektor bobotnya sendiri.
 3. Klasifikasi Jarak: Hitung jarak terdekat (misalnya menggunakan rumus Euclidean Distance) antara vektor bobot wajah baru dengan seluruh vektor bobot wajah yang ada di database.
 4. Jika jarak terkecil berada di bawah ambang batas (threshold) tertentu, maka sistem akan menampilkan identitas wajah yang paling cocok tersebut.
@@ -59,8 +59,8 @@ Berikut adalah langkah-langkah menjalankan program di Google Colab:
 Google Colab menggunakan sistem berbasis Notebook (file .ipynb). Kode program kamu ditulis di dalam kotak-kotak yang disebut Cell. 
 - Menggunakan Tombol Play: Di sebelah kiri setiap kotak kode, ada tombol berbentuk segitiga/Play dalam lingkaran. Cukup klik tombol tersebut untuk menjalankan kode di kotak itu.
 - Menggunakan Shortcut Keyboard: Klik kotak kodenya, lalu tekan tombol Shift + Enter atau Ctrl + Enter di keyboard kamu.
-- - Ctrl + Enter: Menjalankan kode dan tetap berada di kotak yang sama.
-- - Shift + Enter: Menjalankan kode dan otomatis berpindah ke kotak di bawahnya.
+  - Ctrl + Enter: Menjalankan kode dan tetap berada di kotak yang sama.
+  - Shift + Enter: Menjalankan kode dan otomatis berpindah ke kotak di bawahnya.
 
 2. Cara Mengunggah (Upload) Folder atau File Data
 - Lihat di bilah menu sebelah kiri layar Colab.
@@ -69,7 +69,7 @@ Google Colab menggunakan sistem berbasis Notebook (file .ipynb). Kode program ka
 
 ## 5. link collab:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/https://colab.research.google.com/drive/1e2xJwZ8vghJKkQnf5-Lr2vYDt1j5-XPt)
+[![Open In Colab](https://colab.research.google.com/drive/https://colab.research.google.com/drive/1e2xJwZ8vghJKkQnf5-Lr2vYDt1j5-XPt)]
 
 
 

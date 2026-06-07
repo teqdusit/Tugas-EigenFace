@@ -382,8 +382,8 @@ Detail Komponen Matriks:</p>
 </ul>
 <p>Tahap 2: Menghitung SVD &amp; Reduksi Dimensi</p>
 <ol class="arabic simple">
-<li><p>Masukkan matriks perbedaan wajah yang sudah dinormalisasi ke dalam fungsi SVD untuk mendapatkan matriks $U$, $\Sigma$, dan $V^T$.</p></li>
-<li><p>Memilih $k$ Komponen Utama: Kita tidak perlu menggunakan semua kolom $U$. Pilih sejumlah $k$ kolom pertama (misal 10 atau 20) yang memiliki nilai singular terbesar di matriks $\Sigma$. Matriks pangkas ini kita sebut sebagai Ruang Eigenface.</p></li>
+<li><p>Masukkan matriks perbedaan wajah yang sudah dinormalisasi ke dalam fungsi SVD untuk mendapatkan matriks $ U $ , $ \Sigma $ , dan $ V^T $ .</p></li>
+<li><p>Memilih $k$ Komponen Utama: Kita tidak perlu menggunakan semua kolom $ U $ . Pilih sejumlah $k$ kolom pertama (misal 10 atau 20) yang memiliki nilai singular terbesar di matriks  $ \Sigma $ . Matriks pangkas ini kita sebut sebagai Ruang Eigenface.</p></li>
 </ol>
 <p>Tahap 3: Proyeksi Data (Training)</p>
 <ol class="arabic simple">
@@ -392,7 +392,7 @@ Detail Komponen Matriks:</p>
 </ol>
 <p>Tahap 4: Pengenalan Wajah Baru (Testing)</p>
 <ol class="arabic simple">
-<li><p>Masukkan foto wajah baru yang ingin diuji, ubah menjadi vektor, lalu kurangi dengan wajah rata-rata ($\Psi$) yang didapat pada Tahap 1.</p></li>
+<li><p>Masukkan foto wajah baru yang ingin diuji, ubah menjadi vektor, lalu kurangi dengan wajah rata-rata ( $ \Psi $ ) yang didapat pada Tahap 1.</p></li>
 <li><p>Proyeksikan vektor wajah baru tersebut ke Ruang Eigenface untuk mendapatkan vektor bobotnya sendiri.</p></li>
 <li><p>Klasifikasi Jarak: Hitung jarak terdekat (misalnya menggunakan rumus Euclidean Distance) antara vektor bobot wajah baru dengan seluruh vektor bobot wajah yang ada di database.</p></li>
 <li><p>Jika jarak terkecil berada di bawah ambang batas (threshold) tertentu, maka sistem akan menampilkan identitas wajah yang paling cocok tersebut.</p></li>
@@ -407,12 +407,9 @@ Google Colab menggunakan sistem berbasis Notebook (file .ipynb). Kode program ka
 </ol>
 <ul class="simple">
 <li><p>Menggunakan Tombol Play: Di sebelah kiri setiap kotak kode, ada tombol berbentuk segitiga/Play dalam lingkaran. Cukup klik tombol tersebut untuk menjalankan kode di kotak itu.</p></li>
-<li><p>Menggunakan Shortcut Keyboard: Klik kotak kodenya, lalu tekan tombol Shift + Enter atau Ctrl + Enter di keyboard kamu.</p></li>
-<li><ul>
+<li><p>Menggunakan Shortcut Keyboard: Klik kotak kodenya, lalu tekan tombol Shift + Enter atau Ctrl + Enter di keyboard kamu.</p>
+<ul>
 <li><p>Ctrl + Enter: Menjalankan kode dan tetap berada di kotak yang sama.</p></li>
-</ul>
-</li>
-<li><ul>
 <li><p>Shift + Enter: Menjalankan kode dan otomatis berpindah ke kotak di bawahnya.</p></li>
 </ul>
 </li>
@@ -428,7 +425,7 @@ Google Colab menggunakan sistem berbasis Notebook (file .ipynb). Kode program ka
 </section>
 <section id="link-collab">
 <h2>5. link collab:<a class="headerlink" href="#link-collab" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://colab.research.google.com/drive/https://colab.research.google.com/drive/1e2xJwZ8vghJKkQnf5-Lr2vYDt1j5-XPt"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<p>[<img alt="Open In Colab" src="https://colab.research.google.com/drive/https://colab.research.google.com/drive/1e2xJwZ8vghJKkQnf5-Lr2vYDt1j5-XPt" />]</p>
 </section>
 </section>
 
