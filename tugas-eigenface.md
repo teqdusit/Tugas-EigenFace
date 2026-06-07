@@ -67,7 +67,7 @@ Google Colab menggunakan sistem berbasis Notebook (file .ipynb). Kode program ka
 - Klik ikon berbentuk Folder (paling bawah).
 - (drag & drop) file gambar atau folder dataset dari laptop ke dalam area folder tersebut, atau klik ikon Upload (kertas dengan panah ke atas).
 
-## 5. link collab saya:
+## 5. link collab:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/https://colab.research.google.com/drive/1e2xJwZ8vghJKkQnf5-Lr2vYDt1j5-XPt)
 
