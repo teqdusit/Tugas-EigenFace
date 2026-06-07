@@ -105,34 +105,26 @@ $\begin{pmatrix} x' \\ y' \end{pmatrix} = (M_3 \times M_2 \times M_1) \begin{pma
 
 ---
 
-## Contoh Soal dan Penyelesaian Teknis
+### D. Objek Transformasi: Persegi Panjang
 
-### Soal:
-Sebuah titik $A(4, 2)$ mula-mula dicerminkan terhadap garis $y = x$. Bayangan dari pencerminan tersebut kemudian diputar sebesar $90^\circ$ berlawanan arah jarum jam dengan pusat rotasi di titik asal $O(0,0)$. Tentukan koordinat akhir bayangan titik $A$.
+Pada implementasi ini, objek yang ditransformasi adalah **persegi panjang**
+yang didefinisikan oleh 4 titik sudut:
 
-### Penyelesaian Menggunakan Komposisi Matriks:
+| Label | Posisi | Koordinat |
+|-------|--------|-----------|
+| $A$ | Kiri atas | $(x, y+h)$ |
+| $B$ | Kanan atas | $(x+w, y+h)$ |
+| $C$ | Kiri bawah | $(x, y)$ |
+| $D$ | Kanan bawah | $(x+w, y)$ |
 
-1. **Identifikasi Matriks Transformasi:**
-   - Matriks refleksi terhadap garis $y = x$ ($M_1$):
-     $M_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$
-   - Matriks rotasi $[O, 90^\circ]$ ($M_2$):
-     Karena $\cos 90^\circ = 0$ dan $\sin 90^\circ = 1$, maka:
-     $M_2 = \begin{pmatrix} \cos 90^\circ & -\sin 90^\circ \\ \sin 90^\circ & \cos 90^\circ \end{pmatrix} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$
+di mana $x, y$ adalah posisi sudut kiri bawah, $w$ adalah lebar, dan $h$ adalah tinggi.
 
-2. **Hitung Matriks Komposisi Tunggal ($M_{\text{total}}$):**
-   $M_{\text{total}} = M_2 \times M_1$
-   $M_{\text{total}} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$
-   $M_{\text{total}} = \begin{pmatrix} (0\cdot0 + -1\cdot1) & (0\cdot1 + -1\cdot0) \\ (1\cdot0 + 0\cdot1) & (1\cdot1 + 0\cdot0) \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}$
+Setiap sudut direfleksikan secara individual menggunakan rumus matriks refleksi,
+menghasilkan titik $A', B', C', D'$ yang membentuk persegi panjang hasil refleksi.
 
-3. **Hitung Koordinat Akhir:**
-   $\begin{pmatrix} x' \\ y' \end{pmatrix} = M_{\text{total}} \begin{pmatrix} x \\ y \end{pmatrix}$
-   $\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 4 \\ 2 \end{pmatrix}$
-   $\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} (-1 \cdot 4) + (0 \cdot 2) \\ (0 \cdot 4) + (1 \cdot 2) \end{pmatrix} = \begin{pmatrix} -4 \\ 2 \end{pmatrix}$
+---
 
-### Kesimpulan Hasil:
-Bayangan akhir dari titik $A$ setelah rentetan transformasi tersebut adalah **$A'(-4, 2)$**.
-
-## Source Code Python
+## 6. Source Code Python
 
 ```python
 import numpy as np
@@ -248,3 +240,71 @@ sl_rh.on_changed(update)
 # Menampilkan grafik awal
 draw(-3, 1, 2, 2, 90)
 plt.show()
+
+```
+
+## 7. Hasil Visualisasi
+
+Visualisasi menampilkan:
+
+- **Persegi panjang biru** — objek asli yang dapat digeser bebas menggunakan slider
+- **Persegi panjang merah** — hasil refleksi yang bergerak mengikuti secara otomatis
+- **Garis cermin** — garis referensi abu-abu putus-putus yang dapat diputar
+- **Garis penghubung** — menghubungkan tiap titik sudut asli ke titik refleksinya,
+  membuktikan bahwa jarak tiap titik ke garis cermin adalah sama di kedua sisi
+
+Ketika slider **Geser X** digeser ke kiri, persegi panjang merah bergerak ke kanan —
+persis seperti bayangan di cermin. Ketika slider **Geser Y** digeser ke atas,
+keduanya ikut naik bersama-sama karena refleksi mempertahankan komponen
+yang sejajar dengan garis cermin.
+
+---
+
+## 8. Analisis Sifat Transformasi
+
+Dari hasil visualisasi dapat diverifikasi bahwa refleksi memiliki sifat-sifat berikut:
+
+**1. Isometri** — jarak antar titik dipertahankan:
+
+$|AB| = |A'B'|, \quad |BC| = |B'C'|$
+
+**2. Involusi** — refleksi dua kali menghasilkan identitas:
+
+$R_\theta \cdot R_\theta = I$
+
+artinya merefleksikan objek dua kali mengembalikan ke posisi semula.
+
+**3. Determinan bernilai $-1$** — menunjukkan perubahan orientasi:
+
+$\det(R_\theta) = \cos^2 2\theta + \sin^2 2\theta \cdot (-1) \cdot (-1) = -1$
+
+**4. Matriks ortogonal** — invers sama dengan transpos:
+
+$R_\theta^{-1} = R_\theta^T$
+
+---
+
+## 9. Kesimpulan
+
+Dari implementasi dan visualisasi transformasi linear refleksi pada persegi panjang
+di bidang dua dimensi, dapat disimpulkan:
+
+1. **Refleksi adalah transformasi linear** karena dapat direpresentasikan sebagai
+   perkalian matriks $R_\theta$ yang memenuhi syarat aditivitas dan homogenitas.
+
+2. **Refleksi mempertahankan bentuk dan ukuran** — persegi panjang tetap
+   berbentuk persegi panjang dengan luas dan panjang sisi yang identik setelah
+   direfleksikan.
+
+3. **Refleksi membalik orientasi** — susunan titik $A \to B \to C \to D$
+   yang semula searah jarum jam menjadi berlawanan arah jarum jam pada
+   hasil refleksi $A' \to B' \to C' \to D'$.
+
+4. **Sudut cermin $\theta$ menentukan arah refleksi** — perubahan $\theta$
+   mengubah posisi relatif objek refleksi terhadap objek asli, dengan
+   kasus-kasus khusus pada $0°$, $45°$, $90°$, dan $135°$.
+
+5. **Setiap titik memiliki jarak yang sama ke garis cermin** — titik asal
+   dan titik refleksinya selalu berjarak sama terhadap garis cermin,
+   yang terlihat dari garis penghubung putus-putus yang selalu tegak lurus
+   terhadap garis cermin.
