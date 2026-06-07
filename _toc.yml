@@ -1,6 +1,7 @@
 format: jb-book
 root: index
 chapters:
+  - file: geogebra
   - file: sage
   - file: tugas4
   - file: tugas5
