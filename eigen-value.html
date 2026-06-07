@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Profil &#8212; Tugas Komputasi Aljabar Linear</title>
+    <title>Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR) &#8212; Tugas Komputasi Aljabar Linear</title>
   
   
   
@@ -62,10 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eigen-value';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR)" href="eigen-value.html" />
+    <link rel="next" title="Tugas Project - Eigen Face menggunakan Rumus SVD" href="tugas-eigenface.html" />
+    <link rel="prev" title="Profil" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,8 +131,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -148,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="index.html">
   
   
   
@@ -162,14 +163,14 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
                     Profil
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="eigen-value.html">Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR)</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas-eigenface.html">Tugas Project - Eigen Face menggunakan Rumus SVD</a></li>
 </ul>
 
@@ -225,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/index.md" target="_blank"
+      <li><a href="_sources/eigen-value.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -309,7 +310,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Profil</h1>
+    <h1>Ringkasan Materi & Tugas: Komputasi Eigenvalue (Teori & Metode QR)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -319,7 +320,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-saya">Tentang saya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-dasar-pengertian-analitik">1. Konsep Dasar &amp; Pengertian Analitik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-utama">Persamaan Utama:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendekatan-komputasi-numerik-metode-qr-iteration">2. Pendekatan Komputasi Numerik (Metode QR Iteration)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-algoritma-qr">Alur Algoritma QR:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hasil-simulasi-program-tugas">3. Data Hasil Simulasi Program (Tugas)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-1">=== Iterasi 1 ===</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -331,19 +343,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="profil">
-<h1>Profil<a class="headerlink" href="#profil" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ringkasan-materi-tugas-komputasi-eigenvalue-teori-metode-qr">
+<h1>Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR)<a class="headerlink" href="#ringkasan-materi-tugas-komputasi-eigenvalue-teori-metode-qr" title="Permalink to this heading">#</a></h1>
+<p>Halaman ini berisi ringkasan konsep dasar Eigenvalue dari sudut pandang aljabar linear analitik hingga implementasi komputasi numerik menggunakan metode <strong>QR Iteration</strong>.</p>
 <hr class="docutils" />
-<section id="tentang-saya">
-<h2>Tentang saya<a class="headerlink" href="#tentang-saya" title="Permalink to this heading">#</a></h2>
-<a class="reference internal image-reference" href="_images/foto.jpeg"><img alt="_images/foto.jpeg" src="_images/foto.jpeg" style="width: 200px;" /></a>
-<p><strong>Nama:</strong> Teq Dusit Anggoro</p>
-<p><strong>Nim:</strong> 250411100176</p>
-<p><strong>Prodi:</strong> Teknik Informatika</p>
+<section id="konsep-dasar-pengertian-analitik">
+<h2>1. Konsep Dasar &amp; Pengertian Analitik<a class="headerlink" href="#konsep-dasar-pengertian-analitik" title="Permalink to this heading">#</a></h2>
+<p>Dalam aljabar linear, jika kita memiliki sebuah matriks persegi <span class="math notranslate nohighlight">\(A\)</span> dan kita mengalikannya dengan sebuah vektor <span class="math notranslate nohighlight">\(x\)</span>, biasanya vektor tersebut akan berubah arah dan ukurannya. Namun, ada beberapa vektor spesial yang <strong>tidak berubah arahnya</strong> setelah dikalikan dengan matriks <span class="math notranslate nohighlight">\(A\)</span>. Vektor tersebut hanya menjadi lebih panjang, lebih pendek, atau berbalik arah (<span class="math notranslate nohighlight">\(180^\circ\)</span>).</p>
+<ul class="simple">
+<li><p><strong>Eigenvector (Vektor Eigen):</strong> Vektor spesial <span class="math notranslate nohighlight">\(x\)</span> (bukan vektor nol) yang arahnya tetap konisten setelah dilakukan transformasi matriks.</p></li>
+<li><p><strong>Eigenvalue (Nilai Eigen):</strong> Faktor skala atau nilai <span class="math notranslate nohighlight">\(\lambda\)</span> (lambda) yang menunjukkan seberapa besar vektor <span class="math notranslate nohighlight">\(x\)</span> tersebut diperpanjang atau diperpendek.</p></li>
+</ul>
+<section id="persamaan-utama">
+<h3>Persamaan Utama:<a class="headerlink" href="#persamaan-utama" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[A \cdot x = \lambda \cdot x\]</div>
+<p>Untuk mencari nilai <span class="math notranslate nohighlight">\(\lambda\)</span> secara manual (analitik), kita mengubah persamaan di atas menjadi <strong>Persamaan Karakteristik</strong>:
+$<span class="math notranslate nohighlight">\(\det(A - \lambda I) = 0\)</span>$</p>
+<p>Dari persamaan determinan inilah kita mencari akar-akar polinomial untuk mendapatkan nilai <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+</section>
 </section>
 <hr class="docutils" />
-<div class="toctree-wrapper compound">
+<section id="pendekatan-komputasi-numerik-metode-qr-iteration">
+<h2>2. Pendekatan Komputasi Numerik (Metode QR Iteration)<a class="headerlink" href="#pendekatan-komputasi-numerik-metode-qr-iteration" title="Permalink to this heading">#</a></h2>
+<p>Mencari akar persamaan karakteristik secara manual sangat mudah untuk matriks ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>. Namun, bagi komputer yang menangani data raksasa, menghitung determinan polinomial derajat tinggi sangatlah berat. Oleh karena itu, digunakan metode pendekatan iteratif seperti <strong>Dekomposisi QR</strong>.</p>
+<section id="alur-algoritma-qr">
+<h3>Alur Algoritma QR:<a class="headerlink" href="#alur-algoritma-qr" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Matriks pada iterasi ke-<span class="math notranslate nohighlight">\(k\)</span> (<span class="math notranslate nohighlight">\(A_k\)</span>) difaktorkan menjadi perkalian dua matriks:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Q\)</span> = Matriks Ortogonal (<span class="math notranslate nohighlight">\(Q^T \cdot Q = I\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(R\)</span> = Matriks Segitiga Atas (<em>Upper Triangular</em>)</p></li>
+</ul>
+</li>
+<li><p>Setelah didapat <span class="math notranslate nohighlight">\(A_k = Q_k \cdot R_k\)</span>, kita membentuk matriks baru untuk iterasi berikutnya dengan membalik urutan perkaliannya:
+$<span class="math notranslate nohighlight">\(A_{k+1} = R_k \cdot Q_k\)</span>$</p></li>
+<li><p>Jika proses ini diulang terus-menerus secara iteratif, nilai di luar diagonal utama matriks <span class="math notranslate nohighlight">\(A\)</span> lama-kelamaan akan mengecil menuju nol (<span class="math notranslate nohighlight">\(0\)</span>).</p></li>
+<li><p>Hasil akhir diagonal utama pada matriks <span class="math notranslate nohighlight">\(A\)</span> baru tersebut merupakan <strong>perkiraan nilai Eigenvalue</strong>.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="data-hasil-simulasi-program-tugas">
+<h2>3. Data Hasil Simulasi Program (Tugas)<a class="headerlink" href="#data-hasil-simulasi-program-tugas" title="Permalink to this heading">#</a></h2>
+<p>Berikut adalah simulasi jalannya program komputasi QR Iteration dengan input matriks awal:
+$<span class="math notranslate nohighlight">\(A = \begin{pmatrix} 5 &amp; 2 \\ 2 &amp; 2 \end{pmatrix}\)</span>$</p>
+<section id="iterasi-1">
+<h3>=== Iterasi 1 ===<a class="headerlink" href="#iterasi-1" title="Permalink to this heading">#</a></h3>
+<p><strong>Matriks <span class="math notranslate nohighlight">\(Q\)</span>:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[[ 0.92847669 -0.37139068]
+ [ 0.37139068  0.92847669]]
+</pre></div>
 </div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -376,12 +429,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profil</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="eigen-value.html"
+       href="tugas-eigenface.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ringkasan Materi &amp; Tugas: Komputasi Eigenvalue (Teori &amp; Metode QR)</p>
+        <p class="prev-next-title">Tugas Project - Eigen Face menggunakan Rumus SVD</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -401,7 +463,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-saya">Tentang saya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-dasar-pengertian-analitik">1. Konsep Dasar &amp; Pengertian Analitik</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan-utama">Persamaan Utama:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pendekatan-komputasi-numerik-metode-qr-iteration">2. Pendekatan Komputasi Numerik (Metode QR Iteration)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alur-algoritma-qr">Alur Algoritma QR:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-hasil-simulasi-program-tugas">3. Data Hasil Simulasi Program (Tugas)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterasi-1">=== Iterasi 1 ===</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
