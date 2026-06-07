@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas-eigenface';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -332,7 +334,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="tugas-project-eigen-face-menggunakan-rumus-svd">
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-project-eigen-face-menggunakan-rumus-svd">
 <h1>Tugas Project - Eigen Face menggunakan Rumus SVD<a class="headerlink" href="#tugas-project-eigen-face-menggunakan-rumus-svd" title="Permalink to this heading">#</a></h1>
 <section id="pengertian-eigen-face-dan-svd">
 <h2>1. Pengertian Eigen Face dan SVD<a class="headerlink" href="#pengertian-eigen-face-dan-svd" title="Permalink to this heading">#</a></h2>
@@ -343,25 +345,25 @@ document.write(`
 </section>
 <section id="rumus-matematika-svd-pada-data-wajah">
 <h2>2. Rumus Matematika SVD pada Data Wajah<a class="headerlink" href="#rumus-matematika-svd-pada-data-wajah" title="Permalink to this heading">#</a></h2>
-<p>Misalkan kita memiliki dataset berisi $M$ buah foto wajah, di mana setiap foto telah diubah menjadi satu vektor kolom panjang berukuran $N$ (total piksel). Seluruh vektor ini digabungkan membentuk sebuah matriks data wajah $A$ berukuran $N \times M$.Rumus utama SVD memfaktorkan matriks $A$ menjadi:
-$$A = U \cdot \Sigma \cdot V^T$$
+<p>Misalkan kita memiliki dataset berisi <span class="math notranslate nohighlight">\(M\)</span> buah foto wajah, di mana setiap foto telah diubah menjadi satu vektor kolom panjang berukuran <span class="math notranslate nohighlight">\(N\)</span> (total piksel). Seluruh vektor ini digabungkan membentuk sebuah matriks data wajah <span class="math notranslate nohighlight">\(A\)</span> berukuran <span class="math notranslate nohighlight">\(N \times M\)</span>.Rumus utama SVD memfaktorkan matriks <span class="math notranslate nohighlight">\(A\)</span> menjadi:
+$<span class="math notranslate nohighlight">\(A = U \cdot \Sigma \cdot V^T\)</span>$
 Detail Komponen Matriks:</p>
 <ol class="arabic simple">
-<li><p>Matriks $U$ (Left Singular Vectors) $\rightarrow$ Ukuran $N \times N$</p></li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(U\)</span> (Left Singular Vectors) <span class="math notranslate nohighlight">\(\rightarrow\)</span> Ukuran <span class="math notranslate nohighlight">\(N \times N\)</span></p></li>
 </ol>
 <ul class="simple">
-<li><p>Kolom-kolom di dalam matriks $U$ bersifat saling tegak lurus (ortogonal).</p></li>
-<li><p>Di sinilah letak Eigenfaces. Kolom-kolom pertama pada matriks $U$ menyimpan informasi variasi wajah terbesar. Jika kolom ini di-reshape kembali ke ukuran gambar asli, kita mendapatkan visualisasi Eigenface.</p></li>
+<li><p>Kolom-kolom di dalam matriks <span class="math notranslate nohighlight">\(U\)</span> bersifat saling tegak lurus (ortogonal).</p></li>
+<li><p>Di sinilah letak Eigenfaces. Kolom-kolom pertama pada matriks <span class="math notranslate nohighlight">\(U\)</span> menyimpan informasi variasi wajah terbesar. Jika kolom ini di-reshape kembali ke ukuran gambar asli, kita mendapatkan visualisasi Eigenface.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>Matriks $\Sigma$ (Singular Values) $\rightarrow$ Ukuran $N \times M$</p></li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(\Sigma\)</span> (Singular Values) <span class="math notranslate nohighlight">\(\rightarrow\)</span> Ukuran <span class="math notranslate nohighlight">\(N \times M\)</span></p></li>
 </ol>
 <ul class="simple">
 <li><p>Merupakan matriks diagonal yang berisi nilai penyimpangan (singular values) yang diurutkan dari terbesar ke terkecil.</p></li>
-<li><p>Nilai ini melambangkan tingkat kepentingan atau “bobot” informasi dari setiap Eigenface yang bersesuaian di matriks $U$. Nilai yang kecil melambangkan noise atau detail tidak penting yang dapat dibuang (Reduksi Dimensi).</p></li>
+<li><p>Nilai ini melambangkan tingkat kepentingan atau “bobot” informasi dari setiap Eigenface yang bersesuaian di matriks <span class="math notranslate nohighlight">\(U\)</span>. Nilai yang kecil melambangkan noise atau detail tidak penting yang dapat dibuang (Reduksi Dimensi).</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><p>Matriks $V^T$ (Right Singular Vectors) $\rightarrow$ Ukuran $M \times M$</p></li>
+<li><p>Matriks <span class="math notranslate nohighlight">\(V^T\)</span> (Right Singular Vectors) <span class="math notranslate nohighlight">\(\rightarrow\)</span> Ukuran <span class="math notranslate nohighlight">\(M \times M\)</span></p></li>
 </ol>
 <ul class="simple">
 <li><p>Merepresentasikan koefisien atau kontribusi setiap foto wajah asli terhadap komponen ruang Eigenface yang terbentuk.</p></li>
@@ -374,16 +376,16 @@ Detail Komponen Matriks:</p>
 <ol class="arabic simple">
 <li><p>Load Gambar: Membaca semua gambar wajah dari dataset dan mengubahnya menjadi format grayscale (hitam putih).</p></li>
 <li><p>Flattening: Mengubah setiap gambar matriks 2D menjadi satu vektor baris atau kolom 1D.</p></li>
-<li><p>Matriks Data: Menggabungkan semua vektor gambar tersebut ke dalam satu matriks besar $A$.</p></li>
-<li><p>Normalisasi (Wajah Rata-rata): * Hitung rata-rata dari seluruh wajah ($\Psi$).</p></li>
+<li><p>Matriks Data: Menggabungkan semua vektor gambar tersebut ke dalam satu matriks besar <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+<li><p>Normalisasi (Wajah Rata-rata): * Hitung rata-rata dari seluruh wajah (<span class="math notranslate nohighlight">\(\Psi\)</span>).</p></li>
 </ol>
 <ul class="simple">
-<li><p>Kurangi setiap vektor wajah asli dengan wajah rata-rata ini ($\Phi_i = X_i - \Psi$). Langkah ini memastikan kita hanya fokus pada perbedaan antar-wajah.</p></li>
+<li><p>Kurangi setiap vektor wajah asli dengan wajah rata-rata ini (<span class="math notranslate nohighlight">\(\Phi_i = X_i - \Psi\)</span>). Langkah ini memastikan kita hanya fokus pada perbedaan antar-wajah.</p></li>
 </ul>
 <p>Tahap 2: Menghitung SVD &amp; Reduksi Dimensi</p>
 <ol class="arabic simple">
-<li><p>Masukkan matriks perbedaan wajah yang sudah dinormalisasi ke dalam fungsi SVD untuk mendapatkan matriks $ U $ , $ \Sigma $ , dan $ V^T $ .</p></li>
-<li><p>Memilih $k$ Komponen Utama: Kita tidak perlu menggunakan semua kolom $ U $ . Pilih sejumlah $k$ kolom pertama (misal 10 atau 20) yang memiliki nilai singular terbesar di matriks  $ \Sigma $ . Matriks pangkas ini kita sebut sebagai Ruang Eigenface.</p></li>
+<li><p>Masukkan matriks perbedaan wajah yang sudah dinormalisasi ke dalam fungsi SVD untuk mendapatkan matriks <span class="math notranslate nohighlight">\( U \)</span> , <span class="math notranslate nohighlight">\( \Sigma \)</span> , dan <span class="math notranslate nohighlight">\( V^T \)</span> .</p></li>
+<li><p>Memilih <span class="math notranslate nohighlight">\(k\)</span> Komponen Utama: Kita tidak perlu menggunakan semua kolom <span class="math notranslate nohighlight">\( U \)</span> . Pilih sejumlah <span class="math notranslate nohighlight">\(k\)</span> kolom pertama (misal 10 atau 20) yang memiliki nilai singular terbesar di matriks  <span class="math notranslate nohighlight">\( \Sigma \)</span> . Matriks pangkas ini kita sebut sebagai Ruang Eigenface.</p></li>
 </ol>
 <p>Tahap 3: Proyeksi Data (Training)</p>
 <ol class="arabic simple">
@@ -392,7 +394,7 @@ Detail Komponen Matriks:</p>
 </ol>
 <p>Tahap 4: Pengenalan Wajah Baru (Testing)</p>
 <ol class="arabic simple">
-<li><p>Masukkan foto wajah baru yang ingin diuji, ubah menjadi vektor, lalu kurangi dengan wajah rata-rata ( $ \Psi $ ) yang didapat pada Tahap 1.</p></li>
+<li><p>Masukkan foto wajah baru yang ingin diuji, ubah menjadi vektor, lalu kurangi dengan wajah rata-rata ( <span class="math notranslate nohighlight">\( \Psi \)</span> ) yang didapat pada Tahap 1.</p></li>
 <li><p>Proyeksikan vektor wajah baru tersebut ke Ruang Eigenface untuk mendapatkan vektor bobotnya sendiri.</p></li>
 <li><p>Klasifikasi Jarak: Hitung jarak terdekat (misalnya menggunakan rumus Euclidean Distance) antara vektor bobot wajah baru dengan seluruh vektor bobot wajah yang ada di database.</p></li>
 <li><p>Jika jarak terkecil berada di bawah ambang batas (threshold) tertentu, maka sistem akan menampilkan identitas wajah yang paling cocok tersebut.</p></li>
