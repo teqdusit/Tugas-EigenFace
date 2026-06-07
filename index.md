@@ -5,7 +5,7 @@
 
 ## Tentang saya
 
-<img src="foto.jpeg" width="200" style="border-radius: 50%;" />
+<img src="image/foto.jpeg" width="200" style="border-radius: 50%;" />
 
 **Nama:** Teq Dusit Anggoro
 
