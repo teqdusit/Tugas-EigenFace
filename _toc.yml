@@ -7,9 +7,10 @@ chapters:
       - file: persamaan-linier/geogebra
       - file: persamaan-linier/sage
   - file: eliminasi-gauss 
+  - file: eliminasi-gauss/index
     sections:
-      -file: tugas4
-      -file: tugas5
+      - file: eliminasi-gauss/tugas4
+      - file: eliminasi-gauss/tugas5
   - file: tugas-adjoin
   - file: evaluasi
   - file: tugas-tranformasi
