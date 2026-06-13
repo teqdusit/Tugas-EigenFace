@@ -1,11 +1,12 @@
 # Profil
 
-
 ---
 
 ## Tentang saya
 
-<img src="image/foto.jpeg" width="200" style="border-radius: 50%;" />
+<center>
+<img src="image/foto.jpeg" width="250">
+</center>
 
 **Nama:** Teq Dusit Anggoro
 
@@ -14,4 +15,3 @@
 **Prodi:** Teknik Informatika
 
 ---
-
