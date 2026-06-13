@@ -16,9 +16,9 @@ chapters:
     sections:
       - file: determinan/tugas-adjoin 
       - file: determinan/evaluasi
-  - file: tranformasi-linier
-  - file: tranformasi-linier/index
+  - file: tranformasi-liniear
+  - file: tranformasi-liniear/index
     sections:
-      - file: tranformasi-linier/tugas-tranformasi
-      - file: tranformasi-linier/eigen-value
-      - file: tranformasi-linier/tugas-eigenface
+      - file: tranformasi-liniear/tugas-tranformasi
+      - file: tranformasi-liniear/eigen-value
+      - file: tranformasi-liniear/tugas-eigenface
