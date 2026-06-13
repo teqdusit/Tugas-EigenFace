@@ -3,7 +3,7 @@ root: index
 chapters:
   - file: kal
   - file: persamaan-linier/index
-    section:
+    sections:
       - file: persamaan-linier/geogebra
       - file: persamaan-linier/sage
   - file: tugas4
