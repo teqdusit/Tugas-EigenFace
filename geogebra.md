@@ -58,8 +58,8 @@ Setelah garis terbentuk, Anda bisa menggunakan perintah-perintah berikut di kolo
 Cobalah langkah-langkah berikut di GeoGebra untuk menguji pemahaman Anda:
 
 1. Buatlah grafik dari sistem persamaan linear dua variabel (SPLDV) berikut:
-   * Garis 1: $x + y = 5$
-   * Garis 2: $2x - y = 1$
+   * Garis 1: $x + y = 20$
+   * Garis 2: $2x + y = 30$
 2. Gunakan perintah atau alat `Intersect` untuk mengklik titik pertemuan kedua garis tersebut.
 3. Catat koordinat titik potongnya! Koordinat $(x, y)$ tersebut merupakan **Himpunan Penyelesaian (HP)** dari sistem persamaan tersebut.
 
@@ -91,7 +91,7 @@ var params = {
         api.evalCommand("x + y = 20");
         api.evalCommand("2x + y = 30");
         api.evalCommand("A = Intersect(eq1, eq2)");
-        
+
         api.setCoordSystem(-5, 25, -5, 25);
     }
 };
