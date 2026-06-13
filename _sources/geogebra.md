@@ -53,7 +53,7 @@ Setelah garis terbentuk, Anda bisa menggunakan perintah-perintah berikut di kolo
 
 ---
 
-## 4. Latihan Praktis (Mandiri)
+## 4. membuat persamaan linier
 
 Cobalah langkah-langkah berikut di GeoGebra untuk menguji pemahaman Anda:
 
@@ -62,3 +62,41 @@ Cobalah langkah-langkah berikut di GeoGebra untuk menguji pemahaman Anda:
    * Garis 2: $2x - y = 1$
 2. Gunakan perintah atau alat `Intersect` untuk mengklik titik pertemuan kedua garis tersebut.
 3. Catat koordinat titik potongnya! Koordinat $(x, y)$ tersebut merupakan **Himpunan Penyelesaian (HP)** dari sistem persamaan tersebut.
+
+
+---
+
+## Visualisasi SPLDV
+
+### Persamaan
+
+- Garis 1 : x + y = 20
+- Garis 2 : 2x + y = 30
+
+### Grafik
+
+<div id="ggb-element"></div>
+
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+var params = {
+    appName: "graphing",
+    width: 800,
+    height: 500,
+    showToolBar: true,
+    showAlgebraInput: true,
+    showMenuBar: true,
+    appletOnLoad: function(api) {
+        api.evalCommand("x + y = 20");
+        api.evalCommand("2x + y = 30");
+        api.evalCommand("A = Intersect(eq1, eq2)");
+    }
+};
+
+var applet = new GGBApplet(params, true);
+
+window.addEventListener("load", function () {
+    applet.inject('ggb-element');
+});
+</script>

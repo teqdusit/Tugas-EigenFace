@@ -347,7 +347,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-tambahan-yang-berguna">3. Fitur Tambahan yang Berguna</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan-praktis-mandiri">4. Latihan Praktis (Mandiri)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-persamaan-linier">4. membuat persamaan linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-spldv">Visualisasi SPLDV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan">Persamaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafik">Grafik</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -428,8 +433,8 @@ Ketik <code class="docutils literal notranslate"><span class="pre">Slope(f)</spa
 </ul>
 </section>
 <hr class="docutils" />
-<section id="latihan-praktis-mandiri">
-<h2>4. Latihan Praktis (Mandiri)<a class="headerlink" href="#latihan-praktis-mandiri" title="Permalink to this heading">#</a></h2>
+<section id="membuat-persamaan-linier">
+<h2>4. membuat persamaan linier<a class="headerlink" href="#membuat-persamaan-linier" title="Permalink to this heading">#</a></h2>
 <p>Cobalah langkah-langkah berikut di GeoGebra untuk menguji pemahaman Anda:</p>
 <ol class="arabic simple">
 <li><p>Buatlah grafik dari sistem persamaan linear dua variabel (SPLDV) berikut:</p>
@@ -441,6 +446,42 @@ Ketik <code class="docutils literal notranslate"><span class="pre">Slope(f)</spa
 <li><p>Gunakan perintah atau alat <code class="docutils literal notranslate"><span class="pre">Intersect</span></code> untuk mengklik titik pertemuan kedua garis tersebut.</p></li>
 <li><p>Catat koordinat titik potongnya! Koordinat <span class="math notranslate nohighlight">\((x, y)\)</span> tersebut merupakan <strong>Himpunan Penyelesaian (HP)</strong> dari sistem persamaan tersebut.</p></li>
 </ol>
+</section>
+<hr class="docutils" />
+<section id="visualisasi-spldv">
+<h2>Visualisasi SPLDV<a class="headerlink" href="#visualisasi-spldv" title="Permalink to this heading">#</a></h2>
+<section id="persamaan">
+<h3>Persamaan<a class="headerlink" href="#persamaan" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Garis 1 : x + y = 20</p></li>
+<li><p>Garis 2 : 2x + y = 30</p></li>
+</ul>
+</section>
+<section id="grafik">
+<h3>Grafik<a class="headerlink" href="#grafik" title="Permalink to this heading">#</a></h3>
+<div id="ggb-element"></div>
+<script src="https://www.geogebra.org/apps/deployggb.js"></script>
+<script>
+var params = {
+    appName: "graphing",
+    width: 800,
+    height: 500,
+    showToolBar: true,
+    showAlgebraInput: true,
+    showMenuBar: true,
+    appletOnLoad: function(api) {
+        api.evalCommand("x + y = 20");
+        api.evalCommand("2x + y = 30");
+        api.evalCommand("A = Intersect(eq1, eq2)");
+    }
+};
+
+var applet = new GGBApplet(params, true);
+
+window.addEventListener("load", function () {
+    applet.inject('ggb-element');
+});
+</script></section>
 </section>
 </section>
 
@@ -516,7 +557,12 @@ Ketik <code class="docutils literal notranslate"><span class="pre">Slope(f)</spa
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-tambahan-yang-berguna">3. Fitur Tambahan yang Berguna</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latihan-praktis-mandiri">4. Latihan Praktis (Mandiri)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-persamaan-linier">4. membuat persamaan linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-spldv">Visualisasi SPLDV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan">Persamaan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafik">Grafik</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
