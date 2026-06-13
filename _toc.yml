@@ -2,10 +2,10 @@ format: jb-book
 root: index
 chapters:
   - file: kal
-  - file: Persamaan Linier/intro
+  - file: persamaan-linier/index
     section:
-      - file: geogebra
-      - file: sage
+      - file: persamaan-linier/geogebra
+      - file: persamaan-linier/sage
   - file: tugas4
   - file: tugas5
   - file: tugas-adjoin
