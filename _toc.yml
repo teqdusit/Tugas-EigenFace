@@ -2,8 +2,10 @@ format: jb-book
 root: index
 chapters:
   - file: kal
-  - file: geogebra
-  - file: sage
+  - file: Persamaan Linier/intro
+    section:
+      - file: geogebra
+      - file: sage
   - file: tugas4
   - file: tugas5
   - file: tugas-adjoin
