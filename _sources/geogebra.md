@@ -91,6 +91,8 @@ var params = {
         api.evalCommand("x + y = 20");
         api.evalCommand("2x + y = 30");
         api.evalCommand("A = Intersect(eq1, eq2)");
+        
+        api.setCoordSystem(-5, 25, -5, 25);
     }
 };
 
