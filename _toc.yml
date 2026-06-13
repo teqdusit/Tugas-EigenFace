@@ -11,8 +11,11 @@ chapters:
     sections:
       - file: eliminasi-gauss/tugas4
       - file: eliminasi-gauss/tugas5
-  - file: tugas-adjoin
-  - file: evaluasi
+  - file: determinan
+  - file: determinan/index
+    sections:
+      - file: tugas-adjoin 
+      - file: evaluasi
   - file: tugas-tranformasi
   - file: eigen-value
   - file: tugas-eigenface
