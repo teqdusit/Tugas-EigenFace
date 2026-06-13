@@ -14,8 +14,11 @@ chapters:
   - file: determinan
   - file: determinan/index
     sections:
-      - file: tugas-adjoin 
-      - file: evaluasi
-  - file: tugas-tranformasi
-  - file: eigen-value
-  - file: tugas-eigenface
+      - file: determinan/tugas-adjoin 
+      - file: determinan/evaluasi
+  - file: tranformasi-linier
+  - file: tranformasi-linier/index
+    sections:
+      - file: tranformasi-linier/tugas-tranformasi
+      - file: tranformasi-linier/eigen-value
+      - file: tranformasi-linier/tugas-eigenface
