@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>SageMath &#8212; Tugas Komputasi Aljabar Linear</title>
+    <title>Eliminasi Gauss &#8212; Tugas Komputasi Aljabar Linear</title>
   
   
   
@@ -62,11 +62,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'persamaan-linier/sage';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eliminasi-gauss/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Eliminasi Gauss" href="../eliminasi-gauss/index.html" />
-    <link rel="prev" title="Membuat Persamaan Linear dengan GeoGebra" href="geogebra.html" />
+    <link rel="next" title="Operasi Baris Elementer (OBE)" href="tugas4.html" />
+    <link rel="prev" title="SageMath" href="../persamaan-linier/sage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,14 +171,14 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../kal.html">Komputasi Aljabar Linear</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Persamaan Linear</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="geogebra.html">Membuat Persamaan Linear dengan GeoGebra</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">SageMath</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../persamaan-linier/index.html">Persamaan Linear</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../persamaan-linier/geogebra.html">Membuat Persamaan Linear dengan GeoGebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../persamaan-linier/sage.html">SageMath</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../eliminasi-gauss/index.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../eliminasi-gauss/tugas4.html">Operasi Baris Elementer (OBE)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eliminasi-gauss/tugas5.html">Tugas</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Eliminasi Gauss</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="tugas4.html">Operasi Baris Elementer (OBE)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tugas5.html">Tugas</a></li>
 
 
 
@@ -250,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/persamaan-linier/sage.md" target="_blank"
+      <li><a href="../_sources/eliminasi-gauss/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SageMath</h1>
+    <h1>Eliminasi Gauss</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -344,13 +346,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-sagemath">1. Apa itu SageMath?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-menggunakan-sagemath">2. Mengapa Menggunakan SageMath?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-utama-sagemath">3. Fitur Utama SageMath</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penggunaan-dasar-sintaks-sagemath">4. Contoh Penggunaan Dasar (Sintaks SageMath)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-menghitung-turunan-dan-integral-kalkulus">a. Menghitung Turunan dan Integral (Kalkulus)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ide-dasar-mengubah-persamaan-menjadi-matriks">1. Ide Dasar: Mengubah Persamaan Menjadi Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-eliminasi-gauss-matriks-segitiga-atas">2. Target Eliminasi Gauss: Matriks Segitiga Atas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-operasi-baris-elemeneter-obe">3. Langkah-Langkah Operasi Baris Elemeneter (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-akhir-substitusi-balik-back-substitution">4. Tahap Akhir: Substitusi Balik (Back Substitution)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-eliminasi-gauss">5. Kelebihan Eliminasi Gauss</a></li>
 </ul>
             </nav>
         </div>
@@ -362,53 +363,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sagemath">
-<h1>SageMath<a class="headerlink" href="#sagemath" title="Permalink to this heading">#</a></h1>
-<section id="apa-itu-sagemath">
-<h2>1. Apa itu SageMath?<a class="headerlink" href="#apa-itu-sagemath" title="Permalink to this heading">#</a></h2>
-<p><strong>SageMath</strong> (sebelumnya bernama SAGE - <em>System for Algebra and Geometry Experimentation</em>) adalah sistem komputer aljabar (Computer Algebra System / CAS) yang bersifat <em>open-source</em> (gratis dan bebas dikembangkan).</p>
-<p>SageMath menggabungkan kekuatan berbagai software matematika open-source yang sudah ada (seperti NumPy, SciPy, Matplotlib, Maxima, GAP, R, dan Singular) ke dalam satu antarmuka terpadu menggunakan bahasa pemrograman <strong>Python</strong>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gauss">
+<h1>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Permalink to this heading">#</a></h1>
+<section id="pengertian">
+<h2>Pengertian<a class="headerlink" href="#pengertian" title="Permalink to this heading">#</a></h2>
+<p>Eliminasi Gauss adalah salah satu metode paling populer dan mendasar dalam aljabar linear untuk menyelesaikan Sistem Persamaan Linear (SPL).
+Metode ini dinamai dari matematikawan terkenal, Carl Friedrich Gauss. Prinsip utamanya adalah mengubah sistem persamaan linear yang rumit menjadi bentuk yang lebih sederhana (disebut Bentuk Eselon Baris), sehingga nilai variabel-variabelnya bisa ditemukan dengan mudah melalui hitung mundur (substitusi balik).
+Dalam dunia komputer, metode inilah yang menjadi dasar bagi software untuk menyelesaikan ribuan persamaan linear sekaligus.</p>
 </section>
-<hr class="docutils" />
-<section id="mengapa-menggunakan-sagemath">
-<h2>2. Mengapa Menggunakan SageMath?<a class="headerlink" href="#mengapa-menggunakan-sagemath" title="Permalink to this heading">#</a></h2>
+<section id="ide-dasar-mengubah-persamaan-menjadi-matriks">
+<h2>1. Ide Dasar: Mengubah Persamaan Menjadi Matriks<a class="headerlink" href="#ide-dasar-mengubah-persamaan-menjadi-matriks" title="Permalink to this heading">#</a></h2>
+<p>Misalkan kita punya sistem persamaan linear seperti ini:</p>
+<p><span class="math notranslate nohighlight">\(2x + y - z = 8\)</span></p>
+<p><span class="math notranslate nohighlight">\(-3x - y + 2z = -11\)</span></p>
+<p><span class="math notranslate nohighlight">\(-2x + y + 2z = -3\)</span></p>
+<p>Untuk menyelesaikannya dengan Eliminasi Gauss, kita membuang huruf variabelnya (<span class="math notranslate nohighlight">\(x, y, z\)</span>) sementara waktu dan mengambil angka-angkanya saja untuk dimasukkan ke dalam kotak yang disebut Matriks Augmentasi (Augmented Matrix):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{ccc|c}
+2 &amp; 1 &amp; -1 &amp; 8 \\
+-3 &amp; -1 &amp; 2 &amp; -11 \\
+-2 &amp; 1 &amp; 2 &amp; -3 \\
+\end{array}
+\right]\end{split}\]</div>
+</section>
+<section id="target-eliminasi-gauss-matriks-segitiga-atas">
+<h2>2. Target Eliminasi Gauss: Matriks Segitiga Atas<a class="headerlink" href="#target-eliminasi-gauss-matriks-segitiga-atas" title="Permalink to this heading">#</a></h2>
+<p>Tujuan dari Eliminasi Gauss adalah melakukan serangkaian operasi matematika pada baris-baris matriks tersebut agar elemen-elemen di bawah diagonal utama berubah menjadi nol.
+Jika area di bawah diagonal utama sudah menjadi nol semua, matriks ini disebut berbentuk Segitiga Atas (Bentuk Eselon Baris).</p>
+</section>
+<section id="langkah-langkah-operasi-baris-elemeneter-obe">
+<h2>3. Langkah-Langkah Operasi Baris Elemeneter (OBE)<a class="headerlink" href="#langkah-langkah-operasi-baris-elemeneter-obe" title="Permalink to this heading">#</a></h2>
+<p>Untuk mengubah angka di bawah diagonal menjadi nol, kita menggunakan Operasi Baris Elementer (OBE). Ada tiga aturan legal yang boleh kita lakukan pada baris matriks:</p>
+<ol class="arabic simple">
+<li><p>Menukar posisi dua baris.</p></li>
+<li><p>Mengalikan atau membagi sebuah baris dengan angka bukan nol.</p></li>
+<li><p>Menambahkan atau mengurangkan kelipatan suatu baris ke baris yang lain.</p></li>
+</ol>
+<p>Prosesnya secara urut:</p>
 <ul class="simple">
-<li><p><strong>Berbasis Python:</strong> Tidak perlu mempelajari bahasa pemrograman baru yang rumit jika sudah memahami dasar-dasar Python.</p></li>
-<li><p><strong>Alternatif Software Komersial:</strong> Menjadi kompetitor gratis dan terbuka untuk software matematika berbayar seperti <em>MATLAB, Mathematica, Maple,</em> dan <em>Magma</em>.</p></li>
-<li><p><strong>Sangat Lengkap:</strong> Mendukung berbagai cabang matematika mulai dari aljabar dasar, kalkulus, teori bilangan, kriptografi, graf, hingga linear aljabar.</p></li>
+<li><p>Langkah 1: Buat angka pertama di baris pertama kolom pertama menjadi angka <span class="math notranslate nohighlight">\(1\)</span> (disebut Pivot atau satu utama).</p></li>
+<li><p>Langkah 2: Gunakan baris pertama tersebut untuk mengubah angka-angka di bawahnya (pada kolom pertama) menjadi <span class="math notranslate nohighlight">\(0\)</span> lewat operasi pengurangan/penjumlahan baris.</p></li>
+<li><p>Langkah 3: Pindah ke baris kedua kolom kedua, jadikan angka di sana sebagai Pivot berikutnya, lalu jadikan angka di bawahnya menjadi <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Langkah 4: Lakukan terus secara diagonal ke bawah sampai terbentuk matriks segitiga atas.</p></li>
 </ul>
 </section>
-<hr class="docutils" />
-<section id="fitur-utama-sagemath">
-<h2>3. Fitur Utama SageMath<a class="headerlink" href="#fitur-utama-sagemath" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Aljabar Linear &amp; Matriks:</strong> Mampu menyelesaikan operasi matriks, mencari determinan, invers, nilai eigen, hingga Operasi Baris Elementer (OBE).</p></li>
-<li><p><strong>Kalkulus Simbolik:</strong> Menyelesaikan turunan (derivatives), integral tentu/tak tentu, limit, dan deret Taylor secara simbolik (bukan hanya numerik).</p></li>
-<li><p><strong>Visualisasi Data:</strong> Membuat grafik 2D dan 3D dengan kualitas tinggi secara mudah.</p></li>
-<li><p><strong>Teori Bilangan &amp; Kriptografi:</strong> Menyediakan fungsi tingkat lanjut untuk menguji bilangan prima, faktorisasi, dan simulasi algoritma keamanan.</p></li>
-</ol>
+<section id="tahap-akhir-substitusi-balik-back-substitution">
+<h2>4. Tahap Akhir: Substitusi Balik (Back Substitution)<a class="headerlink" href="#tahap-akhir-substitusi-balik-back-substitution" title="Permalink to this heading">#</a></h2>
+<p>Setelah bagian bawah diagonal menjadi nol, kita kembalikan lagi bentuk matriks tadi menjadi persamaan matematika biasa.
+Sebagai gambaran hasil akhir, baris paling bawah matriks akan menyisakan satu variabel saja, misalnya:</p>
+<div class="math notranslate nohighlight">
+\[0x + 0y + 1z = 2 \quad \Rightarrow \quad z = 2\]</div>
+<p>Karena nilai <span class="math notranslate nohighlight">\(z\)</span> sudah ketahuan, kita naik ke baris di atasnya untuk mencari nilai <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(y + (\text{angka} \times z) = \text{hasil}\)</span></p>
+<p>Masukkan nilai <span class="math notranslate nohighlight">\(z = 2\)</span> ke persamaan tersebut, maka nilai <span class="math notranslate nohighlight">\(y\)</span> akan didapat.Terakhir, naik lagi ke baris paling atas, masukkan nilai <span class="math notranslate nohighlight">\(y\)</span> dan <span class="math notranslate nohighlight">\(z\)</span> yang sudah ketemu untuk mendapatkan nilai <span class="math notranslate nohighlight">\(x\)</span>. Selesai!</p>
 </section>
-<hr class="docutils" />
-<section id="contoh-penggunaan-dasar-sintaks-sagemath">
-<h2>4. Contoh Penggunaan Dasar (Sintaks SageMath)<a class="headerlink" href="#contoh-penggunaan-dasar-sintaks-sagemath" title="Permalink to this heading">#</a></h2>
-<p>Berikut adalah beberapa contoh kode sederhana bagaimana SageMath menyelesaikan persoalan matematika:</p>
-<section id="a-menghitung-turunan-dan-integral-kalkulus">
-<h3>a. Menghitung Turunan dan Integral (Kalkulus)<a class="headerlink" href="#a-menghitung-turunan-dan-integral-kalkulus" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mendefinisikan variabel x</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-
-<span class="c1"># Menghitung turunan dari f(x) = sin(x^2)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Turunan:&quot;</span><span class="p">,</span> <span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
-
-<span class="c1"># Menghitung integral dari g(x) = 3x^2</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Integral:&quot;</span><span class="p">,</span> <span class="n">integral</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
-
-</pre></div>
+<section id="kelebihan-eliminasi-gauss">
+<h2>5. Kelebihan Eliminasi Gauss<a class="headerlink" href="#kelebihan-eliminasi-gauss" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sangat Terstruktur: Langkah-langkahnya pasti dan mekanis, sehingga sangat mudah diubah menjadi kode program komputer (algoritma).</p></li>
+<li><p>Efisien untuk Komputer: Dibandingkan rumus manual seperti aturan Cramer (yang pakai determinan), Eliminasi Gauss jauh lebih cepat diselesaikan oleh prosesor komputer ketika jumlah persamaannya mencapai ratusan atau ribuan.</p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -424,7 +442,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./persamaan-linier"
+            path: "./eliminasi-gauss"
         },
         predefinedOutput: true
     }
@@ -442,20 +460,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="geogebra.html"
+       href="../persamaan-linier/sage.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Membuat Persamaan Linear dengan GeoGebra</p>
+        <p class="prev-next-title">SageMath</p>
       </div>
     </a>
     <a class="right-next"
-       href="../eliminasi-gauss/index.html"
+       href="tugas4.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Eliminasi Gauss</p>
+        <p class="prev-next-title">Operasi Baris Elementer (OBE)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -475,13 +493,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-sagemath">1. Apa itu SageMath?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-menggunakan-sagemath">2. Mengapa Menggunakan SageMath?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-utama-sagemath">3. Fitur Utama SageMath</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penggunaan-dasar-sintaks-sagemath">4. Contoh Penggunaan Dasar (Sintaks SageMath)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-menghitung-turunan-dan-integral-kalkulus">a. Menghitung Turunan dan Integral (Kalkulus)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ide-dasar-mengubah-persamaan-menjadi-matriks">1. Ide Dasar: Mengubah Persamaan Menjadi Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#target-eliminasi-gauss-matriks-segitiga-atas">2. Target Eliminasi Gauss: Matriks Segitiga Atas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-operasi-baris-elemeneter-obe">3. Langkah-Langkah Operasi Baris Elemeneter (OBE)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahap-akhir-substitusi-balik-back-substitution">4. Tahap Akhir: Substitusi Balik (Back Substitution)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-eliminasi-gauss">5. Kelebihan Eliminasi Gauss</a></li>
 </ul>
   </nav></div>
 

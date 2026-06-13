@@ -1,6 +1,6 @@
-# Tugas 4
+# Operasi Baris Elementer (OBE)
 
-## Operasi Baris Elementer (OBE)
+## pengertian
 
 Eliminasi Gauss adalah metode untuk menyelesaikan Sistem Persamaan Linear (SPL) dengan mengubah matriks augmentasi (gabungan koefisien dan konstanta) menjadi **Matriks Eselon Baris**. Target utama kita adalah membentuk *leading 1* (utama 1) secara diagonal dan membuat elemen di bawahnya menjadi 0.
 
