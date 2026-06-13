@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Persamaan Linear &#8212; Tugas Komputasi Aljabar Linear</title>
+    <title>Tranformasi Linear &#8212; Tugas Komputasi Aljabar Linear</title>
   
   
   
@@ -64,11 +64,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'persamaan-linier/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'transformasi-linear/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Membuat Persamaan Linear dengan GeoGebra" href="geogebra.html" />
-    <link rel="prev" title="Komputasi Aljabar Linear" href="../kal.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -131,6 +129,8 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -169,11 +169,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../kal.html">Komputasi Aljabar Linear</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Persamaan Linear</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="geogebra.html">Membuat Persamaan Linear dengan GeoGebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sage.html">SageMath</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../persamaan-linier/index.html">Persamaan Linear</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../persamaan-linier/geogebra.html">Membuat Persamaan Linear dengan GeoGebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../persamaan-linier/sage.html">SageMath</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../eliminasi-gauss/index.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -252,7 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/persamaan-linier/index.md" target="_blank"
+      <li><a href="../_sources/transformasi-linear/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Persamaan Linear</h1>
+    <h1>Tranformasi Linear</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -347,14 +347,17 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-umum-persamaan-linear">1. Bentuk Umum Persamaan Linear</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#satu-variabel">Satu Variabel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dua-variabel">Dua Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dua-syarat-mutlak-transformasi-linear">1. Dua Syarat Mutlak Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-erat-dengan-matriks">2. Hubungan Erat dengan Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-transformasi-linear-beserta-contoh-matriksnya">3. Jenis-Jenis Transformasi Linear (Beserta Contoh Matriksnya)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-rotasi-perputaran">a. Rotasi (Perputaran)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-scaling-perubahan-skala-ukuran">b. Scaling (Perubahan Skala/Ukuran)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-refleksi-pencerminan">c. Refleksi (Pencerminan)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-shearing-pergeseran-kemiringan">c. Shearing (Pergeseran Kemiringan)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linear-spl">Sistem Persamaan Linear (SPL)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menyelesaikan-sistem-persamaan-linear">3. Cara Menyelesaikan Sistem Persamaan Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-persamaan-linear-penting">4. Mengapa Persamaan Linear Penting?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-dan-range">4. Kernel dan Range</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penerapan-di-dunia-nyata">5. Penerapan di Dunia Nyata</a></li>
 </ul>
             </nav>
         </div>
@@ -366,75 +369,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="persamaan-linear">
-<h1>Persamaan Linear<a class="headerlink" href="#persamaan-linear" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tranformasi-linear">
+<h1>Tranformasi Linear<a class="headerlink" href="#tranformasi-linear" title="Permalink to this heading">#</a></h1>
 <section id="pengertian">
 <h2>Pengertian<a class="headerlink" href="#pengertian" title="Permalink to this heading">#</a></h2>
-<p>Persamaan Linear adalah sebuah persamaan matematika yang jika digambarkan ke dalam grafik, akan membentuk garis lurus.Kata kuncinya adalah “linear”, yang berarti pangkat tertinggi dari variabel (seperti <span class="math notranslate nohighlight">\(x\)</span> atau <span class="math notranslate nohighlight">\(y\)</span>) di dalam persamaan tersebut selalu satu. Jadi, tidak ada variabel yang dikuadratkan (<span class="math notranslate nohighlight">\(x^2\)</span>), diakar (<span class="math notranslate nohighlight">\(\sqrt{x}\)</span>), atau saling dikalikan (<span class="math notranslate nohighlight">\(xy\)</span>).</p>
+<p>Transformasi Linear adalah sebuah fungsi atau pemetaan matematika yang memindahkan/mengubah suatu vektor dari satu ruang vektor (domain) ke ruang vektor lainnya (kodomain), dengan syarat perubahan tersebut harus menjaga sifat garis lurus dan kesebandingan.Secara visual, bayangkan kamu memiliki sebuah gambar atau grafik di atas kertas karet. Jika kamu menarik, merenggangkan, memutar, atau membalik kertas tersebut tanpa membuatnya melengkung, robek, atau bergeser dari titik pusat <span class="math notranslate nohighlight">\((0,0)\)</span>, maka kamu baru saja melakukan Transformasi Linear.</p>
 </section>
-<section id="bentuk-umum-persamaan-linear">
-<h2>1. Bentuk Umum Persamaan Linear<a class="headerlink" href="#bentuk-umum-persamaan-linear" title="Permalink to this heading">#</a></h2>
-<p>Tergantung pada jumlah variabelnya, persamaan linear biasanya ditulis seperti ini:</p>
-<section id="satu-variabel">
-<h3>Satu Variabel<a class="headerlink" href="#satu-variabel" title="Permalink to this heading">#</a></h3>
-<p>Hanya ada satu huruf yang tidak diketahui nilainya.</p>
-<div class="math notranslate nohighlight">
-\[ax + b = 0\]</div>
-<ul class="simple">
-<li><p>Contoh: <span class="math notranslate nohighlight">\(2x - 6 = 0\)</span></p></li>
-<li><p>Jika kita cari nilai <span class="math notranslate nohighlight">\(x\)</span>, maka <span class="math notranslate nohighlight">\(2x = 6\)</span>, sehingga <span class="math notranslate nohighlight">\(x = 3\)</span>.</p></li>
-</ul>
-</section>
-<section id="dua-variabel">
-<h3>Dua Variabel<a class="headerlink" href="#dua-variabel" title="Permalink to this heading">#</a></h3>
-<p>Memiliki dua huruf variabel (biasanya <span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(y\)</span>). Bentuk ini sangat sering digunakan untuk membuat grafik fungsi di koordinat Kartesius.</p>
-<div class="math notranslate nohighlight">
-\[y = mx + c\]</div>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(m\)</span> adalah gradien atau kemiringan garis.</p></li>
-<li><p><span class="math notranslate nohighlight">\(c\)</span> adalah titik potong pada sumbu <span class="math notranslate nohighlight">\(y\)</span> (di mana garis menabrak garis vertikal <span class="math notranslate nohighlight">\(y\)</span>).</p></li>
-<li><p>Contoh: <span class="math notranslate nohighlight">\(y = 2x + 1\)</span></p></li>
-</ul>
-</section>
-</section>
-<section id="sistem-persamaan-linear-spl">
-<h2>Sistem Persamaan Linear (SPL)<a class="headerlink" href="#sistem-persamaan-linear-spl" title="Permalink to this heading">#</a></h2>
-<p>Sering kali kita tidak hanya menghadapi satu persamaan, melainkan beberapa persamaan sekaligus yang saling berhubungan. Ini disebut Sistem Persamaan Linear.
-Tujuan utama dari SPL adalah mencari satu nilai untuk variabel-variabelnya yang bisa memuaskan semua persamaan yang ada.</p>
-<ul class="simple">
-<li><p>Sistem Persamaan Linear Dua Variabel (SPLDV):</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[2x + y = 5\]</div>
-<div class="math notranslate nohighlight">
-\[x - y = 1\]</div>
-<p>Untuk menyelesaikan ini, kita mencari nilai <span class="math notranslate nohighlight">\(x\)</span> dan <span class="math notranslate nohighlight">\(y\)</span> yang cocok untuk kedua persamaan di atas (dalam contoh ini, <span class="math notranslate nohighlight">\(x = 2\)</span> dan <span class="math notranslate nohighlight">\(y = 1\)</span>).</p>
-<ul class="simple">
-<li><p>Sistem Persamaan Linear Tiga Variabel (SPLTV):
-Memiliki tiga variabel (misal <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, dan <span class="math notranslate nohighlight">\(z\)</span>). Di dunia komputer dan aljabar linear, sistem ini bisa berkembang menjadi puluhan, ratusan, bahkan jutaan variabel.</p></li>
-</ul>
-</section>
-<section id="cara-menyelesaikan-sistem-persamaan-linear">
-<h2>3. Cara Menyelesaikan Sistem Persamaan Linear<a class="headerlink" href="#cara-menyelesaikan-sistem-persamaan-linear" title="Permalink to this heading">#</a></h2>
-<p>Untuk mencari nilai variabel yang belum diketahui, ada beberapa metode dasar yang biasa digunakan:</p>
+<section id="dua-syarat-mutlak-transformasi-linear">
+<h2>1. Dua Syarat Mutlak Transformasi Linear<a class="headerlink" href="#dua-syarat-mutlak-transformasi-linear" title="Permalink to this heading">#</a></h2>
+<p>Sebuah fungsi <span class="math notranslate nohighlight">\(T\)</span> (misalkan memetakan vektor <span class="math notranslate nohighlight">\(u\)</span> dan <span class="math notranslate nohighlight">\(v\)</span>) disebut sebagai transformasi linear jika dan hanya jika memenuhi dua aturan berikut:</p>
 <ol class="arabic simple">
-<li><p>Metode Substitusi: Mengubah satu persamaan menjadi bentuk tunggal (misal <span class="math notranslate nohighlight">\(x = ...\)</span>), lalu memasukkannya ke persamaan lain.</p></li>
-<li><p>Metode Eliminasi: Menghilangkan salah satu variabel dengan cara menjumlahkan atau mengurangkan kedua persamaan.</p></li>
-<li><p>Metode Grafik: Menggambar kedua garis persamaan pada grafik, lalu melihat di titik mana kedua garis tersebut saling berpotongan. Titik potong itulah jawabannya.</p></li>
-<li><p>Metode Matriks (Aljabar Linear Komputasi): Untuk persamaan yang sangat banyak, komputer akan menyusun angka-angkanya menjadi sebuah matriks (kotak angka) lalu menyelesaikannya menggunakan algoritma seperti Eliminasi Gauss.</p></li>
+<li><p>Aditif (Penjumlahan):</p></li>
 </ol>
+<div class="math notranslate nohighlight">
+\[T(u + v) = T(u) + T(v)\]</div>
+<p>Artinya, kamu boleh menjumlahkan dua vektor terlebih dahulu baru ditransformasikan, atau mentransformasikan masing-masing vektor baru dijumlahkan. Hasilnya harus sama.</p>
+<ol class="arabic simple" start="2">
+<li><p>Homogen (Perkalian Skalar):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[T(c \cdot u) = c \cdot T(u)\]</div>
+<p>Di mana <span class="math notranslate nohighlight">\(c\)</span> adalah sebuah angka (skalar). Artinya, jika vektor input dikalikan 2, maka vektor hasil transformasinya juga harus menjadi 2 kali lebih panjang. Transformasi linear wajib memetakan vektor nol ke vektor nol (<span class="math notranslate nohighlight">\(T(0) = 0\)</span>). Jadi, titik pusat <span class="math notranslate nohighlight">\((0,0)\)</span> tidak boleh bergeser posisi.</p>
 </section>
-<section id="mengapa-persamaan-linear-penting">
-<h2>4. Mengapa Persamaan Linear Penting?<a class="headerlink" href="#mengapa-persamaan-linear-penting" title="Permalink to this heading">#</a></h2>
-<p>Meskipun terlihat sederhana, persamaan linear adalah fondasi dari banyak teknologi dan hitungan di dunia nyata:</p>
+<section id="hubungan-erat-dengan-matriks">
+<h2>2. Hubungan Erat dengan Matriks<a class="headerlink" href="#hubungan-erat-dengan-matriks" title="Permalink to this heading">#</a></h2>
+<p>Di dalam komputer, kita tidak menuliskan rumus fungsi yang panjang untuk melakukan transformasi linear. Kita menggunakan Matriks.Setiap transformasi linear dari ruang dimensi <span class="math notranslate nohighlight">\(n\)</span> ke dimensi <span class="math notranslate nohighlight">\(m\)</span> selalu bisa diwakili oleh sebuah perkalian matriks tunggal. Hubungannya ditulis seperti ini:</p>
+<div class="math notranslate nohighlight">
+\[T(x) = A \cdot x\]</div>
+<p>Di mana <span class="math notranslate nohighlight">\(A\)</span> adalah Matriks Transformasi dan <span class="math notranslate nohighlight">\(x\)</span> adalah vektor koordinat awal.</p>
+</section>
+<section id="jenis-jenis-transformasi-linear-beserta-contoh-matriksnya">
+<h2>3. Jenis-Jenis Transformasi Linear (Beserta Contoh Matriksnya)<a class="headerlink" href="#jenis-jenis-transformasi-linear-beserta-contoh-matriksnya" title="Permalink to this heading">#</a></h2>
+<p>Berikut adalah beberapa operasi grafik 2D yang paling sering digunakan dalam pemrograman game atau grafika komputer:</p>
+<section id="a-rotasi-perputaran">
+<h3>a. Rotasi (Perputaran)<a class="headerlink" href="#a-rotasi-perputaran" title="Permalink to this heading">#</a></h3>
+<p>Memutar vektor berlawanan arah jarum jam sebesar sudut <span class="math notranslate nohighlight">\(\theta\)</span> dengan titik pusat <span class="math notranslate nohighlight">\((0,0)\)</span>.</p>
 <ul class="simple">
-<li><p>Prediksi Bisnis: Menghitung keuntungan berdasarkan jumlah barang yang terjual jika harga per barangnya konstan.</p></li>
-<li><p>Ilmu Komputer &amp; AI: Algoritma kecerdasan buatan (Machine Learning) seperti Linear Regression menggunakan prinsip persamaan linear untuk memprediksi tren data (misalnya memprediksi harga rumah berdasarkan luas tanah).</p></li>
-<li><p>Fisika dan Teknik: Menghitung kecepatan konstan, arus listrik dalam rangkaian, atau distribusi beban pada jembatan.</p></li>
+<li><p>Matriks Transformasi:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{bmatrix}\end{split}\]</div>
+</section>
+<section id="b-scaling-perubahan-skala-ukuran">
+<h3>b. Scaling (Perubahan Skala/Ukuran)<a class="headerlink" href="#b-scaling-perubahan-skala-ukuran" title="Permalink to this heading">#</a></h3>
+<p>Memperbesar atau memperkecil ukuran objek. Misalkan kita ingin memperbesar sumbu <span class="math notranslate nohighlight">\(x\)</span> sebanyak <span class="math notranslate nohighlight">\(k_x\)</span> kali dan sumbu <span class="math notranslate nohighlight">\(y\)</span> sebanyak <span class="math notranslate nohighlight">\(k_y\)</span> kali.</p>
+<ul class="simple">
+<li><p>Matriks Transformasi:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} k_x &amp; 0 \\ 0 &amp; k_y \end{bmatrix}\end{split}\]</div>
+</section>
+<section id="c-refleksi-pencerminan">
+<h3>c. Refleksi (Pencerminan)<a class="headerlink" href="#c-refleksi-pencerminan" title="Permalink to this heading">#</a></h3>
+<p>Mencerminkan objek terhadap suatu garis. Contohnya, mencerminkan objek terhadap sumbu <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<ul class="simple">
+<li><p>Matriks Transformasi:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}\end{split}\]</div>
+</section>
+<section id="c-shearing-pergeseran-kemiringan">
+<h3>c. Shearing (Pergeseran Kemiringan)<a class="headerlink" href="#c-shearing-pergeseran-kemiringan" title="Permalink to this heading">#</a></h3>
+<p>Menggeser satu sumbu secara konstan sementara sumbu lainnya tetap, sehingga objek terlihat miring (seperti bentuk jajaran genjang).</p>
+<ul class="simple">
+<li><p>Matriks Transformasi (Shear horizontal):</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix} 1 &amp; k \\ 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
+</section>
+</section>
+<section id="kernel-dan-range">
+<h2>4. Kernel dan Range<a class="headerlink" href="#kernel-dan-range" title="Permalink to this heading">#</a></h2>
+<p>Saat mempelajari transformasi linear, ada dua istilah ruang yang sangat penting untuk dipahami:</p>
+<ul class="simple">
+<li><p>Kernel (atau Null Space): Kumpulan semua vektor asal (<span class="math notranslate nohighlight">\(x\)</span>) yang setelah ditransformasikan oleh <span class="math notranslate nohighlight">\(T\)</span>, hasilnya amblas menjadi vektor nol (<span class="math notranslate nohighlight">\(0\)</span>).</p></li>
+<li><p>Range (atau Image): Kumpulan semua hasil vektor yang mungkin dicapai setelah vektor-vektor asal ditransformasikan oleh <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
 </ul>
 </section>
-<div class="toctree-wrapper compound">
-</div>
+<section id="penerapan-di-dunia-nyata">
+<h2>5. Penerapan di Dunia Nyata<a class="headerlink" href="#penerapan-di-dunia-nyata" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Grafika Komputer &amp; Game 3D: Ketika kamu menggerakkan kamera di dalam game (maju, mundur, menoleh), komputer sedang mengalikan semua koordinat objek 3D di dunia game tersebut dengan matriks transformasi linear agar posisinya berubah di layar monitor secara real-time.</p></li>
+<li><p>Pengolahan Citra (Image Processing): Fitur crop, resize, rotate, hingga efek filter miring pada aplikasi edit foto memanfaatkan perkalian matriks transformasi linear pada piksel gambar.</p></li>
+<li><p>Kecerdasan Buatan (Data Reduction): Teknik seperti PCA (Principal Component Analysis) menggunakan transformasi linear untuk memutar dan memproyeksikan data berdimensi tinggi (ribuan kolom) ke dimensi yang lebih kecil agar lebih mudah diproses oleh komputer tanpa kehilangan informasi penting.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -450,7 +469,7 @@ Memiliki tiga variabel (misal <span class="math notranslate nohighlight">\(x\)</
         },
         kernelOptions: {
             name: "python3",
-            path: "./persamaan-linier"
+            path: "./transformasi-linear"
         },
         predefinedOutput: true
     }
@@ -467,24 +486,6 @@ Memiliki tiga variabel (misal <span class="math notranslate nohighlight">\(x\)</
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../kal.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Komputasi Aljabar Linear</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="geogebra.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Membuat Persamaan Linear dengan GeoGebra</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -502,14 +503,17 @@ Memiliki tiga variabel (misal <span class="math notranslate nohighlight">\(x\)</
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bentuk-umum-persamaan-linear">1. Bentuk Umum Persamaan Linear</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#satu-variabel">Satu Variabel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dua-variabel">Dua Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dua-syarat-mutlak-transformasi-linear">1. Dua Syarat Mutlak Transformasi Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hubungan-erat-dengan-matriks">2. Hubungan Erat dengan Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-transformasi-linear-beserta-contoh-matriksnya">3. Jenis-Jenis Transformasi Linear (Beserta Contoh Matriksnya)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-rotasi-perputaran">a. Rotasi (Perputaran)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-scaling-perubahan-skala-ukuran">b. Scaling (Perubahan Skala/Ukuran)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-refleksi-pencerminan">c. Refleksi (Pencerminan)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-shearing-pergeseran-kemiringan">c. Shearing (Pergeseran Kemiringan)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-persamaan-linear-spl">Sistem Persamaan Linear (SPL)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menyelesaikan-sistem-persamaan-linear">3. Cara Menyelesaikan Sistem Persamaan Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-persamaan-linear-penting">4. Mengapa Persamaan Linear Penting?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-dan-range">4. Kernel dan Range</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penerapan-di-dunia-nyata">5. Penerapan di Dunia Nyata</a></li>
 </ul>
   </nav></div>
 
