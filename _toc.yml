@@ -1,6 +1,7 @@
 format: jb-book
 root: index
 chapters:
+  - file: kal
   - file: geogebra
   - file: sage
   - file: tugas4
