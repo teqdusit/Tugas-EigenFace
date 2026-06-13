@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Membuat Persamaan Linear dengan GeoGebra &#8212; Tugas Komputasi Aljabar Linear</title>
+    <title>Determinan &#8212; Tugas Komputasi Aljabar Linear</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'persamaan-linier/geogebra';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'determinan/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SageMath" href="sage.html" />
-    <link rel="prev" title="Persamaan Linear" href="index.html" />
+    <link rel="next" title="Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi" href="../tugas-tranformasi.html" />
+    <link rel="prev" title="Tugas" href="../eliminasi-gauss/tugas5.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,9 +171,9 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../kal.html">Komputasi Aljabar Linear</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Persamaan Linear</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Membuat Persamaan Linear dengan GeoGebra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sage.html">SageMath</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../persamaan-linier/index.html">Persamaan Linear</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../persamaan-linier/geogebra.html">Membuat Persamaan Linear dengan GeoGebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../persamaan-linier/sage.html">SageMath</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../eliminasi-gauss/index.html">Eliminasi Gauss</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -185,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../determinan/index.html">Determinan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Determinan</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../tugas-tranformasi.html">Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi</a></li>
@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/persamaan-linier/geogebra.md" target="_blank"
+      <li><a href="../_sources/determinan/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +329,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Membuat Persamaan Linear dengan GeoGebra</h1>
+    <h1>Determinan</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -339,20 +339,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-dasar-persamaan-linear">1. Konsep Dasar Persamaan Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-persamaan-linear-di-geogebra">2. Cara Membuat Persamaan Linear di GeoGebra</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-1-menginput-persamaan-langsung-aljabar">Cara 1: Menginput Persamaan Langsung (Aljabar)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-2-menggunakan-dua-titik-geometri">Cara 2: Menggunakan Dua Titik (Geometri)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-3-menggunakan-slider-eksperimen-interaktif">Cara 3: Menggunakan Slider (Eksperimen Interaktif)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arti-geometris-apa-yang-diwakili-oleh-determinan">1. Arti Geometris: Apa yang Diwakili oleh Determinan?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menghitung-determinan">2. Cara Menghitung Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-2-times-2">Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-3-times-3-metode-sarrus">Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span> (Metode Sarrus)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ukuran-besar-4-times-4-ke-atas">Matriks Ukuran Besar (<span class="math notranslate nohighlight">\(4 \times 4\)</span> ke atas)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-tambahan-yang-berguna">3. Fitur Tambahan yang Berguna</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-persamaan-linier">4. membuat persamaan linier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-spldv">Visualisasi SPLDV</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan">Persamaan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafik">Grafik</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-penting-determinan">3. Sifat-Sifat Penting Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-determinan-sangat-penting">4. Mengapa Determinan Sangat Penting?</a></li>
 </ul>
             </nav>
         </div>
@@ -364,127 +360,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="membuat-persamaan-linear-dengan-geogebra">
-<h1>Membuat Persamaan Linear dengan GeoGebra<a class="headerlink" href="#membuat-persamaan-linear-dengan-geogebra" title="Permalink to this heading">#</a></h1>
-<section id="konsep-dasar-persamaan-linear">
-<h2>1. Konsep Dasar Persamaan Linear<a class="headerlink" href="#konsep-dasar-persamaan-linear" title="Permalink to this heading">#</a></h2>
-<p>Persamaan linear dua variabel umumnya ditulis dalam bentuk:
-$<span class="math notranslate nohighlight">\(y = mx + c\)</span><span class="math notranslate nohighlight">\(
-Atau bentuk implisit:
-\)</span><span class="math notranslate nohighlight">\(ax + by = c\)</span>$</p>
-<ul class="simple">
-<li><p><strong><span class="math notranslate nohighlight">\(m\)</span></strong> adalah <strong>gradien</strong> (kemiringan garis).</p></li>
-<li><p><strong><span class="math notranslate nohighlight">\(c\)</span></strong> adalah <strong>titik potong</strong> garis dengan sumbu-Y (intercept-Y).</p></li>
-</ul>
-<p>GeoGebra adalah alat yang sangat kuat untuk memvisualisasikan bagaimana perubahan nilai <span class="math notranslate nohighlight">\(m\)</span> dan <span class="math notranslate nohighlight">\(c\)</span> akan mempengaruhi arah dan posisi garis secara langsung (<em>real-time</em>).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="determinan">
+<h1>Determinan<a class="headerlink" href="#determinan" title="Permalink to this heading">#</a></h1>
+<section id="pengertian">
+<h2>pengertian<a class="headerlink" href="#pengertian" title="Permalink to this heading">#</a></h2>
+<p>Determinan adalah sebuah nilai numerik (angka tunggal) yang hanya bisa dihitung dari sebuah matriks persegi (matriks yang jumlah baris dan kolomnya sama, seperti <span class="math notranslate nohighlight">\(2 \times 2\)</span>, <span class="math notranslate nohighlight">\(3 \times 3\)</span>, dst.).Jika matriks adalah sebuah kumpulan angka yang menyusun suatu transformasi ruang, maka determinan adalah satu angka yang menunjukkan bagaimana transformasi tersebut mengubah “skala” atau “ukuran” dari ruang tersebut.Notasi determinan untuk matriks <span class="math notranslate nohighlight">\(A\)</span> biasanya ditulis sebagai <span class="math notranslate nohighlight">\(\text{det}(A)\)</span> atau <span class="math notranslate nohighlight">\(|A|\)</span>.</p>
 </section>
-<hr class="docutils" />
-<section id="cara-membuat-persamaan-linear-di-geogebra">
-<h2>2. Cara Membuat Persamaan Linear di GeoGebra<a class="headerlink" href="#cara-membuat-persamaan-linear-di-geogebra" title="Permalink to this heading">#</a></h2>
-<p>Ada tiga cara utama yang sering digunakan di GeoGebra untuk membuat garis linear:</p>
-<section id="cara-1-menginput-persamaan-langsung-aljabar">
-<h3>Cara 1: Menginput Persamaan Langsung (Aljabar)<a class="headerlink" href="#cara-1-menginput-persamaan-langsung-aljabar" title="Permalink to this heading">#</a></h3>
-<p>Jika Anda sudah memiliki persamaannya, Anda tinggal mengetiknya di bilah masukan (<em>Input Bar</em>).</p>
-<ol class="arabic simple">
-<li><p>Buka GeoGebra (Graphing Calculator atau Classic).</p></li>
-<li><p>Pada kolom <strong>Input</strong>, ketik persamaannya. Contoh: <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">2x</span> <span class="pre">+</span> <span class="pre">3</span></code> lalu tekan <strong>Enter</strong>.</p></li>
-<li><p>GeoGebra akan langsung menggambar garis tersebut di bidang Kartesius dan memberi nama garis tersebut (misalnya garis <span class="math notranslate nohighlight">\(f\)</span>).</p></li>
-</ol>
-</section>
-<section id="cara-2-menggunakan-dua-titik-geometri">
-<h3>Cara 2: Menggunakan Dua Titik (Geometri)<a class="headerlink" href="#cara-2-menggunakan-dua-titik-geometri" title="Permalink to this heading">#</a></h3>
-<p>Jika Anda hanya mengetahui dua titik yang dilewati garis:</p>
-<ol class="arabic simple">
-<li><p>Pilih alat <strong>Point</strong> (Titik) pada toolbar, lalu klik di dua tempat berbeda pada grafik untuk membuat titik <span class="math notranslate nohighlight">\(A\)</span> dan <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<section id="arti-geometris-apa-yang-diwakili-oleh-determinan">
+<h2>1. Arti Geometris: Apa yang Diwakili oleh Determinan?<a class="headerlink" href="#arti-geometris-apa-yang-diwakili-oleh-determinan" title="Permalink to this heading">#</a></h2>
+<p>Sebelum masuk ke rumus, bayangkan determinan secara visual:</p>
 <ul class="simple">
-<li><p><em>Alternatif:</em> Ketik langsung di kolom input: <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">(1,</span> <span class="pre">2)</span></code> dan <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">=</span> <span class="pre">(3,</span> <span class="pre">4)</span></code>.</p></li>
+<li><p>Pada matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>, nilai determinan mewakili luas daerah (paralelogram) yang dibentuk oleh vektor-vektor kolom matriks tersebut.</p></li>
+<li><p>Pada matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span>, nilai determinan mewakili volume ruang (paralelepipedum) yang dibentuk oleh vektor-vektornya.</p></li>
+<li><p>Jika <span class="math notranslate nohighlight">\(\text{det}(A) = 2\)</span>, artinya transformasi matriks tersebut membuat luas/volume objek menjadi 2 kali lipat lebih besar.</p></li>
+<li><p>Jika <span class="math notranslate nohighlight">\(\text{det}(A) = 0\)</span>, artinya ruang tersebut “tertekan” hingga gepeng (luas atau volumenya menjadi nol). Ini tanda bahwa matriks tersebut tidak memiliki kebalikan (invers).</p></li>
 </ul>
-</li>
-<li><p>Pilih alat <strong>Line</strong> pada toolbar, lalu klik titik <span class="math notranslate nohighlight">\(A\)</span> kemudian klik titik <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
-<li><p>GeoGebra akan otomatis memunculkan persamaan linear dari garis tersebut di panel Aljabar sebelah kiri.</p></li>
-</ol>
 </section>
-<section id="cara-3-menggunakan-slider-eksperimen-interaktif">
-<h3>Cara 3: Menggunakan Slider (Eksperimen Interaktif)<a class="headerlink" href="#cara-3-menggunakan-slider-eksperimen-interaktif" title="Permalink to this heading">#</a></h3>
-<p>Ini adalah cara terbaik untuk memahami perilaku grafik secara dinamis:</p>
-<ol class="arabic simple">
-<li><p>Ketik <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">1</span></code> di kolom Input (Ini akan membuat slider untuk gradien).</p></li>
-<li><p>Ketik <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">2</span></code> di kolom Input (Ini akan membuat slider untuk titik potong Y).</p></li>
-<li><p>Ketik persamaan umum: <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">m*x</span> <span class="pre">+</span> <span class="pre">c</span></code> lalu tekan <strong>Enter</strong>.</p></li>
-<li><p>Geser tombol slider <span class="math notranslate nohighlight">\(m\)</span> dan <span class="math notranslate nohighlight">\(c\)</span> yang muncul di layar. Perhatikan bagaimana grafik bergerak:</p>
+<section id="cara-menghitung-determinan">
+<h2>2. Cara Menghitung Determinan<a class="headerlink" href="#cara-menghitung-determinan" title="Permalink to this heading">#</a></h2>
+<p>Cara menghitung determinan berbeda-beda tergantung pada ukuran matriksnya.</p>
+<section id="matriks-2-times-2">
+<h3>Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span><a class="headerlink" href="#matriks-2-times-2" title="Permalink to this heading">#</a></h3>
+<p>Ini adalah bentuk yang paling sederhana. Cukup kali silang diagonal utama lalu kurangi dengan perkalian diagonal sekunder.</p>
+<p>Jika <span class="math notranslate nohighlight">\(A = \begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}\)</span>, maka:</p>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = (a \times d) - (b \times c)\]</div>
 <ul class="simple">
-<li><p>Jika <span class="math notranslate nohighlight">\(m\)</span> diperbesar, garis menjadi lebih tegak.</p></li>
-<li><p>Jika <span class="math notranslate nohighlight">\(m\)</span> negatif, garis miring ke kiri bawah.</p></li>
-<li><p>Jika <span class="math notranslate nohighlight">\(c\)</span> diubah, garis akan bergeser naik atau turun.</p></li>
+<li><p>Contoh: <span class="math notranslate nohighlight">\(A = \begin{bmatrix} 3 &amp; 2 \\ 1 &amp; 4 \end{bmatrix}\)</span></p></li>
 </ul>
-</li>
+<div class="math notranslate nohighlight">
+\[\text{det}(A) = (3 \times 4) - (2 \times 1) = 12 - 2 = 10\]</div>
+</section>
+<section id="matriks-3-times-3-metode-sarrus">
+<h3>Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span> (Metode Sarrus)<a class="headerlink" href="#matriks-3-times-3-metode-sarrus" title="Permalink to this heading">#</a></h3>
+<p>Untuk matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span>, metode yang paling sering digunakan secara manual adalah Metode Sarrus. Caranya adalah dengan menuliskan kembali dua kolom pertama di sebelah kanan matriks, lalu menjumlahkan hasil kali diagonal yang mengarah ke kanan bawah dan menguranginya dengan hasil kali diagonal yang mengarah ke kanan atas.</p>
+</section>
+<section id="matriks-ukuran-besar-4-times-4-ke-atas">
+<h3>Matriks Ukuran Besar (<span class="math notranslate nohighlight">\(4 \times 4\)</span> ke atas)<a class="headerlink" href="#matriks-ukuran-besar-4-times-4-ke-atas" title="Permalink to this heading">#</a></h3>
+<p>Metode Sarrus tidak bisa digunakan untuk matriks berukuran <span class="math notranslate nohighlight">\(4 \times 4\)</span> atau lebih besar. Untuk matriks besar, kita menggunakan metode:</p>
+<ol class="arabic simple">
+<li><p>Ekspansi Kofaktor (Laplace): Memecah matriks besar menjadi matriks-matriks kecil secara rekursif.</p></li>
+<li><p>Eliminasi Gauss: Mengubah matriks menjadi matriks segitiga atas melalui OBE. Jika matriks sudah menjadi segitiga atas, nilai determinannya sangat mudah dicari, yaitu cukup mengalikan semua angka yang ada di diagonal utamanya. Metode inilah yang dipakai oleh komputer karena jauh lebih cepat.</p></li>
 </ol>
 </section>
 </section>
-<hr class="docutils" />
-<section id="fitur-tambahan-yang-berguna">
-<h2>3. Fitur Tambahan yang Berguna<a class="headerlink" href="#fitur-tambahan-yang-berguna" title="Permalink to this heading">#</a></h2>
-<p>Setelah garis terbentuk, Anda bisa menggunakan perintah-perintah berikut di kolom Input untuk menganalisis grafik:</p>
+<section id="sifat-sifat-penting-determinan">
+<h2>3. Sifat-Sifat Penting Determinan<a class="headerlink" href="#sifat-sifat-penting-determinan" title="Permalink to this heading">#</a></h2>
+<p>Memahami sifat determinan akan sangat membantu mempermudah perhitungan tanpa harus menghitung baris demi baris:</p>
 <ul class="simple">
-<li><p><strong>Mencari Titik Potong Sumbu (Intercepts):</strong>
-Ketik <code class="docutils literal notranslate"><span class="pre">Intersect(f,</span> <span class="pre">SumbuY)</span></code> atau cukup gunakan alat <em>Intersect</em> pada toolbar lalu klik garis dan sumbu X/Y untuk melihat titik potongnya secara presisi.</p></li>
-<li><p><strong>Menampilkan Nilai Kemiringan (Gradien):</strong>
-Ketik <code class="docutils literal notranslate"><span class="pre">Slope(f)</span></code> atau pilih alat <em>Slope</em> dari toolbar lalu klik pada garis. GeoGebra akan menampilkan segitiga kemiringan beserta nilai <span class="math notranslate nohighlight">\(m\)</span>-nya pada grafik.</p></li>
+<li><p>Matriks Identitas: Determinan dari matriks identitas (<span class="math notranslate nohighlight">\(I\)</span>) selalu sama dengan <span class="math notranslate nohighlight">\(1\)</span>.</p></li>
+<li><p>Transpos Matriks: Nilai determinan dari matriks yang dibalik baris dan kolomnya tetap sama: <span class="math notranslate nohighlight">\(\text{det}(A^T) = \text{det}(A)\)</span>.</p></li>
+<li><p>Perkalian Matriks: <span class="math notranslate nohighlight">\(\text{det}(A \times B) = \text{det}(A) \times \text{det}(B)\)</span>.</p></li>
+<li><p>Baris/Kolom Nol: Jika ada satu baris atau satu kolom yang semua angkanya adalah <span class="math notranslate nohighlight">\(0\)</span>, maka determinannya otomatis <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Baris/Kolom Kembar: Jika ada dua baris atau dua kolom yang angkanya sama atau kelipatannya (saling bergantung linear), determinannya adalah <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
 </ul>
 </section>
-<hr class="docutils" />
-<section id="membuat-persamaan-linier">
-<h2>4. membuat persamaan linier<a class="headerlink" href="#membuat-persamaan-linier" title="Permalink to this heading">#</a></h2>
-<p>Cobalah langkah-langkah berikut di GeoGebra untuk menguji pemahaman Anda:</p>
-<ol class="arabic simple">
-<li><p>Buatlah grafik dari sistem persamaan linear dua variabel (SPLDV) berikut:</p>
+<section id="mengapa-determinan-sangat-penting">
+<h2>4. Mengapa Determinan Sangat Penting?<a class="headerlink" href="#mengapa-determinan-sangat-penting" title="Permalink to this heading">#</a></h2>
+<p>Dalam komputasi dan aljabar linear, determinan bertindak sebagai “alarm” atau indikator utama untuk mengetahui karakteristik suatu sistem:</p>
 <ul class="simple">
-<li><p>Garis 1: <span class="math notranslate nohighlight">\(x + y = 20\)</span></p></li>
-<li><p>Garis 2: <span class="math notranslate nohighlight">\(2x + y = 30\)</span></p></li>
-</ul>
-</li>
-<li><p>Gunakan perintah atau alat <code class="docutils literal notranslate"><span class="pre">Intersect</span></code> untuk mengklik titik pertemuan kedua garis tersebut.</p></li>
-<li><p>Catat koordinat titik potongnya! Koordinat <span class="math notranslate nohighlight">\((x, y)\)</span> tersebut merupakan <strong>Himpunan Penyelesaian (HP)</strong> dari sistem persamaan tersebut.</p></li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="visualisasi-spldv">
-<h2>Visualisasi SPLDV<a class="headerlink" href="#visualisasi-spldv" title="Permalink to this heading">#</a></h2>
-<section id="persamaan">
-<h3>Persamaan<a class="headerlink" href="#persamaan" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Garis 1 : x + y = 20</p></li>
-<li><p>Garis 2 : 2x + y = 30</p></li>
+<li><p>Menentukan Keberadaan Invers: Sebuah matriks punya invers (bisa dibagi) jika dan hanya jika <span class="math notranslate nohighlight">\(\text{det}(A) \neq 0\)</span>. Jika <span class="math notranslate nohighlight">\(\text{det}(A) = 0\)</span>, matriks itu disebut Matriks Singular (tidak punya invers).</p></li>
+<li><p>Menyelesaikan SPL: Digunakan dalam Aturan Cramer untuk mencari solusi persamaan linear.</p></li>
+<li><p>Mencari Eigenvalue: Dalam analisis matriks tingkat lanjut, determinan digunakan untuk menyelesaikan persamaan karakteristik <span class="math notranslate nohighlight">\(\text{det}(A - \lambda I) = 0\)</span> guna menemukan eigenvalue yang penting untuk kestabilan sistem dan algoritma kecerdasan buatan.</p></li>
 </ul>
 </section>
-<section id="grafik">
-<h3>Grafik<a class="headerlink" href="#grafik" title="Permalink to this heading">#</a></h3>
-<div id="ggb-element"></div>
-<script src="https://www.geogebra.org/apps/deployggb.js"></script>
-<script>
-var params = {
-    appName: "graphing",
-    width: 800,
-    height: 500,
-    showToolBar: true,
-    showAlgebraInput: true,
-    showMenuBar: true,
-    appletOnLoad: function(api) {
-        api.evalCommand("x + y = 20");
-        api.evalCommand("2x + y = 30");
-        api.evalCommand("A = Intersect(eq1, eq2)");
-
-        api.setCoordSystem(-5, 25, -5, 25);
-    }
-};
-
-var applet = new GGBApplet(params, true);
-
-window.addEventListener("load", function () {
-    applet.inject('ggb-element');
-});
-</script></section>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -500,7 +441,7 @@ window.addEventListener("load", function () {
         },
         kernelOptions: {
             name: "python3",
-            path: "./persamaan-linier"
+            path: "./determinan"
         },
         predefinedOutput: true
     }
@@ -518,20 +459,20 @@ window.addEventListener("load", function () {
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="../eliminasi-gauss/tugas5.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Persamaan Linear</p>
+        <p class="prev-next-title">Tugas</p>
       </div>
     </a>
     <a class="right-next"
-       href="sage.html"
+       href="../tugas-tranformasi.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SageMath</p>
+        <p class="prev-next-title">Transformasi Linear Refleksi pada Vektor di Bidang Dua Dimensi</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -551,20 +492,16 @@ window.addEventListener("load", function () {
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-dasar-persamaan-linear">1. Konsep Dasar Persamaan Linear</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-persamaan-linear-di-geogebra">2. Cara Membuat Persamaan Linear di GeoGebra</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-1-menginput-persamaan-langsung-aljabar">Cara 1: Menginput Persamaan Langsung (Aljabar)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-2-menggunakan-dua-titik-geometri">Cara 2: Menggunakan Dua Titik (Geometri)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-3-menggunakan-slider-eksperimen-interaktif">Cara 3: Menggunakan Slider (Eksperimen Interaktif)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arti-geometris-apa-yang-diwakili-oleh-determinan">1. Arti Geometris: Apa yang Diwakili oleh Determinan?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menghitung-determinan">2. Cara Menghitung Determinan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-2-times-2">Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-3-times-3-metode-sarrus">Matriks <span class="math notranslate nohighlight">\(3 \times 3\)</span> (Metode Sarrus)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-ukuran-besar-4-times-4-ke-atas">Matriks Ukuran Besar (<span class="math notranslate nohighlight">\(4 \times 4\)</span> ke atas)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitur-tambahan-yang-berguna">3. Fitur Tambahan yang Berguna</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membuat-persamaan-linier">4. membuat persamaan linier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-spldv">Visualisasi SPLDV</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persamaan">Persamaan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafik">Grafik</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-penting-determinan">3. Sifat-Sifat Penting Determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-determinan-sangat-penting">4. Mengapa Determinan Sangat Penting?</a></li>
 </ul>
   </nav></div>
 
