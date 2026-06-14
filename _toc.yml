@@ -11,6 +11,13 @@ chapters:
     sections:
       - file: eliminasi-gauss/tugas4
       - file: eliminasi-gauss/tugas5
+  - file: operasi-matrix
+  - file: operasi-matrix/index
+    sections:
+      - file: operasi-matrix/penjumlahan
+      - file: operasi-matrix/pengurangan
+      - file: operasi-matrix/perkalian
+      - file: operasi-matrix/pembagian
   - file: determinan
   - file: determinan/index
     sections:
