@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Pembagian Matrix &#8212; Tugas Komputasi Aljabar Linear</title>
+    <title>Invers Matriks &#8212; Tugas Komputasi Aljabar Linear</title>
   
   
   
@@ -64,11 +64,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'operasi-matrix/pembagian';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'determinan/invers';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Determinan" href="../determinan/index.html" />
-    <link rel="prev" title="Perkalian Matrix" href="perkalian.html" />
+    <link rel="next" title="TUGAS Join (Adjoin)" href="tugas-adjoin.html" />
+    <link rel="prev" title="Determinan" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,16 +185,16 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Operasi Matrix</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="penjumlahan.html">Penjumlahan Matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pengurangan.html">Pengurangan Matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="perkalian.html">Perkalian Matrix</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Pembagian Matrix</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../operasi-matrix/index.html">Operasi Matrix</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../operasi-matrix/penjumlahan.html">Penjumlahan Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operasi-matrix/pengurangan.html">Pengurangan Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operasi-matrix/perkalian.html">Perkalian Matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operasi-matrix/pembagian.html">Pembagian Matrix</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../determinan/index.html">Determinan</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../determinan/invers.html">Invers Matriks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../determinan/tugas-adjoin.html">TUGAS Join (Adjoin)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Determinan</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Invers Matriks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tugas-adjoin.html">TUGAS Join (Adjoin)</a></li>
 
 
 
@@ -203,7 +203,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../determinan/evaluasi.html">Tugas Evaluasi Determinan dan Invers Matriks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluasi.html">Tugas Evaluasi Determinan dan Invers Matriks</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../transformasi-linear/index.html">Tranformasi Linear</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -266,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/operasi-matrix/pembagian.md" target="_blank"
+      <li><a href="../_sources/determinan/invers.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +350,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pembagian Matrix</h1>
+    <h1>Invers Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -361,18 +361,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dua-kemungkinan-rumus-pembagian-matriks">Dua Kemungkinan Rumus “Pembagian” Matriks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kondisi-1-matriks-b-ada-di-depan">Kondisi 1: Matriks <span class="math notranslate nohighlight">\(B\)</span> ada di depan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kondisi-2-matriks-b-ada-di-belakang">Kondisi 2: Matriks <span class="math notranslate nohighlight">\(B\)</span> ada di belakang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-matriks-punya-invers">Syarat Matriks Punya Invers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-matriks-ukuran-2-times-2">1. Invers Matriks Ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-matriks-2-times-2">Contoh Soal Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-pembagian-matriks-invers">Syarat Pembagian Matriks (Invers)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-mencari-invers-matriks-ukuran-2-times-2">Cara Mencari Invers Matriks (Ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-langkah-demi-langkah">Contoh Langkah demi Langkah</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-cari-invers-matriks-b">Langkah 1: Cari Invers Matriks <span class="math notranslate nohighlight">\(B\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-kalikan-b-1-dengan-a">Langkah 2: Kalikan <span class="math notranslate nohighlight">\(B^{-1}\)</span> dengan <span class="math notranslate nohighlight">\(A\)</span></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-matriks-ukuran-3-times-3">2. Invers Matriks Ukuran <span class="math notranslate nohighlight">\(3 \times 3\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-penting-invers-matriks">Sifat-Sifat Penting Invers Matriks</a></li>
 </ul>
             </nav>
         </div>
@@ -384,91 +379,79 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="pembagian-matrix">
-<h1>Pembagian Matrix<a class="headerlink" href="#pembagian-matrix" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="invers-matriks">
+<h1>Invers Matriks<a class="headerlink" href="#invers-matriks" title="Permalink to this heading">#</a></h1>
 <section id="pengertian">
 <h2>Pengertian<a class="headerlink" href="#pengertian" title="Permalink to this heading">#</a></h2>
-<p>Secara teknis, dalam aljabar linear tidak ada operasi pembagian matriks seperti halnya pembagian angka biasa (<span class="math notranslate nohighlight">\(A \div B\)</span> atau <span class="math notranslate nohighlight">\(\frac{A}{B}\)</span> itu tidak terdefinisi).Namun, kita bisa melakukan operasi yang setara dengan pembagian dengan memanfaatkan konsep Matriks Invers.Ingat kembali prinsip matematika dasar: membagi dengan suatu angka sama saja dengan mengalikan dengan kebalikannya.</p>
-<ul class="simple">
-<li><p>Contoh: <span class="math notranslate nohighlight">\(6 \div 2\)</span> sama dengan <span class="math notranslate nohighlight">\(6 \times \frac{1}{2}\)</span> atau <span class="math notranslate nohighlight">\(6 \times 2^{-1}\)</span>.</p></li>
-</ul>
-<p>Pada matriks, konsep kebalikan ini disebut Invers Matriks (dilambangkan dengan <span class="math notranslate nohighlight">\(B^{-1}\)</span>). Jadi, alih-alih membagi matriks <span class="math notranslate nohighlight">\(A\)</span> dengan matriks <span class="math notranslate nohighlight">\(B\)</span>, kita mengalikan matriks <span class="math notranslate nohighlight">\(A\)</span> dengan invers dari matriks <span class="math notranslate nohighlight">\(B\)</span>.</p>
-</section>
-<section id="dua-kemungkinan-rumus-pembagian-matriks">
-<h2>Dua Kemungkinan Rumus “Pembagian” Matriks<a class="headerlink" href="#dua-kemungkinan-rumus-pembagian-matriks" title="Permalink to this heading">#</a></h2>
-<p>Karena perkalian matriks tidak bersifat komutatif (<span class="math notranslate nohighlight">\(A \times B \neq B \times A\)</span>), urutan posisi peletakan matriks sangatlah penting. Jika kita memiliki persamaan matriks dan ingin mencari matriks <span class="math notranslate nohighlight">\(X\)</span>, ada dua kondisi:</p>
-<section id="kondisi-1-matriks-b-ada-di-depan">
-<h3>Kondisi 1: Matriks <span class="math notranslate nohighlight">\(B\)</span> ada di depan<a class="headerlink" href="#kondisi-1-matriks-b-ada-di-depan" title="Permalink to this heading">#</a></h3>
-<p>Jika persamaannya adalah:</p>
+<p>Invers matriks bisa dianalogikan sebagai “kebalikan” dari suatu matriks. Jika pada bilangan biasa kebalikan dari <span class="math notranslate nohighlight">\(5\)</span> adalah <span class="math notranslate nohighlight">\(\frac{1}{5}\)</span> (atau <span class="math notranslate nohighlight">\(5^{-1}\)</span>) karena <span class="math notranslate nohighlight">\(5 \times \frac{1}{5} = 1\)</span>, maka di dalam matriks:Sebuah matriks <span class="math notranslate nohighlight">\(A\)</span> jika dikalikan dengan inversnya (dilambangkan dengan <span class="math notranslate nohighlight">\(A^{-1}\)</span>) akan menghasilkan Matriks Identitas (<span class="math notranslate nohighlight">\(I\)</span>).</p>
 <div class="math notranslate nohighlight">
-\[B \times X = A\]</div>
-<p>Untuk mencari <span class="math notranslate nohighlight">\(X\)</span>, kita kalikan invers <span class="math notranslate nohighlight">\(B\)</span> di sisi kiri:</p>
-<div class="math notranslate nohighlight">
-\[X = B^{-1} \times A\]</div>
+\[A \times A^{-1} = I\]</div>
+<p>(Catatan: Matriks identitas <span class="math notranslate nohighlight">\(I\)</span> adalah matriks khusus yang elemen diagonal utamanya bernilai <span class="math notranslate nohighlight">\(1\)</span> dan elemen lainnya <span class="math notranslate nohighlight">\(0\)</span>, seperti <span class="math notranslate nohighlight">\(\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}\)</span>. Matriks ini bertindak seperti angka <span class="math notranslate nohighlight">\(1\)</span> pada perkalian biasa).</p>
 </section>
-<section id="kondisi-2-matriks-b-ada-di-belakang">
-<h3>Kondisi 2: Matriks <span class="math notranslate nohighlight">\(B\)</span> ada di belakang<a class="headerlink" href="#kondisi-2-matriks-b-ada-di-belakang" title="Permalink to this heading">#</a></h3>
-<p>Jika persamaannya adalah:</p>
-<div class="math notranslate nohighlight">
-\[X \times B = A\]</div>
-<p>Untuk mencari <span class="math notranslate nohighlight">\(X\)</span>, kita kalikan invers <span class="math notranslate nohighlight">\(B\)</span> di sisi kanan:</p>
-<div class="math notranslate nohighlight">
-\[X = A \times B^{-1}\]</div>
-</section>
-</section>
-<section id="syarat-pembagian-matriks-invers">
-<h2>Syarat Pembagian Matriks (Invers)<a class="headerlink" href="#syarat-pembagian-matriks-invers" title="Permalink to this heading">#</a></h2>
-<p>Tidak semua matriks bisa dijadikan “pembagi” (punya invers). Matriks <span class="math notranslate nohighlight">\(B\)</span> harus memenuhi syarat berikut:</p>
+<section id="syarat-matriks-punya-invers">
+<h2>Syarat Matriks Punya Invers<a class="headerlink" href="#syarat-matriks-punya-invers" title="Permalink to this heading">#</a></h2>
+<p>Tidak semua matriks bisa memiliki invers. Ada dua syarat mutlak yang harus dipenuhi:</p>
 <ol class="arabic simple">
-<li><p>Harus Matriks Persegi: Jumlah baris dan kolomnya sama (misal <span class="math notranslate nohighlight">\(2 \times 2\)</span>, <span class="math notranslate nohighlight">\(3 \times 3\)</span>).</p></li>
-<li><p>Nilai Determinan Tidak Boleh Nol (<span class="math notranslate nohighlight">\(\text{det}(B) \neq 0\)</span>): Matriks yang determinannya nol disebut matriks singular dan tidak memiliki invers (sama seperti angka 0 dalam bilangan biasa yang tidak bisa menjadi pembagi).</p></li>
+<li><p>Harus Matriks Persegi: Jumlah baris dan kolomnya harus sama (misalnya <span class="math notranslate nohighlight">\(2 \times 2\)</span>, <span class="math notranslate nohighlight">\(3 \times 3\)</span>, dst).</p></li>
+<li><p>Nilai Determinan Tidak Boleh Nol (<span class="math notranslate nohighlight">\(\text{det}(A) \neq 0\)</span>): Jika determinan suatu matriks bernilai <span class="math notranslate nohighlight">\(0\)</span>, matriks tersebut dinamakan Matriks Singular dan dipastikan tidak memiliki invers.</p></li>
 </ol>
 </section>
-<section id="cara-mencari-invers-matriks-ukuran-2-times-2">
-<h2>Cara Mencari Invers Matriks (Ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>)<a class="headerlink" href="#cara-mencari-invers-matriks-ukuran-2-times-2" title="Permalink to this heading">#</a></h2>
-<p>Untuk matriks berukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>:</p>
+<section id="invers-matriks-ukuran-2-times-2">
+<h2>1. Invers Matriks Ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span><a class="headerlink" href="#invers-matriks-ukuran-2-times-2" title="Permalink to this heading">#</a></h2>
+<p>Ini adalah bentuk yang paling dasar dan paling sering digunakan.Jika kita memiliki matriks <span class="math notranslate nohighlight">\(A\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}B = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\end{split}\]</div>
-<p>Rumus inversnya adalah:</p>
+\[\begin{split}A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\end{split}\]</div>
+<p>Rumus untuk mencari inversnya adalah:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}B^{-1} = \frac{1}{\text{det}(B)} \times \begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}\end{split}\]</div>
-<p>Di mana nilai determinan <span class="math notranslate nohighlight">\(\text{det}(B) = (a \times d) - (b \times c)\)</span></p>
-</section>
-<section id="contoh-langkah-demi-langkah">
-<h2>Contoh Langkah demi Langkah<a class="headerlink" href="#contoh-langkah-demi-langkah" title="Permalink to this heading">#</a></h2>
-<p>Misalkan kita ingin menyelesaikan “pembagian” untuk mencari matriks <span class="math notranslate nohighlight">\(X\)</span> dari kondisi <span class="math notranslate nohighlight">\(B \times X = A\)</span>, dengan:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}B = \begin{pmatrix} 4 &amp; 2 \\ 5 &amp; 3 \end{pmatrix}, \quad A = \begin{pmatrix} 10 &amp; 8 \\ 13 &amp; 11 \end{pmatrix}\end{split}\]</div>
-<section id="langkah-1-cari-invers-matriks-b">
-<h3>Langkah 1: Cari Invers Matriks <span class="math notranslate nohighlight">\(B\)</span><a class="headerlink" href="#langkah-1-cari-invers-matriks-b" title="Permalink to this heading">#</a></h3>
+\[\begin{split}A^{-1} = \frac{1}{\text{det}(A)} \times \begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}\end{split}\]</div>
+<p>Dengan nilai determinan: <span class="math notranslate nohighlight">\(\text{det}(A) = (a \times d) - (b \times c)\)</span></p>
+<p>Langkah mudah menghafalnya:</p>
+<ol class="arabic simple">
+<li><p>Hitung determinannya: <span class="math notranslate nohighlight">\((a \times d) - (b \times c)\)</span>.</p></li>
+<li><p>Tukar posisi elemen diagonal utama (<span class="math notranslate nohighlight">\(a\)</span> dan <span class="math notranslate nohighlight">\(d\)</span> saling bertukar tempat).</p></li>
+<li><p>Ubah tanda (kali dengan <span class="math notranslate nohighlight">\(-1\)</span>) elemen diagonal sekunder (<span class="math notranslate nohighlight">\(b\)</span> dan <span class="math notranslate nohighlight">\(c\)</span>).</p></li>
+</ol>
+<section id="contoh-soal-matriks-2-times-2">
+<h3>Contoh Soal Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>:<a class="headerlink" href="#contoh-soal-matriks-2-times-2" title="Permalink to this heading">#</a></h3>
+<p>Diketahui matriks <span class="math notranslate nohighlight">\(A = \begin{pmatrix} 4 &amp; 2 \\ 5 &amp; 3 \end{pmatrix}\)</span>, cari <span class="math notranslate nohighlight">\(A^{-1}\)</span>!</p>
 <ul class="simple">
-<li><p>Hitung determinan <span class="math notranslate nohighlight">\(B\)</span>:</p></li>
+<li><p>Langkah 1: Hitung Determinan</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\text{det}(B) = (4 \times 3) - (2 \times 5) = 12 - 10 = 2\]</div>
+\[\text{det}(A) = (4 \times 3) - (2 \times 5) = 12 - 10 = 2\]</div>
 <ul class="simple">
-<li><p>Masukkan ke rumus invers (tukar posisi <span class="math notranslate nohighlight">\(a\)</span> dan <span class="math notranslate nohighlight">\(d\)</span>, beri tanda negatif pada <span class="math notranslate nohighlight">\(b\)</span> dan <span class="math notranslate nohighlight">\(c\)</span>):</p></li>
+<li><p>Langkah 2: Masukkan ke Rumus</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}B^{-1} = \frac{1}{2} \times \begin{pmatrix} 3 &amp; -2 \\ -5 &amp; 4 \end{pmatrix} = \begin{pmatrix} 1.5 &amp; -1 \\ -2.5 &amp; 2 \end{pmatrix}\end{split}\]</div>
-</section>
-<section id="langkah-2-kalikan-b-1-dengan-a">
-<h3>Langkah 2: Kalikan <span class="math notranslate nohighlight">\(B^{-1}\)</span> dengan <span class="math notranslate nohighlight">\(A\)</span><a class="headerlink" href="#langkah-2-kalikan-b-1-dengan-a" title="Permalink to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[X = B^{-1} \times A\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}X = \begin{pmatrix} 1.5 &amp; -1 \\ -2.5 &amp; 2 \end{pmatrix} \times \begin{pmatrix} 10 &amp; 8 \\ 13 &amp; 11 \end{pmatrix}\end{split}\]</div>
-<p>Mari kita hitung dengan prinsip perkalian matriks (Baris <span class="math notranslate nohighlight">\(\times\)</span> Kolom):</p>
+\[\begin{split}A^{-1} = \frac{1}{2} \times \begin{pmatrix} 3 &amp; -2 \\ -5 &amp; 4 \end{pmatrix}\end{split}\]</div>
 <ul class="simple">
-<li><p>Baris 1 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 1: <span class="math notranslate nohighlight">\((1.5 \times 10) + (-1 \times 13) = 15 - 13 = 2\)</span></p></li>
-<li><p>Baris 1 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 2: <span class="math notranslate nohighlight">\((1.5 \times 8) + (-1 \times 11) = 12 - 11 = 1\)</span></p></li>
-<li><p>Baris 2 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 1: <span class="math notranslate nohighlight">\((-2.5 \times 10) + (2 \times 13) = -25 + 26 = 1\)</span></p></li>
-<li><p>Baris 2 <span class="math notranslate nohighlight">\(\times\)</span> Kolom 2: <span class="math notranslate nohighlight">\((-2.5 \times 8) + (2 \times 11) = -20 + 22 = 2\)</span>
-Maka hasil matriks <span class="math notranslate nohighlight">\(X\)</span> adalah:</p></li>
+<li><p>Langkah 3: Kalikan semua elemen dengan <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span></p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}X = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{pmatrix}\end{split}\]</div>
+\[\begin{split}A^{-1} = \begin{pmatrix} \frac{3}{2} &amp; \frac{-2}{2} \\ \frac{-5}{2} &amp; \frac{4}{2} \end{pmatrix} = \begin{pmatrix} 1.5 &amp; -1 \\ -2.5 &amp; 2 \end{pmatrix}\end{split}\]</div>
 </section>
+</section>
+<section id="invers-matriks-ukuran-3-times-3">
+<h2>2. Invers Matriks Ukuran <span class="math notranslate nohighlight">\(3 \times 3\)</span><a class="headerlink" href="#invers-matriks-ukuran-3-times-3" title="Permalink to this heading">#</a></h2>
+<p>Untuk ukuran <span class="math notranslate nohighlight">\(3 \times 3\)</span>, langkahnya sedikit lebih panjang karena kita harus mencari matriks Kofaktor dan Adjoin terlebih dahulu.Rumus umumnya secara struktural tetap sama:</p>
+<div class="math notranslate nohighlight">
+\[A^{-1} = \frac{1}{\text{det}(A)} \times \text{Adj}(A)\]</div>
+<p>Tahapan mencarinya:</p>
+<ol class="arabic simple">
+<li><p>Cari Determinan: Biasanya menggunakan metode Sarrus (menambahkan dua kolom pertama di sebelah kanan matriks lalu menghitung jumlah perkalian diagonalnya).</p></li>
+<li><p>Cari Matriks Minor &amp; Kofaktor: Menghitung determinan sub-matriks kecil <span class="math notranslate nohighlight">\(2 \times 2\)</span> dengan cara menutup baris dan kolom tertentu satu per satu, lalu memberikan tanda selang-seling <span class="math notranslate nohighlight">\((+, -, +, \dots)\)</span>.</p></li>
+<li><p>Cari Adjoin (<span class="math notranslate nohighlight">\(\text{Adj}\)</span>): Adjoin didapat dengan cara men-transpose matriks kofaktor (mengubah baris menjadi kolom).</p></li>
+<li><p>Kalikan dengan <span class="math notranslate nohighlight">\(\frac{1}{\text{det}(A)}\)</span>.</p></li>
+</ol>
+</section>
+<section id="sifat-sifat-penting-invers-matriks">
+<h2>Sifat-Sifat Penting Invers Matriks<a class="headerlink" href="#sifat-sifat-penting-invers-matriks" title="Permalink to this heading">#</a></h2>
+<p>Berikut adalah beberapa sifat operasi invers yang sering keluar dalam ujian atau penyederhanaan rumus:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((A^{-1})^{-1} = A\)</span> (Invers yang diinverskan lagi akan kembali ke matriks semula).</p></li>
+<li><p><span class="math notranslate nohighlight">\((A \times B)^{-1} = B^{-1} \times A^{-1}\)</span> (Hati-hati: urutannya berbalik jika tanda kurung dibuka).</p></li>
+<li><p><span class="math notranslate nohighlight">\((A^T)^{-1} = (A^{-1})^T\)</span> (Operasi transpose dan invers posisinya boleh ditukar).</p></li>
+</ul>
 </section>
 </section>
 
@@ -485,7 +468,7 @@ Maka hasil matriks <span class="math notranslate nohighlight">\(X\)</span> adala
         },
         kernelOptions: {
             name: "python3",
-            path: "./operasi-matrix"
+            path: "./determinan"
         },
         predefinedOutput: true
     }
@@ -503,20 +486,20 @@ Maka hasil matriks <span class="math notranslate nohighlight">\(X\)</span> adala
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="perkalian.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Perkalian Matrix</p>
+        <p class="prev-next-title">Determinan</p>
       </div>
     </a>
     <a class="right-next"
-       href="../determinan/index.html"
+       href="tugas-adjoin.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Determinan</p>
+        <p class="prev-next-title">TUGAS Join (Adjoin)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -537,18 +520,13 @@ Maka hasil matriks <span class="math notranslate nohighlight">\(X\)</span> adala
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dua-kemungkinan-rumus-pembagian-matriks">Dua Kemungkinan Rumus “Pembagian” Matriks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kondisi-1-matriks-b-ada-di-depan">Kondisi 1: Matriks <span class="math notranslate nohighlight">\(B\)</span> ada di depan</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kondisi-2-matriks-b-ada-di-belakang">Kondisi 2: Matriks <span class="math notranslate nohighlight">\(B\)</span> ada di belakang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-matriks-punya-invers">Syarat Matriks Punya Invers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-matriks-ukuran-2-times-2">1. Invers Matriks Ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-soal-matriks-2-times-2">Contoh Soal Matriks <span class="math notranslate nohighlight">\(2 \times 2\)</span>:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-pembagian-matriks-invers">Syarat Pembagian Matriks (Invers)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-mencari-invers-matriks-ukuran-2-times-2">Cara Mencari Invers Matriks (Ukuran <span class="math notranslate nohighlight">\(2 \times 2\)</span>)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-langkah-demi-langkah">Contoh Langkah demi Langkah</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-cari-invers-matriks-b">Langkah 1: Cari Invers Matriks <span class="math notranslate nohighlight">\(B\)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-kalikan-b-1-dengan-a">Langkah 2: Kalikan <span class="math notranslate nohighlight">\(B^{-1}\)</span> dengan <span class="math notranslate nohighlight">\(A\)</span></a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invers-matriks-ukuran-3-times-3">2. Invers Matriks Ukuran <span class="math notranslate nohighlight">\(3 \times 3\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-penting-invers-matriks">Sifat-Sifat Penting Invers Matriks</a></li>
 </ul>
   </nav></div>
 
