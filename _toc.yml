@@ -21,6 +21,7 @@ chapters:
   - file: determinan
   - file: determinan/index
     sections:
+      - file: determinan/invers
       - file: determinan/tugas-adjoin 
       - file: determinan/evaluasi
   - file: transformasi-linear
